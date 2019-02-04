@@ -12,9 +12,9 @@ export default class HelloWorld extends React.Component {
     render() {
         return (
             <div>
-                <h1>{"Hello, world!"}</h1>
+                <h1>{"Bebouc"}</h1>
                 <hr />
-                <small>{"becode/bookshelf"}</small>
+                <small>{"Laura, Olivier, Youssef, Elias"}</small>
             </div>
         );
     }
