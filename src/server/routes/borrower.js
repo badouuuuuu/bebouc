@@ -27,4 +27,4 @@ Router.post("/borrower", (req, res) => {
         });
 });
 
-module.exports = router;
+module.exports = Router;
