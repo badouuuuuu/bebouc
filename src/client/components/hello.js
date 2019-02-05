@@ -15,6 +15,9 @@ export default class HelloWorld extends React.Component {
                 <h1>{"Bebouc"}</h1>
                 <hr />
                 <small>{"Laura, Olivier, Youssef, Elias"}</small>
+                <form action="/books" method="get">
+                    <button>Books</button>
+                </form>
             </div>
         );
     }
