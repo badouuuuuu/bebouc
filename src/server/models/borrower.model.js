@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const server = "localhost:12345";
+const server = "localhost:27018";
 const database = "bebooks";
-const user = "admin";
-const password = "pass";
+const user = "dev";
+const password = "dev";
 
 mongoose.connect(
     `mongodb://${user}:${password}@${server}/${database}`,
@@ -12,11 +12,6 @@ mongoose.connect(
 
 let BorrowerSchema = new mongoose.Schema({
     name: String,
-    email: {
-        type: String,
-        required: true,
-        unique: true,
-    },
 });
 
 module.exports = mongoose.model("Borrower", BorrowerSchema);
