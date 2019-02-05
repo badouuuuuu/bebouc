@@ -2,8 +2,8 @@ let RegisterModel = require("../models/register.model"),
     express = require("express"),
     Router = new express.Router();
 
-// Create new borrower
-// POST localhost/borrower
+// Create new account
+// POST localhost/account
 
 Router.post("/register", (req, res) => {
     if (!req.body) {

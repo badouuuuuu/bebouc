@@ -1,4 +1,5 @@
 import express from "express";
+
 let Router = new express.Router(),
     UserModel = require("../models/user.model");
 
