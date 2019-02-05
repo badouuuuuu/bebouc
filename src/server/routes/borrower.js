@@ -1,6 +1,6 @@
 let BorrowerModel = require("../models/borrower.model"),
     Express = require("express"),
-    Router = Express.Router();
+    Router = Express.router();
 
 // Create new borrower
 // POST localhost/borrower
@@ -12,7 +12,8 @@ Router.post("/borrower", (req, res) => {
 
     let model = new BorrowerModel(req.body);
 
-    model.save()
+    model
+        .save()
         .then(doc => {
             if (!doc || doc.length === 0) {
                 return res.status(500).send(doc);
