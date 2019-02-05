@@ -5,7 +5,7 @@
 /* ------------------------------------------------------------ */
 
 import express from "express"; // Initilisation d'express
-let Router = express.Router(); /* Ajout d'express.router dans une variable pour une utilisation plus facile */
+let Router = new express.Router(); /* Ajout d'express.router dans une variable pour une utilisation plus facile */
 
 // Creation de la root localhost/books pour listing de tout les livres
 Router.get("/books", (req, res) => {
