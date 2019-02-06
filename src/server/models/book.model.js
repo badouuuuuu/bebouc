@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const BookSchema = new Schema({
+    title: {
+        type: String,
+        required: true,
+    },
     author: {
         type: String,
         required: true,
@@ -10,6 +14,8 @@ const BookSchema = new Schema({
     isbn: {
         type: String,
         required: true,
+        max: 13,
+        unique: true,
     },
     language: {
         type: String,
@@ -20,13 +26,24 @@ const BookSchema = new Schema({
         required: true,
     },
     tags: {
-        type: String,
-        required: true,
+        type: Array,
     },
     owner: {
         type: String,
         required: true,
     },
+    isBook: {
+        type: Boolean,
+        required: true,
+    },
+    isEbook: {
+        type: Boolean,
+        required: true,
+    },
+    created: {
+        type: Date,
+        default: Date.now,
+    },
 });
 
-module.exports = Book = mongoose.model("book", BookSchema);
+module.exports = mongoose.model("book", BookSchema);
