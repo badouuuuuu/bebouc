@@ -1,17 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-// Connection to database
-const server = "localhost:12345";
-const database = "bebooks";
-const user = "dev";
-const password = "dev";
-
-mongoose.connect(
-    `mongodb://${user}:${password}@${server}/${database}`,
-    {useNewUrlParser: true},
-);
-
 // Create Schema
 const BookSchema = new Schema({
     author: {
