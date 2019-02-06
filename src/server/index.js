@@ -47,7 +47,7 @@ app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 // Router config
 const router = new express.Router();
 
-app.use("/user", router);
+app.use("/users", router);
 require(`${__dirname}/controllers/userController`)(router);
 
 // Port listener

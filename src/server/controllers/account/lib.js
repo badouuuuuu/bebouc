@@ -24,7 +24,9 @@ const signup = (req, res) => {
                         if (err) {
                             reject(500);
                         } else if (result) {
-                            reject(204);
+                            res.status(204).json({
+                                text: "Content Vide"
+                            });
                         } else {
                             resolve(true);
                         }
