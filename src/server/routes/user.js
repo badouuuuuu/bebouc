@@ -1,5 +1,6 @@
 import express from "express";
-let Router = express.router(),
+
+let Router = new express.Router(),
     UserModel = require("../models/user.model");
 
 Router.get("/users", (req, res) => {
@@ -13,7 +14,7 @@ Router.get("/users", (req, res) => {
         .save()
         .then(doc => {
             if (!doc || doc.length === 0) {
-                return res.status(500).send(doc);
+                return res.status(500).send(`${doc}json vide`);
             }
 
             res.status(201).send(doc);
