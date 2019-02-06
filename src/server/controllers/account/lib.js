@@ -9,6 +9,9 @@ const signup = (req, res) => {
         });
     } else {
         let user = {
+                name: req.body.name,
+                surname: req.body.surname,
+                admin: req.body.admin,
                 email: req.body.email,
                 password: passwordHash.generate(req.body.password),
             },
