@@ -40,7 +40,7 @@ const signup = (req, res) => {
                         });
                     } else {
                         res.status(200).json({
-                            text: "Succès",
+                            text: "Succes",
                             token: usr.getToken(),
                         });
                     }

@@ -5,15 +5,15 @@ import bodyParser from "body-parser";
 import path from "path";
 
 // Database connection
-mongoose
-    .connect("mongodb://dev:dev@mongo:2017/bebook?authSource=admin")
-    .then(() => {
-        console.log("Connected to mongoDB");
-    })
-    .catch(e => {
-        console.log("Error while DB connecting");
-        console.log(e);
-    });
+mongoose.connect("mongodb://dev:dev@mongo:27017/bebook?authSource=admin");
+
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+
+db.once("open", () => {
+    console.log("----------   yeah! connected!   ----------");
+});
 
 //  Express config
 const app = express();
