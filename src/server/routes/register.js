@@ -27,4 +27,18 @@ Router.post("/register", (req, res) => {
         });
 });
 
+Router.get("/register", (req, res) => {
+    res.status(200);
+
+    RegisterModel.find(null, (err, registered) => {
+        if (err) {
+            throw err;
+        }
+
+        console.log(registered);
+    }).then(doc => {
+        res.send(doc);
+    });
+});
+
 module.exports = Router;

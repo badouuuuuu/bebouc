@@ -8,6 +8,7 @@ let RegisterSchema = new mongoose.Schema({
         required: true,
         unique: true,
     },
+    admin: false,
 });
 
 module.exports = mongoose.model("Register", RegisterSchema);
