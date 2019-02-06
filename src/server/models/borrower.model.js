@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const server = "localhost:12345" ;
+const server = "localhost:12345";
 const database = "bebooks";
 const user = "dev";
 const password = "dev";

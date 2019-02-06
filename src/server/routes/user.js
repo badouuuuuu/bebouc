@@ -1,16 +1,13 @@
-let BorrowerModel = require("../models/borrower.model"),
-    Express = require("express"),
-    Router = Express.router();
+import express from "express";
+let Router = express.router(),
+    UserModel = require("../models/user.model");
 
-// Create new borrower
-// POST localhost/borrower
-
-Router.post("/borrower", (req, res) => {
+Router.get("/users", (req, res) => {
     if (!req.body) {
         return res.status(400).send("Request body is missing");
     }
 
-    let model = new BorrowerModel(req.body);
+    let model = new UserModel(req.body);
 
     model
         .save()
