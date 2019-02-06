@@ -1,5 +1,5 @@
 import express from "express";
-let Router = express.router(),
+let Router = new express.Router(),
     UserModel = require("../models/user.model");
 
 Router.get("/users", (req, res) => {
