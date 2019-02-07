@@ -51,7 +51,12 @@
     "express": "^4.16.4",
     "mongoose": "^5.4.9",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "password-hash": "^1.2.2",
+    "jwt-simple": "^0.5.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "babel-loader": "^8.0.2"
   },
   "husky": {
     "hooks": {
