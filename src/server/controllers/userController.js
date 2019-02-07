@@ -1,9 +1,14 @@
 const User = require("../schema/schemaUser.js");
 const passwordHash = require("password-hash");
 
+const show = (req, res) => {
+    User.find()
+        .sort({name: 1})
+        .then(users => res.json(users));
+};
+
 const create = (req, res) => {
     if (!req.body.email || !req.body.password) {
-        // In case nothing is submitted
         res.status(400).json({
             text: "Requête invalide",
         });
@@ -25,7 +30,7 @@ const create = (req, res) => {
                             reject(500);
                         } else if (result) {
                             res.status(204).json({
-                                text: "Content Vide",
+                                text: "User already exists",
                             });
                         } else {
                             resolve(true);
@@ -41,7 +46,7 @@ const create = (req, res) => {
                 _u.save((err, usr) => {
                     if (err) {
                         res.status(500).json({
-                            text: "Erreur interne",
+                            text: "Internal error",
                         });
                     } else {
                         res.status(200).json({
@@ -55,17 +60,17 @@ const create = (req, res) => {
                 switch (error) {
                     case 500:
                         res.status(500).json({
-                            text: "Erreur interne",
+                            text: "Internal error",
                         });
                         break;
                     case 204:
                         res.status(204).json({
-                            text: "L'adresse email existe déjà",
+                            text: "Email already exists",
                         });
                         break;
                     default:
                         res.status(500).json({
-                            text: "Erreur interne",
+                            text: "Internal error",
                         });
                 }
             },
@@ -112,6 +117,7 @@ const store = () => {};
 const destroy = () => {};
 
 // Exporting methods
+exports.show = show;
 exports.login = login;
 exports.create = create;
 exports.store = store;
