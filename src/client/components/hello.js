@@ -7,6 +7,7 @@
  */
 
 import * as React from "react";
+import AddBooks from "./addbooks.js";
 
 export default class HelloWorld extends React.Component {
     render() {
@@ -16,7 +17,8 @@ export default class HelloWorld extends React.Component {
                 <hr />
                 <small>{"Laura, Olivier, Youssef, Elias"}</small>
                 <form action="/books" method="get">
-                    <button>Books</button>
+                    <button>{"Books"}</button>
+                    <AddBooks />
                 </form>
             </div>
         );
