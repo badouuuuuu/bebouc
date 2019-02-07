@@ -19,7 +19,7 @@ db.once("open", () => {
 const app = express();
 
 // Body Parser config and express protocol
-let urlencodedParser = bodyParser.urlencoded({
+const urlencodedParser = bodyParser.urlencoded({
     extended: true,
 });
 
@@ -47,8 +47,8 @@ app.use(express.static(path.resolve(__dirname, "../../bin/client")));
 // Router config
 const router = new express.Router();
 
-app.use("/users", router);
-require(`${__dirname}/controllers/userController`)(router);
+app.use("/api", router);
+require(`${__dirname}/routes`)(router);
 
 // Port listener
 const {APP_PORT} = process.env;

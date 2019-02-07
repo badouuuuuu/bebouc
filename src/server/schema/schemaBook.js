@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+// const jwt = require("jwt-simple");
+// const config = require("../config/config");
 
-// Create Schema
-const BookSchema = new Schema({
+// Mongoose Schema
+const schemaBook = new mongoose.Schema({
     title: {
         type: String,
         required: true,
@@ -46,4 +47,4 @@ const BookSchema = new Schema({
     },
 });
 
-module.exports = mongoose.model("book", BookSchema);
+module.exports = mongoose.model("book", schemaBook);

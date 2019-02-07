@@ -1,5 +1,5 @@
 // Book Model
-const Book = require("../schema/bookSchema");
+const Book = require("../schema/schemaBook.js");
 
 // @route   GET books
 // @desc    get All books
