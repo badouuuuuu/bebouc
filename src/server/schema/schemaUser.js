@@ -44,4 +44,4 @@ userSchema.methods = {
 };
 
 // Translate Schema into Model and export
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("user", userSchema);
