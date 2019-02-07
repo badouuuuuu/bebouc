@@ -7,7 +7,9 @@ const userController = require("./controllers/userController.js");
 module.exports = function(app) {
     // user
     app.post("/login", userController.login);
-    app.post("/signup", userController.signup);
+    app.post("/create", userController.create);
+    // app.post("/store", userController.update);
+    // app.post("/destroy", userController.destroy);
     // book
 
     // loan

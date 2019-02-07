@@ -1,7 +1,7 @@
 const User = require("../schema/schemaUser.js");
 const passwordHash = require("password-hash");
 
-const signup = (req, res) => {
+const create = (req, res) => {
     if (!req.body.email || !req.body.password) {
         // In case nothing is submitted
         res.status(400).json({
@@ -109,10 +109,10 @@ const login = (req, res) => {
 
 const update = () => {};
 
-const suppr = () => {};
+const destroy = () => {};
 
 // Exporting methods
 exports.login = login;
-exports.signup = signup;
+exports.create = create;
 exports.update = update;
-exports.suppr = suppr;
+exports.destroy = destroy;
