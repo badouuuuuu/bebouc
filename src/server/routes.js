@@ -2,7 +2,7 @@ const userController = require("./controllers/userController.js");
 const bookController = require("./controllers/bookController.js");
 // const loanController = require("./controllers/loanController.js");
 // const reviewController = require("./controllers/reviewController.js");
-// const tagController = require("./controllers/tagController.js");
+const tagController = require("./controllers/tagController.js");
 
 module.exports = function(app) {
     // user
@@ -12,10 +12,14 @@ module.exports = function(app) {
     // app.post("/destroy", userController.destroy);
     // book
     app.get("/books", bookController.show);
-    app.post("/books", bookController.create);
-    app.put("/books/:id", bookController.store);
-    app.delete("/books/:id", bookController.destroy);
+    app.post("/book", bookController.create);
+    app.put("/book/:id", bookController.store);
+    app.delete("/book/:id", bookController.destroy);
     // loan
 
     // tag
+    app.get("/tags", tagController.show);
+    app.post("/tag", tagController.create);
+    app.put("/tag/:id", tagController.store);
+    app.delete("/tag/:id", tagController.destroy);
 };

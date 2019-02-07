@@ -10,7 +10,7 @@ const show = (req, res) => {
         .then(books => res.json(books));
 };
 
-// @route   POST books
+// @route   POST book
 // @desc    Create A book
 // @access  Admin
 const create = (req, res) => {
@@ -41,7 +41,7 @@ const store = (req, res) => {
         .catch(err => res.status(400).send(err));
 };
 
-// @route   DELETE books/:id
+// @route   DELETE book/:id
 // @desc    Delete A book
 // @access  Admin
 const destroy = (req, res) => {
