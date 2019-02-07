@@ -108,7 +108,71 @@ const login = (req, res) => {
     }
 };
 
-// On exporte nos deux fonctions
+const update = () => {
+    let user = {
+            name: req.body.name,
+            surname: req.body.surname,
+            email: req.body.email,
+            password: passwordHash.generate(req.body.password),
+        },
+        findUser = new Promise((resolve, reject) => {
+            User.findOne(
+                {
+                    email: user.email,
+                },
+                (err, result) => {
+                    if (err) {
+                        reject(500);
+                    } else if (result) {
+                        res.status(204).json({
+                            text: "Empty Content",
+                        });
+                    } else {
+                        resolve(true);
+                    }
+                },
+            );
+        });
 
+    findUser.then(
+        () => {
+            let _u = new User(user);
+
+            _u.save((err, usr) => {
+                if (err) {
+                    res.status(500).json({
+                        text: "Erreur interne",
+                    });
+                } else {
+                    res.status(200).json({
+                        text: "Succes",
+                        token: usr.getToken(),
+                    });
+                }
+            });
+        },
+        error => {
+            switch (error) {
+                case 500:
+                    res.status(500).json({
+                        text: "Erreur interne",
+                    });
+                    break;
+                case 204:
+                    res.status(204).json({
+                        text: "L'adresse email existe déjà",
+                    });
+                    break;
+                default:
+                    res.status(500).json({
+                        text: "Erreur interne",
+                    });
+            }
+        },
+    );
+};
+
+// Exporting methods
 exports.login = login;
 exports.signup = signup;
+exports.update = update;
