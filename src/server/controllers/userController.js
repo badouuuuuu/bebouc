@@ -114,7 +114,12 @@ const login = (req, res) => {
 
 const store = () => {};
 
-const destroy = () => {};
+// Noy yet functionnal
+const destroy = (req, res) => {
+    User.findById(req.params.id)
+        .then(user => user.remove().then(() => res.json({success: true})))
+        .catch(err => res.status(404).json(err));
+};
 
 // Exporting methods
 exports.show = show;
