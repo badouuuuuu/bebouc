@@ -107,12 +107,12 @@ const login = (req, res) => {
     }
 };
 
-const update = () => {};
+const store = () => {};
 
 const destroy = () => {};
 
 // Exporting methods
 exports.login = login;
 exports.create = create;
-exports.update = update;
+exports.store = store;
 exports.destroy = destroy;
