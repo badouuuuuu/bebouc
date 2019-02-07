@@ -3,6 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import path from "path";
+import booksRouter from "./routes/books";
 
 // Database connection
 mongoose.connect("mongodb://dev:dev@mongo:27017/bebook?authSource=admin");
@@ -25,6 +26,7 @@ let urlencodedParser = bodyParser.urlencoded({
 
 app.use(urlencodedParser);
 app.use(bodyParser.json());
+app.use(booksRouter);
 
 // CORS config (even if we aim to deploy product in https)
 app.use((req, res, next) => {

@@ -34,7 +34,10 @@ router.post("/books", (req, res) => {
         isEbook: req.body.isEbook,
     });
 
-    newBook.save().them(book => res.json(book));
+    newBook
+        .save()
+        .then(book => res.json(book))
+        .catch(err => res.status(400).send(err));
 });
 
 // @route   DELETE books/:id
