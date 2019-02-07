@@ -1,42 +1,57 @@
+// Dependencies
 import express from "express";
+import mongoose from "mongoose";
+import bodyParser from "body-parser";
 import path from "path";
-let bodyParser = require("body-parser");
 
-const booksRoute = require("./routes/books"); // On appel la route creer dans ./server/routes/books.js
-const registerRoute = require("./routes/register");
-const userRoute = require("./routes/user");
+// Database connection
+mongoose.connect("mongodb://dev:dev@mongo:27017/bebook?authSource=admin");
 
-const {APP_PORT} = process.env;
+const db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+
+db.once("open", () => {
+    console.log("----------   yeah! connected!   ----------");
+});
+
+//  Express config
 const app = express();
 
+// Body Parser config and express protocol
+const urlencodedParser = bodyParser.urlencoded({
+    extended: true,
+});
+
+app.use(urlencodedParser);
 app.use(bodyParser.json());
 
-app.use(req => {
-    // Permet l'affichage des requetes aux URL de l'API dans le terminal docker-compose
-    console.log(`${new Date().toString()} => ${req.originalUrl}`);
+// CORS config (even if we aim to deploy product in https)
+app.use((req, res, next) => {
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "X-Requested-With,content-type",
+    );
+    res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+        "Access-Control-Allow-Methods",
+        "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+    );
+    res.setHeader("Access-Control-Allow-Credentials", true);
     next();
 });
 
+//  ??
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
-app.use(booksRoute); // Appel de la route cree dans ./server/routes/books.js
-app.use(registerRoute); // Appel de la route cree dans ./server/routes/register.js
-app.use(userRoute);
 
-app.use((req, res) => {
-    res.status(404).send(` 😱 💩 You are lost.. ;D 🚀 🙈`);
-    /*  Middleware pour modifier message des erreurs de routes
-     Status 404 Page Not Found */
-});
+// Router config
+const router = new express.Router();
 
-app.use((err, req, res) => {
-    console.error(err.stack);
-    res.status(500).send(` 😱 💩 505 🚀 🙈`);
-});
+app.use("/users", router);
+require(`${__dirname}/controllers/userController`)(router);
 
-/* app.get("/hello", (req, res) => {
-    console.log(`ℹ️  (${req.method.toUpperCase()}) ${req.url}`);
-    res.send("Hello, World!");
-});  */
+// Port listener
+const {APP_PORT} = process.env;
 
 app.listen(APP_PORT, () =>
     console.log(`🚀 Server is listening on port ${APP_PORT}.`),
