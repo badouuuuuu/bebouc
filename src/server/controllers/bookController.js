@@ -4,7 +4,7 @@ const Book = require("../schema/schemaBook.js");
 // @route   GET books
 // @desc    get All books
 // @access  Public
-const getAllBooks = (req, res) => {
+const show = (req, res) => {
     Book.find()
         .sort({title: 1})
         .then(books => res.json(books));
@@ -13,7 +13,7 @@ const getAllBooks = (req, res) => {
 // @route   POST books
 // @desc    Create A book
 // @access  Admin
-const createBook = (req, res) => {
+const create = (req, res) => {
     const newBook = new Book({
         title: req.body.title,
         author: req.body.author,
@@ -34,7 +34,7 @@ const createBook = (req, res) => {
 // @route   PUT book/:id
 // @desc    Update A book
 // @access  Admin
-const updateBook = (req, res) => {
+const store = (req, res) => {
     Book.findById(req.params.id)
         .then(book => book.update().save())
         .then(book => res.json(book))
@@ -44,14 +44,14 @@ const updateBook = (req, res) => {
 // @route   DELETE books/:id
 // @desc    Delete A book
 // @access  Admin
-const deleteBook = (req, res) => {
+const destroy = (req, res) => {
     Book.findById(req.params.id)
         .then(book => book.remove().then(() => res.json({success: true})))
         .catch(err => res.status(404).json(err));
 };
 
 // Exports des fonctions
-exports.getAllBooks = getAllBooks;
-exports.createBook = createBook;
-exports.updateBook = updateBook;
-exports.deleteBook = deleteBook;
+exports.show = show;
+exports.create = create;
+exports.store = store;
+exports.destroy = destroy;

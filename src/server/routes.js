@@ -11,10 +11,10 @@ module.exports = function(app) {
     // app.post("/store", userController.store);
     // app.post("/destroy", userController.destroy);
     // book
-    app.get("/books", bookController.getAllBooks);
-    app.post("/books", bookController.createBook);
-    app.put("/books/:id", bookController.updateBook);
-    app.delete("/books/:id", bookController.deleteBook);
+    app.get("/books", bookController.show);
+    app.post("/books", bookController.create);
+    app.put("/books/:id", bookController.store);
+    app.delete("/books/:id", bookController.destroy);
     // loan
 
     // tag
