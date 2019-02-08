@@ -1,7 +1,7 @@
 const userController = require("./controllers/userController.js");
 const bookController = require("./controllers/bookController.js");
 // const loanController = require("./controllers/loanController.js");
-// const reviewController = require("./controllers/reviewController.js");
+const reviewController = require("./controllers/reviewController.js");
 const tagController = require("./controllers/tagController.js");
 
 module.exports = function(app) {
@@ -13,14 +13,19 @@ module.exports = function(app) {
     app.put("/users/:id", userController.store);
     // book
     app.get("/books", bookController.show);
-    app.post("/book", bookController.create);
-    app.put("/book/:id", bookController.store);
-    app.delete("/book/:id", bookController.destroy);
+    app.post("/books", bookController.create);
+    app.put("/books/:id", bookController.store);
+    app.delete("/books/:id", bookController.destroy);
+    // review
+    app.get("/reviews", reviewController.show);
+    app.post("/reviews", reviewController.create);
+    app.put("/reviews/:id", reviewController.store);
+    app.delete("/reviews/:id", reviewController.destroy);
     // loan
 
     // tag
     app.get("/tags", tagController.show);
-    app.post("/tag", tagController.create);
-    app.put("/tag/:id", tagController.store);
-    app.delete("/tag/:id", tagController.destroy);
+    app.post("/tags", tagController.create);
+    app.put("/tags/:id", tagController.store);
+    app.delete("/tags/:id", tagController.destroy);
 };

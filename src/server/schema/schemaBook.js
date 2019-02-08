@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-// const jwt = require("jwt-simple");
-// const config = require("../config/config");
 
 // Mongoose Schema
 const schemaBook = new mongoose.Schema(

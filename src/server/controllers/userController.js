@@ -10,7 +10,7 @@ const show = (req, res) => {
 const create = (req, res) => {
     if (!req.body.email || !req.body.password) {
         res.status(400).json({
-            text: "Requête invalide",
+            text: "Invalid Request",
         });
     } else {
         let user = {
@@ -50,7 +50,7 @@ const create = (req, res) => {
                         });
                     } else {
                         res.status(200).json({
-                            text: "Succes",
+                            text: "User successfuly saved",
                             token: usr.getToken(),
                         });
                     }
