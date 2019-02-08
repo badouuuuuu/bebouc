@@ -10,7 +10,7 @@ const show = (req, res) => {
         .then(books => res.json(books));
 };
 
-// @route   POST books
+// @route   POST book
 // @desc    Create A book
 // @access  Admin
 const create = (req, res) => {
@@ -35,13 +35,23 @@ const create = (req, res) => {
 // @desc    Update A book
 // @access  Admin
 const store = (req, res) => {
-    Book.findById(req.params.id)
-        .then(book => book.update().save())
+    const updatedBook = {
+        title: req.body.title,
+        author: req.body.author,
+        isbn: req.body.isbn,
+        language: req.body.language,
+        summary: req.body.summary,
+        owner: req.body.owner,
+        isBook: req.body.isBook,
+        isEbook: req.body.isEbook,
+    };
+
+    Book.findByIdAndUpdate(req.params.id, updatedBook, {new: true})
         .then(book => res.json(book))
         .catch(err => res.status(400).send(err));
 };
 
-// @route   DELETE books/:id
+// @route   DELETE book/:id
 // @desc    Delete A book
 // @access  Admin
 const destroy = (req, res) => {
