@@ -9,6 +9,7 @@ module.exports = function(app) {
     app.post("/login", userController.login);
     app.post("/create", userController.create);
     app.get("/users", userController.show);
+    app.delete("/deleteuser", userController.deleteuser);
     // app.post("/store", userController.store);
     // app.post("/destroy", userController.destroy);
     // book

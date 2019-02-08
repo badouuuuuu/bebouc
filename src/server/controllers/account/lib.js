@@ -111,7 +111,7 @@ const login = (req, res) => {
 const deleteuser = req => {
     let querymail = {email: req.body.email};
 
-    User.findOneAndDelete(querymail, (err, res) => {
+    User.deleteOne(querymail, (err, res) => {
         res.status(201).send(res);
         console.log("email delete");
     });

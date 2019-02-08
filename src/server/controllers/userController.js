@@ -122,3 +122,4 @@ exports.login = login;
 exports.create = create;
 exports.store = store;
 exports.destroy = destroy;
+exports.deleteuser = deleteuser;
