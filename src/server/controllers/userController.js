@@ -112,9 +112,19 @@ const login = (req, res) => {
     }
 };
 
-const store = () => {};
+const store = (req, res) => {
+    const updatedUser = {
+        name: req.body.name,
+        surname: req.body.surname,
+        email: req.body.email,
+        admin: req.body.admin,
+    };
 
-// Noy yet functionnal
+    User.findByIdAndUpdate(req.params.id, updatedUser, {new: true})
+        .then(user => res.json(user))
+        .catch(err => res.status(400).send(err));
+};
+
 const destroy = (req, res) => {
     User.findById(req.params.id)
         .then(user => user.remove().then(() => res.json({success: true})))

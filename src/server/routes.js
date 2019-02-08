@@ -10,7 +10,7 @@ module.exports = function(app) {
     app.post("/create", userController.create);
     app.get("/users", userController.show);
     app.delete("/users/:id", userController.destroy);
-    // app.post("/store", userController.store);
+    app.put("/users/:id", userController.store);
     // book
     app.get("/books", bookController.show);
     app.post("/book", bookController.create);
