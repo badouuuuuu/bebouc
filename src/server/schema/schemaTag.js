@@ -8,6 +8,7 @@ const schemaTag = new mongoose.Schema(
         tag: {
             type: String,
             required: true,
+            unique: true,
         },
     },
     {timestamps: {createdAt: "created_at"}},

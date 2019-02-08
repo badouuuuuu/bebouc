@@ -28,8 +28,11 @@ const create = (req, res) => {
 // @desc    Update A tag
 // @access  Admin
 const store = (req, res) => {
-    Tag.findById(req.params.id)
-        .then(tag => tag.update().save())
+    const updatedTag = {
+        tag: req.body.tag,
+    };
+
+    Tag.findByIdAndUpdate(req.params.id, updatedTag, {new: true})
         .then(tag => res.json(tag))
         .catch(err => res.status(400).send(err));
 };
