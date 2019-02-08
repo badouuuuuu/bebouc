@@ -1,7 +1,10 @@
 import * as React from "react";
 import ReactDOM from "react-dom";
+
+// Style
 import "./app.css";
+import "bulma/css/bulma.css";
 
-import HelloWorld from "./components/hello";
+import Main from "./components/main";
 
-ReactDOM.render(<HelloWorld />, document.querySelector("#app"));
+ReactDOM.render(<Main />, document.querySelector("#app"));

@@ -28,9 +28,11 @@ const schemaBook = new mongoose.Schema(
             type: String,
             required: true,
         },
-        tags: {
-            type: Array,
-        },
+        tags: [
+            {
+                type: Array,
+            },
+        ],
         owner: {
             type: String,
             required: true,
