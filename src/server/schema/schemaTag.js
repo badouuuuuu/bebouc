@@ -1,6 +1,16 @@
-// const mongoose = require("mongoose");
-// const passwordHash = require("password-hash");
-// const jwt = require("jwt-simple");
-// const config = require("../config/config");
+const mongoose = require("mongoose");
 
 // Mongoose Schema
+const tagSchema = new mongoose.Schema(
+    {
+        tag: {
+            type: String,
+            required: true,
+            unique: true,
+        },
+    },
+    {timestamps: {createdAt: "created_at"}},
+);
+
+// Translate Schema into Model and export
+module.exports = mongoose.model("tag", tagSchema);
