@@ -3,7 +3,7 @@ const Review = require("../schema/schemaReview.js");
 const show = (req, res) => {
     Review.find()
         .sort({bookID: 1})
-        .then(users => res.json(users));
+        .then(review => res.json(review));
 };
 
 const create = (req, res) => {
@@ -93,7 +93,7 @@ const destroy = (req, res) => {
         .catch(err => res.status(404).json(err));
 };
 
-// Exports des fonctions
+// Exporting methods
 exports.show = show;
 exports.create = create;
 exports.store = store;
