@@ -1,5 +1,7 @@
 const User = require("../schema/schemaUser.js");
-const passwordHash = require("password-hash");
+// crypt password
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 const show = (req, res) => {
     User.find()
@@ -13,68 +15,74 @@ const create = (req, res) => {
             text: "Requête invalide",
         });
     } else {
-        let user = {
-                name: req.body.name,
-                surname: req.body.surname,
-                admin: req.body.admin,
-                email: req.body.email,
-                password: passwordHash.generate(req.body.password),
-            },
-            findUser = new Promise((resolve, reject) => {
-                User.findOne(
-                    {
-                        email: user.email,
-                    },
-                    (err, result) => {
-                        if (err) {
-                            reject(500);
-                        } else if (result) {
-                            res.status(204).json({
-                                text: "User already exists",
+        bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
+            if (err) {
+                return err;
+            }
+
+            let user = {
+                    name: req.body.name,
+                    surname: req.body.surname,
+                    admin: req.body.admin,
+                    email: req.body.email,
+                    password: hash,
+                },
+                findUser = new Promise((resolve, reject) => {
+                    User.findOne(
+                        {
+                            email: user.email,
+                        },
+                        (er, result) => {
+                            if (er) {
+                                reject(500);
+                            } else if (result) {
+                                res.status(204).json({
+                                    text: "User already exists",
+                                });
+                            } else {
+                                resolve(true);
+                            }
+                        },
+                    );
+                });
+
+            findUser.then(
+                () => {
+                    let _u = new User(user);
+
+                    _u.save((er, usr) => {
+                        if (er) {
+                            res.status(500).json({
+                                text: "Internal error",
                             });
                         } else {
-                            resolve(true);
+                            res.status(200).json({
+                                text: "Succes",
+                                token: usr.getToken(),
+                            });
                         }
-                    },
-                );
-            });
-
-        findUser.then(
-            () => {
-                let _u = new User(user);
-
-                _u.save((err, usr) => {
-                    if (err) {
-                        res.status(500).json({
-                            text: "Internal error",
-                        });
-                    } else {
-                        res.status(200).json({
-                            text: "Succes",
-                            token: usr.getToken(),
-                        });
+                    });
+                },
+                error => {
+                    switch (error) {
+                        case 500:
+                            res.status(500).json({
+                                text: "Internal error",
+                            });
+                            break;
+                        case 204:
+                            res.status(204).json({
+                                text: "Email already exists",
+                            });
+                            break;
+                        default:
+                            res.status(500).json({
+                                text: "Internal error",
+                            });
                     }
-                });
-            },
-            error => {
-                switch (error) {
-                    case 500:
-                        res.status(500).json({
-                            text: "Internal error",
-                        });
-                        break;
-                    case 204:
-                        res.status(204).json({
-                            text: "Email already exists",
-                        });
-                        break;
-                    default:
-                        res.status(500).json({
-                            text: "Internal error",
-                        });
-                }
-            },
-        );
+                },
+            );
+        });
     }
 };
 
@@ -97,14 +105,18 @@ const login = (req, res) => {
                     res.status(401).json({
                         text: "User does not exist",
                     });
-                } else if (user.authenticate(req.body.password)) {
-                    res.status(200).json({
-                        token: user.getToken(),
-                        text: "Authentification succesful",
-                    });
                 } else {
-                    res.status(401).json({
-                        text: "Password incorrects",
+                    user.authenticate(req.body.password, isChecked => {
+                        if (isChecked) {
+                            res.status(200).json({
+                                token: user.getToken(),
+                                text: "Authentification succesful",
+                            });
+                        } else {
+                            res.status(401).json({
+                                text: "Password incorrects",
+                            });
+                        }
                     });
                 }
             },
@@ -137,4 +149,3 @@ exports.login = login;
 exports.create = create;
 exports.store = store;
 exports.destroy = destroy;
-exports.deleteuser = deleteuser;

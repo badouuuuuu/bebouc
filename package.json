@@ -48,17 +48,18 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "babel-loader": "^8.0.2",
+    "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
     "bulma": "^0.7.2",
     "express": "^4.16.4",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^5.4.9",
+    "password-hash": "^1.2.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "password-hash": "^1.2.2",
-    "jwt-simple": "^0.5.1",
     "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "babel-loader": "^8.0.2"
+    "style-loader": "^0.23.1"
   },
   "husky": {
     "hooks": {
