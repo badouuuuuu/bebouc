@@ -3,7 +3,7 @@ const Review = require("../schema/schemaReview.js");
 const show = (req, res) => {
     Review.find()
         .sort({bookID: 1})
-        .then(users => res.json(users));
+        .then(review => res.json(review));
 };
 
 const create = (req, res) => {
