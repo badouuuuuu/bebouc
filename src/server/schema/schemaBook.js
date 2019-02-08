@@ -1,9 +1,7 @@
 const mongoose = require("mongoose");
-// const jwt = require("jwt-simple");
-// const config = require("../config/config");
 
 // Mongoose Schema
-const schemaBook = new mongoose.Schema(
+const bookSchema = new mongoose.Schema(
     {
         title: {
             type: String,
@@ -49,4 +47,5 @@ const schemaBook = new mongoose.Schema(
     {timestamps: {createdAt: "created_at"}},
 );
 
-module.exports = mongoose.model("book", schemaBook);
+// Translate Schema into Model and export
+module.exports = mongoose.model("book", bookSchema);

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
-const passwordHash = require("password-hash");
 const jwt = require("jwt-simple");
 const config = require("../config/config");
+const bcrypt = require("bcrypt");
 
 // Mongoose Schema
 let userSchema = new mongoose.Schema(
@@ -35,8 +35,14 @@ let userSchema = new mongoose.Schema(
 
 // JTW methods
 userSchema.methods = {
-    authenticate: function(password) {
-        return passwordHash.verify(password, this.password);
+    authenticate: function(password, next /* fonction callback */) {
+        bcrypt.compare(password, this.password, (err, result) => {
+            if (err) {
+                throw err;
+            }
+
+            next(result);
+        });
     },
     getToken: function() {
         return jwt.encode(this, config.secret);
@@ -44,4 +50,4 @@ userSchema.methods = {
 };
 
 // Translate Schema into Model and export
-module.exports = mongoose.model("User", userSchema);
+module.exports = mongoose.model("user", userSchema);
