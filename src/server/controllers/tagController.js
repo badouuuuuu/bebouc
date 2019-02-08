@@ -28,11 +28,7 @@ const create = (req, res) => {
 // @desc    Update A tag
 // @access  Admin
 const store = (req, res) => {
-    const updatedTag = {
-        tag: req.body.tag,
-    };
-
-    Tag.findByIdAndUpdate(req.params.id, updatedTag, {new: true})
+    Tag.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(tag => res.json(tag))
         .catch(err => res.status(400).send(err));
 };

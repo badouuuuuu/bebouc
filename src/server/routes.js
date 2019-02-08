@@ -1,6 +1,6 @@
 const userController = require("./controllers/userController.js");
 const bookController = require("./controllers/bookController.js");
-// const loanController = require("./controllers/loanController.js");
+const loanController = require("./controllers/loanController.js");
 const reviewController = require("./controllers/reviewController.js");
 const tagController = require("./controllers/tagController.js");
 
@@ -22,10 +22,10 @@ module.exports = function(app) {
     app.put("/reviews/:id", reviewController.store);
     app.delete("/reviews/:id", reviewController.destroy);
     // loan
-    // app.get("/loans", loanController.show);
-    // app.post("/loans", loanController.create);
-    // app.put("/loans/:id", loanController.store);
-    // app.delete("/loans/:id", loanController.destroy);
+    app.get("/loans", loanController.show);
+    app.post("/loans", loanController.create);
+    app.put("/loans/:id", loanController.store);
+    app.delete("/loans/:id", loanController.destroy);
     // tag
     app.get("/tags", tagController.show);
     app.post("/tags", tagController.create);
