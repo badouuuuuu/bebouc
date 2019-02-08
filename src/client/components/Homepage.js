@@ -8,7 +8,7 @@ export default class Homepage extends React.Component {
                 <hr />
                 <small>{"Laura, Olivier, Youssef, Elias"}</small>
                 <form action="/books" method="get">
-                    <button>{"Books"}</button>
+                    <button className="primary-button">{"Books"}</button>
                 </form>
             </div>
         );

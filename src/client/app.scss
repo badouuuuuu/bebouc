@@ -1,11 +1,42 @@
+// COLORS
+$color1: #1A2632;
+$color2: #63C3D1;
+$color3: #F57E29;
+$color4: #A4AEB8;
 
+$text-light: #FFFFFF;
+$text-dark: #1A2632;
 
-//CSS Homepage
+// POLICES
+$font1: 'Roboto', sans-serif;
+
+// CSS Homepage
 
 .backgroundhome {
+    position: relative;
+    width: 100%;
+    background-color: $color1;
+}
 
-position: relative;
-width: 100%;
-background-color: pink;
+// BUTTONS
 
+.primary-button {
+    background-color: $color3;
+}
+
+.secondary-button {
+    background-color: $color2;
+}
+
+.selected-button {
+    background-color: $color4;
+}
+
+button {
+    font-family: $font1;
+    font-weight: 600;
+    padding: .5em .8em;
+    font-size: 1em;
+    border: none;
+    border-radius: .2em;
 }
