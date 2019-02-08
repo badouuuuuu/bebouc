@@ -8,7 +8,7 @@
   "scripts": {
     "lint": "npx eslint --fix --cache --ignore-pattern 'docs/*' src",
     "build:server": "npx babel src/server -s --out-dir bin/server",
-    "work:server": "npx babel src/server -s --watch --verbose --out-dir bin/server",
+    "work:bitch": "npx babel src/server -s --watch --verbose --out-dir bin/server",
     "build:client": "npx webpack --progress --profile --colors",
     "work:client": "npx webpack-dev-server --env=dev --hot --progress",
     "build": "npm run build:server && npm run build:client"
@@ -46,20 +46,22 @@
     "webpack-dev-server": "^3.1.10"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "babel-loader": "^8.0.2",
     "body-parser": "^1.18.3",
     "bulma": "^0.7.2",
     "express": "^4.16.4",
+    "install": "^0.12.2",
+    "jwt-simple": "^0.5.1",
     "mongoose": "^5.4.9",
+    "node-pre-gyp": "^0.12.0",
+    "password-hash": "^1.2.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
-    "password-hash": "^1.2.2",
-    "jwt-simple": "^0.5.1",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.23.1",
-    "babel-loader": "^8.0.2",
-    "axios": "^0.18.0",
     "react-router": "^4.3.1",
-    "react-router-dom": "^4.3.1"
+    "react-router-dom": "^4.3.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1"
   },
   "husky": {
     "hooks": {
