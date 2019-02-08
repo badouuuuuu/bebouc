@@ -22,7 +22,10 @@ module.exports = function(app) {
     app.put("/reviews/:id", reviewController.store);
     app.delete("/reviews/:id", reviewController.destroy);
     // loan
-
+    // app.get("/loans", loanController.show);
+    // app.post("/loans", loanController.create);
+    // app.put("/loans/:id", loanController.store);
+    // app.delete("/loans/:id", loanController.destroy);
     // tag
     app.get("/tags", tagController.show);
     app.post("/tags", tagController.create);
