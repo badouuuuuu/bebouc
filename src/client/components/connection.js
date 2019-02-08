@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export default class Homepage extends React.Component {
+export default class Connection extends React.Component {
     render() {
         return (
             <div className="backgroundhome">
@@ -8,7 +8,7 @@ export default class Homepage extends React.Component {
                 <hr />
                 <small>{"Laura, Olivier, Youssef, Elias"}</small>
                 <form action="/books" method="get">
-                    <button>{"Books"}</button>
+                    <button className="primary-button">{"Books"}</button>
                 </form>
             </div>
         );
