@@ -93,7 +93,7 @@ const destroy = (req, res) => {
         .catch(err => res.status(404).json(err));
 };
 
-// Exports des fonctions
+// Exporting methods
 exports.show = show;
 exports.create = create;
 exports.store = store;
