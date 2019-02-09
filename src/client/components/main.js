@@ -1,4 +1,5 @@
 import * as React from "react";
+import NavCatalogue from "./Catalogue/NavCatalogue.js";
 
 export default class Main extends React.Component {
     render() {
@@ -10,6 +11,8 @@ export default class Main extends React.Component {
                 <form action="/books" method="get">
                     <button className="primary-button">{"Books"}</button>
                 </form>
+
+                <NavCatalogue />
             </div>
         );
     }
