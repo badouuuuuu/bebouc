@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jwt-simple");
 const config = require("../config/config");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Mongoose Schema
 let userSchema = new mongoose.Schema(
@@ -36,12 +36,11 @@ let userSchema = new mongoose.Schema(
 // JTW methods
 userSchema.methods = {
     authenticate: function(password, next /* fonction callback */) {
-        bcrypt.compare(password, this.password, (err, result) => {
-            if (err) {
-                throw err;
-            }
-
-            next(result);
+        bcrypt.compare(password, this.password).then(res => {
+            next(res);
+            console.log(`result ${res}`);
+            console.log(`password ${password}`);
+            console.log(`bd_password ${this.password}`);
         });
     },
     getToken: function() {
