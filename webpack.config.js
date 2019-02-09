@@ -62,6 +62,15 @@ module.exports = env => {
         module: {
             rules: [
                 {
+                    test: /\.css$/,
+                    use: [
+                      {
+                        loader: 'css-loader',
+                        options: { modules: true }
+                      }
+                    ]
+                },  
+                {
                     test: /\.(png|jpg|gif)$/,
                     use: [
                         {

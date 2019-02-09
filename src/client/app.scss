@@ -12,10 +12,9 @@ $font1: 'Roboto', sans-serif;
 
 // CSS Homepage
 
-.backgroundhome {
-    position: relative;
-    width: 100%;
+#app {
     background-color: $color1;
+    font-family: $font1;
 }
 
 // BUTTONS
@@ -33,10 +32,30 @@ $font1: 'Roboto', sans-serif;
 }
 
 button {
-    font-family: $font1;
     font-weight: 600;
-    padding: .5em .8em;
-    font-size: 1em;
+    padding: .3em .6em;
+    font-size: 1.7em;
     border: none;
-    border-radius: .2em;
+    border-radius: .6em;
+    color: $text-light;
+}
+
+// Headings
+
+h1 {
+    color: $text-light;
+    font-weight: 900;
+    margin: 0;
+}
+
+h2 {
+    color: $color2;
+    font-weight: 300;
+    margin: 0;
+}
+
+h3 {
+    color: $text-light;
+    font-weight: 400;
+    margin: 0;
 }

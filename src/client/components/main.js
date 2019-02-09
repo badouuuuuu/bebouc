@@ -1,16 +1,16 @@
 import * as React from "react";
 
+// Components
+import NavBar from "./Navbar/navbar";
+
 export default class Main extends React.Component {
     render() {
         return (
-            <div className="backgroundhome">
-                <h1>{"Bebouc"}</h1>
-                <hr />
-                <small>{"Laura, Olivier, Youssef, Elias"}</small>
-                <form action="/books" method="get">
-                    <button className="primary-button">{"Books"}</button>
-                </form>
-            </div>
+            <>
+                <NavBar />
+                <div className="container"> {"BODY"} </div>
+                <footer> {"FOOTER"} </footer>
+            </>
         );
     }
 }
