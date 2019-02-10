@@ -1,21 +1,7 @@
 import * as React from "react";
-import axios from "axios";
 import NavCatalogue from "./Catalogue/NavCatalogue.js";
 
-export class Homepage extends React.Component {
-    state = {
-        persons: [],
-    };
-    componentDidMount() {
-        // Requetfaite pour tester
-        axios.get(`http://localhost/api`).then(res => {
-            const persons = res.data;
-
-            this.setState({persons});
-            console.log(persons);
-        });
-    }
-
+export default class Main extends React.Component {
     render() {
         return (
             <div className="backgroundhome">

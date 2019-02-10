@@ -9,6 +9,14 @@ import {Signup} from "./components/authentification/Signup";
 import {PrivateRoute} from "./components/PrivateRoute";
 import {AddBooks} from "./components/addbooks";
 import {RegisterTest} from "./components/authentification/RegisiterTest";
+
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faTag} from "@fortawesome/free-solid-svg-icons";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faTag);
+library.add(faSearch);
+
 import "./scss/app.scss";
 
 class App extends Component {
