@@ -69,9 +69,14 @@ export class AddBooks extends React.Component {
             })
             .then(res => {
                 if (res.status !== 200) {
-                    console.log("Email déjà existante");
+                    console.log("Livre déjà existant");
                 } else {
                     console.log(res.data);
+                    this.setState(prevState => {
+                        return {
+                            books: [...prevState.books, res.data],
+                        };
+                    });
                 }
             })
             .catch(err => {
