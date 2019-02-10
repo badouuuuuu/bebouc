@@ -7,6 +7,7 @@ import {Homepage} from "./components/Homepage";
 import {Login} from "./components/authentification/Login";
 import {Signup} from "./components/authentification/Signup";
 import {PrivateRoute} from "./components/PrivateRoute";
+import {RegisterTest} from "./components/authentification/RegisiterTest";
 import "./scss/app.scss";
 
 class App extends Component {
@@ -18,6 +19,11 @@ class App extends Component {
                         <Route exact path="/" component={Login} />
                         <Route exact path="/signup" component={Signup} />
                         <Route exact path="/test" component={Homepage} />
+                        <Route
+                            exact
+                            path="/RegisterTest"
+                            component={RegisterTest}
+                        />
                         <PrivateRoute path="/homepage" component={Homepage} />
                     </Switch>
                 </div>
