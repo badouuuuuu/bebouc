@@ -22,7 +22,7 @@ export class Homepage extends React.Component {
                 <h1>{"Bebouc"}</h1>
                 <hr />
                 <small>{"Laura, Olivier, Youssef, Elias"}</small>
-                <form action="/books" method="get">
+                <form action="/addbooks" method="get">
                     <button className="primary-button">{"Books"}</button>
                 </form>
 
