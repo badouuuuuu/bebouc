@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const jwt = require("jwt-simple");
 const config = require("../config/config");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 // Mongoose Schema
 let userSchema = new mongoose.Schema(
