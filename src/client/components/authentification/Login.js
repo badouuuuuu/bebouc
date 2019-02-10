@@ -1,5 +1,5 @@
 import React from "react";
-// import API from "../../API";
+// import Routes from "../../routes";
 
 export class Login extends React.Component {
     constructor(props) {
@@ -18,7 +18,7 @@ export class Login extends React.Component {
     //     if (this.state.password.length === 0) {
     //         return;
     //     }
-    //     API.login(this.state.email, this.state.password).then(
+    //     Routes.login(this.state.email, this.state.password).then(
     //         data => {
     //             localStorage.setItem("token", data.data.token);
     //             window.location = "/homepage";
