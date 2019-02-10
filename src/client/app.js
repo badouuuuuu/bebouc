@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {Route, Switch} from "react-router-dom";
-import {Homepage} from "./components/Homepage.js";
-import {Login} from "./components/authentification/Login.js";
-import {Signup} from "./components/authentification/Signup.js";
-import {PrivateRoute} from "./components/PrivateRoute.js";
+import {Homepage} from "./components/Homepage";
+import {Login} from "./components/authentification/Login";
+import {Signup} from "./components/authentification/Signup";
+import {PrivateRoute} from "./components/PrivateRoute";
 import "./App.scss";
 
 class App extends Component {
