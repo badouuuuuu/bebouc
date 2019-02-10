@@ -18,12 +18,18 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Login} />
                         <Route exact path="/signup" component={Signup} />
-                        <Route exact path="/test" component={Homepage} />
+                        <Route
+                            exact
+                            path="/homepagetest"
+                            component={Homepage}
+                        />{" "}
+                        {/* Pour l'integration d'Olivier*/}
                         <Route
                             exact
                             path="/RegisterTest"
                             component={RegisterTest}
-                        />
+                        />{" "}
+                        {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />
                     </Switch>
                 </div>

@@ -6,10 +6,12 @@ export class Homepage extends React.Component {
         persons: [],
     };
     componentDidMount() {
+        // Requetfaite pour tester
         axios.get(`http://localhost/api`).then(res => {
             const persons = res.data;
 
             this.setState({persons});
+            console.log(persons);
         });
     }
 
@@ -22,11 +24,6 @@ export class Homepage extends React.Component {
                 <form action="/books" method="get">
                     <button className="primary-button">{"Books"}</button>
                 </form>
-                <ul>
-                    {this.state.persons.map(person => (
-                        <li key={person.id}>{person.name}</li>
-                    ))}
-                </ul>
             </div>
         );
     }
