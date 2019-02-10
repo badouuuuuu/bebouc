@@ -33,14 +33,14 @@ export class RegisterTest extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log("Form Submit");
+        console.log("Form send to Mongo DB");
         console.log(this.state);
 
         const user = {
             name: this.state.name,
             surname: this.state.surname,
             email: this.state.email,
-            password: "yoyo",
+            password: this.state.password,
         };
 
         axios
