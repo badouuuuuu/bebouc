@@ -24,30 +24,29 @@ export class RegisterTest extends React.Component {
             password = target.password;
 
         this.setState({
-            [name]: value,
-            [surname]: value,
             [email]: value,
             [password]: value,
+            [name]: value,
+            [surname]: value,
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log("Form send to Mongo DB");
-        console.log(this.state);
-
-        const user = {
-            name: this.state.name,
-            surname: this.state.surname,
-            email: this.state.email,
-            password: this.state.password,
-        };
-
         axios
-            .post(`http://localhost/api/create`, {user})
+            .post(`http://localhost/api/create`, {
+                email: this.state.email,
+                password: this.state.password,
+                name: this.state.name,
+                surname: this.state.surname,
+                admin: "false",
+            })
             .then(res => {
-                console.log(res);
-                console.log(res.data);
+                if (res.status !== 200) {
+                    console.log("Email déjà existante");
+                } else {
+                    console.log(res.data);
+                }
             })
             .catch(err => {
                 console.log(err);
