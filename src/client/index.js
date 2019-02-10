@@ -5,15 +5,21 @@ import registerServiceWorker from "./registerServiceWorker";
 import App from "./App";
 import "./app.scss";
 
+class Main extends React.Component {
+    render() {
+        return (
+            <div>
+                <App />
+            </div>
+        );
+    }
+}
+
 ReactDOM.render(
     <BrowserRouter>
-        <App />
+        <Main />
     </BrowserRouter>,
     document.getElementById("app"),
 );
 
 registerServiceWorker();
-
-// import Homepage from "./components/homepage";
-//
-// ReactDOM.render(<Homepage />, document.querySelector("#app"));
