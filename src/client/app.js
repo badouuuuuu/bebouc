@@ -1,10 +1,13 @@
 import React, {Component} from "react";
+import ReactDOM from "react-dom";
+import {BrowserRouter} from "react-router-dom";
+// import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
 import {Homepage} from "./components/Homepage";
 import {Login} from "./components/authentification/Login";
 import {Signup} from "./components/authentification/Signup";
 import {PrivateRoute} from "./components/PrivateRoute";
-import "./App.scss";
+import "./scss/app.scss";
 
 class App extends Component {
     render() {
@@ -21,4 +24,11 @@ class App extends Component {
         );
     }
 }
-export default App;
+
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementByID("app"),
+);
+// registerServiceWorker();
