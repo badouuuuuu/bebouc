@@ -47,21 +47,19 @@ export class Login extends React.Component {
                 <br />
                 <hr />
                 <form action="/addbooks" method="get">
-                    <button className="button is-warning">
-                        {"New Books with database"}
-                    </button>
+                    <button className="button is-info">{"New Books"}</button>
                     <p>{"Test d'ajout de livre avec la bd"}</p>
                 </form>
                 <hr />
                 <form action="/Registertest" method="get">
-                    <button className="button is-success">
+                    <button className="button is-primary">
                         {"New User with database"}
                     </button>
                     <p>{"Test d'ajout d'utilisateur avec droit ou non"}</p>
                 </form>
                 <hr />
                 <form action="/Homepagetest" method="get">
-                    <button className="button is-info">
+                    <button className="button is-warning">
                         {"Front-Ent Dev"}
                     </button>
                     <p>{"SPA pour developpement FO"}</p>

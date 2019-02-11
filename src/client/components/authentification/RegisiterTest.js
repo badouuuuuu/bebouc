@@ -59,6 +59,15 @@ export class RegisterTest extends React.Component {
     render() {
         return (
             <div className="container">
+                <section className="hero is-primary">
+                    <div className="hero-body">
+                        <div className="container">
+                            <h1 className="title">{" Add New User"}</h1>
+                        </div>
+                    </div>
+                </section>
+                <hr />
+
                 <form onSubmit={this.handleSubmit}>
                     <label id="icon" htmlFor="email" />
                     <input

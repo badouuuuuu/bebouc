@@ -87,7 +87,14 @@ export class AddBooks extends React.Component {
     render() {
         return (
             <div className="container">
-                <h2>{"Add a book"}</h2>
+                <section className="hero is-info">
+                    <div className="hero-body">
+                        <div className="container">
+                            <h1 className="title">{" Add a book"}</h1>
+                        </div>
+                    </div>
+                </section>
+
                 <hr />
                 <form onSubmit={this.handleSubmit}>
                     <label id="icon" htmlFor="title" />
