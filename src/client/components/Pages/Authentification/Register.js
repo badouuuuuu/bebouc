@@ -12,6 +12,8 @@ export class Register extends React.Component {
             email: "",
             password: "",
             admin: false,
+            addusers_button: "primary-button",
+            addusers_success: "Add User",
         };
     }
 
@@ -49,6 +51,11 @@ export class Register extends React.Component {
                     console.log("Email déjà existante");
                 } else {
                     console.log(res.data);
+
+                    this.setState({
+                        addusers_button: "success-button",
+                        addusers_success: "Success",
+                    });
                 }
             })
             .catch(err => {
@@ -59,91 +66,92 @@ export class Register extends React.Component {
     render() {
         return (
             <div className="container">
-                <section className="hero is-primary">
-                    <div className="hero-body">
-                        <div className="container">
-                            <h1 className="title">{" Add New User"}</h1>
-                        </div>
-                    </div>
+                <section className="section_addusers_title">
+                    <h1 className="addusers_title">{" Add New User"}</h1>
                 </section>
-                <hr />
+                <div className="AddUsers">
+                    <form onSubmit={this.handleSubmit}>
+                        <label id="icon" htmlFor="email" />
+                        <input
+                            className="input_addusers is-small"
+                            type="text"
+                            name="email"
+                            id="email"
+                            placeholder="email"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                            required
+                        />
+                        <br />
 
-                <form onSubmit={this.handleSubmit}>
-                    <label id="icon" htmlFor="email" />
-                    <input
-                        className="input is-primary is-small"
-                        type="text"
-                        name="email"
-                        id="email"
-                        placeholder="email"
-                        value={this.state.email}
-                        onChange={this.handleChange}
-                        required
-                    />
+                        <label id="icon" htmlFor="name" />
+                        <input
+                            className="input_addusers is-small"
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Name"
+                            value={this.state.name}
+                            onChange={this.handleChange}
+                            required
+                        />
+                        <br />
+                        <label id="icon" htmlFor="surname" />
+                        <input
+                            className="input_addusers is-small"
+                            type="text"
+                            name="surname"
+                            id="surname"
+                            placeholder="Surname"
+                            value={this.state.surname}
+                            onChange={this.handleChange}
+                            required
+                        />
+
+                        <br />
+                        <label id="icon" htmlFor="password" />
+                        <input
+                            className="input_addusers is-small"
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            required
+                        />
+                        <br />
+                        <br />
+
+                        <label
+                            className="checkbox_admin"
+                            htmlFor="checkbox_admin">
+                            {" Coach "}{" "}
+                        </label>
+                        <input
+                            type="checkbox"
+                            name="checkbox_admin"
+                            value={this.state.admin}
+                            onChange={this.handleChange}
+                            checked={this.state.admin}
+                        />
+                        <br />
+                        <br />
+                        <button
+                            type="submit"
+                            className={this.state.addusers_button}>
+                            {this.state.addusers_success}
+                        </button>
+                    </form>
                     <hr />
 
-                    <label id="icon" htmlFor="name" />
-                    <input
-                        className="input is-primary is-small"
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Name"
-                        value={this.state.name}
-                        onChange={this.handleChange}
-                        required
-                    />
-                    <hr />
-
-                    <label id="icon" htmlFor="surname" />
-                    <input
-                        className="input is-primary is-small"
-                        type="text"
-                        name="surname"
-                        id="surname"
-                        placeholder="Surname"
-                        value={this.state.surname}
-                        onChange={this.handleChange}
-                        required
-                    />
-                    <hr />
-
-                    <label id="icon" htmlFor="password" />
-                    <input
-                        className="input is-primary is-small"
-                        type="password"
-                        name="password"
-                        id="password"
-                        placeholder="password"
-                        value={this.state.password}
-                        onChange={this.handleChange}
-                        required
-                    />
-                    <br />
-                    <br />
-                    <label htmlFor="admin">{" Coach "}</label>
-                    <input
-                        className="checkbox"
-                        type="checkbox"
-                        name="admin"
-                        value={this.state.admin}
-                        onChange={this.handleChange}
-                        checked={this.state.admin}
-                    />
-                    <br />
-                    <br />
-                    <button type="submit" className="button is-primary">
-                        {"Add User"}
-                    </button>
-                </form>
-                <hr />
-
-                <a href="/">
-                    {" "}
-                    <button type="submit" className="button is-danger">
-                        {"Back Dev homepage"}
-                    </button>
-                </a>
+                    <a href="/">
+                        {" "}
+                        <button type="submit" className="secondary-button">
+                            {"Back"}
+                        </button>
+                    </a>
+                </div>
             </div>
         );
     }

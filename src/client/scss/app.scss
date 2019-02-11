@@ -10,6 +10,8 @@ $color4: #A4AEB8;
 $text-light: #FFFFFF;
 $text-dark: #1A2632;
 
+$color_success: rgb(81, 255, 0);
+
 // POLICES
 $font1: 'Roboto', sans-serif;
 
@@ -25,14 +27,21 @@ $font1: 'Roboto', sans-serif;
 
 .primary-button {
     background-color: $color3;
+    border-radius: 20px;
 }
 
 .secondary-button {
     background-color: $color2;
+    border-radius: 20px;
 }
 
 .selected-button {
     background-color: $color4;
+}
+
+.success-button {
+    background-color: $color_success;
+    border-radius: 20px;
 }
 
 button {
@@ -48,3 +57,55 @@ button {
   text-decoration: none;
   color : #63C3D1;
 }
+
+
+
+// ADD USERS COMPONENTS from src/client/components/Pages/Authentification/Register.js
+
+    .container {
+    text-align: center
+    }
+
+.AddUsers {
+    margin: 0 auto;
+
+    background-color: rgba(255, 255, 255, 0.50);
+    width: 560px;
+    height: 520px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 40px;
+}
+
+.AddUsers button {
+    color: white;
+}
+
+.addusers_title {
+    font-size: 48px;
+    color: white;
+}
+
+input[type=text], input[type=password]  {
+    
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+  }
+
+
+
+  ::placeholder {
+      color: rgba(0, 0, 0, 0.5);
+      text-align: center;
+  }
+
+  body {
+      background-color: #1A2632;
+  }
+
+ 
