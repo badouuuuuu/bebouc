@@ -8,7 +8,6 @@ import {Login} from "./components/Pages/Authentification/Login";
 import {Register} from "./components/Pages/Authentification/Register";
 import {Homepage} from "./components/Pages/Catalogue/Homepage";
 import {AddBooks} from "./components/Pages/Catalogue/AddBooks";
-
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -32,11 +31,7 @@ class App extends Component {
                             component={Homepage}
                         />{" "}
                         {/* Pour l'integration d'Olivier*/}
-                        <Route
-                            exact
-                            path="/Register"
-                            component={Register}
-                        />{" "}
+                        <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />
                     </Switch>

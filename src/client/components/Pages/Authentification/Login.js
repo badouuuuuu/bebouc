@@ -58,7 +58,7 @@ export class Login extends React.Component {
                     <p>{"Test d'ajout de livre avec la bd"}</p>
                 </form>
                 <hr />
-                <form action="/Registertest" method="get">
+                <form action="/Register" method="get">
                     <button className="button is-primary">{"New Users"}</button>
                     <p>{"Test d'ajout d'utilisateur avec droit ou non"}</p>
                 </form>
