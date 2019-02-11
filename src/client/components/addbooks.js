@@ -88,9 +88,11 @@ export class AddBooks extends React.Component {
         return (
             <div>
                 <h2>{"Add a book"}</h2>
+                <hr />
                 <form onSubmit={this.handleSubmit}>
                     <label id="icon" htmlFor="title" />
                     <input
+                        className="input is-info is-small"
                         type="text"
                         name="title"
                         id="title"
@@ -103,6 +105,7 @@ export class AddBooks extends React.Component {
 
                     <label id="icon" htmlFor="author" />
                     <input
+                        className="input is-info is-small"
                         type="text"
                         name="author"
                         id="author"
@@ -115,6 +118,7 @@ export class AddBooks extends React.Component {
 
                     <label id="icon" htmlFor="isbn" />
                     <input
+                        className="input is-info is-small"
                         type="text"
                         name="isbn"
                         id="isbn"
@@ -127,6 +131,7 @@ export class AddBooks extends React.Component {
 
                     <label id="icon" htmlFor="language" />
                     <input
+                        className="input is-info is-small"
                         type="text"
                         name="language"
                         id="language"
@@ -138,6 +143,7 @@ export class AddBooks extends React.Component {
                     <hr />
 
                     <textarea
+                        className="textarea is-info is-small"
                         type="text"
                         name="summary"
                         id="summary"
@@ -151,6 +157,7 @@ export class AddBooks extends React.Component {
                     <hr />
 
                     <input
+                        className="input is-info is-small"
                         type="text"
                         name="owner"
                         id="owner"
@@ -161,12 +168,20 @@ export class AddBooks extends React.Component {
                     />
                     <hr />
 
-                    <button type="submit" className="button">
+                    <button type="submit" className="button is-info">
                         {"Register"}
                     </button>
                 </form>
+                <hr />
 
-                <h1>{"Books: "}</h1>
+                <a href="/">
+                    {" "}
+                    <button type="submit" className="button is-danger">
+                        {"Back Dev homepage"}
+                    </button>
+                </a>
+                <hr />
+                <h1>{"Books database list : "}</h1>
                 <ul>
                     {this.state.books.map(book => (
                         <li key={book._id}>

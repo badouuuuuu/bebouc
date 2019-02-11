@@ -128,6 +128,13 @@ export class RegisterTest extends React.Component {
                     </button>
                 </form>
                 <hr />
+
+                <a href="/">
+                    {" "}
+                    <button type="submit" className="button is-danger">
+                        {"Back Dev homepage"}
+                    </button>
+                </a>
             </div>
         );
     }
