@@ -73,16 +73,7 @@ const create = (req, res) => {
 };
 
 const edit = (req, res) => {
-    const updatedReview = {
-        authorID: req.body.authorID,
-        authorName: req.body.authorName,
-        authorSurname: req.body.authorSurname,
-        bookID: req.body.bookID,
-        rating: req.body.rating,
-        comment: req.body.comment,
-    };
-
-    Review.findByIdAndUpdate(req.params.id, updatedReview, {new: true})
+    Review.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(review => res.json(review))
         .catch(err => res.status(400).send(err));
 };

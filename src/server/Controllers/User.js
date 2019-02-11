@@ -125,14 +125,7 @@ const login = (req, res) => {
 };
 
 const edit = (req, res) => {
-    const updatedUser = {
-        name: req.body.name,
-        surname: req.body.surname,
-        email: req.body.email,
-        admin: req.body.admin,
-    };
-
-    User.findByIdAndUpdate(req.params.id, updatedUser, {new: true})
+    User.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(user => res.json(user))
         .catch(err => res.status(400).send(err));
 };

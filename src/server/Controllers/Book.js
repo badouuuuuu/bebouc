@@ -35,18 +35,7 @@ const create = (req, res) => {
 // @desc    Update A book
 // @access  Admin
 const edit = (req, res) => {
-    const updatedBook = {
-        title: req.body.title,
-        author: req.body.author,
-        isbn: req.body.isbn,
-        language: req.body.language,
-        summary: req.body.summary,
-        owner: req.body.owner,
-        isBook: req.body.isBook,
-        isEbook: req.body.isEbook,
-    };
-
-    Book.findByIdAndUpdate(req.params.id, updatedBook, {new: true})
+    Book.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(book => res.json(book))
         .catch(err => res.status(400).send(err));
 };
