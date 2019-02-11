@@ -86,7 +86,7 @@ export class AddBooks extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <h2>{"Add a book"}</h2>
                 <hr />
                 <form onSubmit={this.handleSubmit}>
