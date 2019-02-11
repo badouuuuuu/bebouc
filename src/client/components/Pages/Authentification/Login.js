@@ -57,7 +57,9 @@ export class Login extends React.Component {
         return (
             <div className="login_container">
                 <section className="section_login_title">
-                    <img className="logo_login" src={Logo} />
+                    <a href="https://becode.org">
+                        <img className="logo_login" src={Logo} />
+                    </a>
                     <h1 className="login_title"> {"be </book>"} </h1>
                     <h2 className="login_subtitle">{"IN BOOK WE LEARN"}</h2>
                 </section>
