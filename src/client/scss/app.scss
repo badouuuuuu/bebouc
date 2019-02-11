@@ -64,7 +64,7 @@ body {
       // LOGIN PAGE
 
       .login_container {
-          background-image: url('../../assets/backgroundimage.jpg');
+          background-image: url('../../assets/backgroundimage-test.jpg');
           background-size: cover;
           background-repeat: no-repeat;
           width: 100%;
@@ -88,17 +88,36 @@ body {
             
           }
 
-            input[type=text], input[type=password]  {
+          p {
+              padding-top: 10px;
+              cursor: pointer;
+              color: $color3;
+          }
+          p:hover{
+              color: white;
+          }
 
-                width: 20%;
+            input[type=text], input[type=password]  {
+                outline: none;
+                width: 30%;
                 padding: 12px 20px;
                 margin: 8px 0;
                 display: inline-block;
                 border: 1px solid #ccc;
-                border-radius: 15px;
+                border-radius: 20px;
                 box-sizing: border-box;
                 text-align: center;
             }
+            
+        input:focus{
+            outline: none;
+            text-align: center;
+            border: 1px solid rgba(245, 126, 41, 0.80);
+        }
+
+        svg {
+            padding-bottom: 1px;
+        }
 
       }
 

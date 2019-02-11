@@ -100,6 +100,7 @@ export class Login extends React.Component {
                             className={this.state.login_button}>
                             {this.state.login}
                         </button>
+                        <p>{"Forgot your password ?"}</p>
                     </form>
                 </div>
             </div>
