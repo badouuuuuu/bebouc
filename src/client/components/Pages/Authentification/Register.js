@@ -141,9 +141,7 @@ export class Register extends React.Component {
                             onChange={this.handleChange}
                             checked={this.state.admin}
                         />
-                        <br />
 
-                        <br />
                         <br />
                         <button
                             disabled={

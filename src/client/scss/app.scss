@@ -66,6 +66,14 @@ button {
     text-align: center
 }
 
+hr {
+    background-color: $color3;
+    width: 250px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .AddUsers {
     margin: 0 auto;
 
@@ -80,11 +88,18 @@ button {
 .AddUsers button {
     color: white;
     cursor: pointer;
+    margin: 10px;
 }
 
 .AddUsers button:hover {
     background-color: white;
     color: $color3;
+}
+
+.AddUsers button:disabled {
+    color: rgba(255, 255, 255, 0.41);
+    background-color: grey;
+    opacity: 20;
 }
 
 .addusers_title {
@@ -102,6 +117,10 @@ input[type=text], input[type=password]  {
     border-radius: 15px;
     box-sizing: border-box;
     text-align: center;
+  }
+
+  input[type=checkbox] {
+      margin: 10px;
   }
 
   .icon {
@@ -129,5 +148,9 @@ input[type=text], input[type=password]  {
 :-moz-placeholder  {  
     text-align: center; 
  }
+
+  body {
+      background-color: #1A2632;
+  }
 
  
