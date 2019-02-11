@@ -14,7 +14,7 @@ export class Register extends React.Component {
             admin: false,
             addusers_button: "primary-button",
             addusers_success: "Add User",
-            disabled_button: "false",
+            disabled_button: "",
         };
     }
 
@@ -76,7 +76,6 @@ export class Register extends React.Component {
 
                         <label id="icon" htmlFor="email" />
                         <input
-                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="text"
                             name="email"
@@ -92,7 +91,6 @@ export class Register extends React.Component {
 
                         <label id="icon" htmlFor="name" />
                         <input
-                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="text"
                             name="name"
@@ -108,7 +106,6 @@ export class Register extends React.Component {
 
                         <label id="icon" htmlFor="surname" />
                         <input
-                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="text"
                             name="surname"
@@ -123,7 +120,6 @@ export class Register extends React.Component {
                         <i className="fas fa-key icon" />
                         <label id="icon" htmlFor="password" />
                         <input
-                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="password"
                             name="password"
@@ -136,19 +132,17 @@ export class Register extends React.Component {
                         <br />
                         <br />
 
-                        <label
-                            className="checkbox_admin"
-                            htmlFor="checkbox_admin">
-                            {" Coach "}
-                        </label>
+                        <label htmlFor="admin">{" Coach "}</label>
                         <input
-                            disabled={!this.state.disabled_button}
+                            className="checkbox"
                             type="checkbox"
-                            name="checkbox_admin"
+                            name="admin"
                             value={this.state.admin}
                             onChange={this.handleChange}
                             checked={this.state.admin}
                         />
+                        <br />
+
                         <br />
                         <br />
                         <button
