@@ -21,25 +21,28 @@ export class RegisterTest extends React.Component {
             name = target.name,
             surname = target.surname,
             email = target.email,
-            password = target.password;
+            password = target.password,
+            admin = target.admin;
 
         this.setState({
             [email]: value,
             [password]: value,
             [name]: value,
             [surname]: value,
+            [admin]: value,
         });
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        console.log(this.state.admin);
         axios
             .post(`http://localhost/api/create`, {
                 email: this.state.email,
                 password: this.state.password,
                 name: this.state.name,
                 surname: this.state.surname,
-                admin: "false",
+                admin: this.state.admin,
             })
             .then(res => {
                 if (res.status !== 200) {
@@ -55,10 +58,11 @@ export class RegisterTest extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="container">
                 <form onSubmit={this.handleSubmit}>
                     <label id="icon" htmlFor="email" />
                     <input
+                        className="input is-primary is-small"
                         type="text"
                         name="email"
                         id="email"
@@ -71,6 +75,7 @@ export class RegisterTest extends React.Component {
 
                     <label id="icon" htmlFor="name" />
                     <input
+                        className="input is-primary is-small"
                         type="text"
                         name="name"
                         id="name"
@@ -83,6 +88,7 @@ export class RegisterTest extends React.Component {
 
                     <label id="icon" htmlFor="surname" />
                     <input
+                        className="input is-primary is-small"
                         type="text"
                         name="surname"
                         id="surname"
@@ -95,6 +101,7 @@ export class RegisterTest extends React.Component {
 
                     <label id="icon" htmlFor="password" />
                     <input
+                        className="input is-primary is-small"
                         type="password"
                         name="password"
                         id="password"
@@ -103,12 +110,24 @@ export class RegisterTest extends React.Component {
                         onChange={this.handleChange}
                         required
                     />
-                    <hr />
-
-                    <button type="submit" className="button">
+                    <br />
+                    <br />
+                    <label htmlFor="admin">{" Coach "}</label>
+                    <input
+                        className="checkbox"
+                        type="checkbox"
+                        name="admin"
+                        value={this.state.admin}
+                        onChange={this.handleChange}
+                        checked={this.state.admin}
+                    />
+                    <br />
+                    <br />
+                    <button type="submit" className="button is-primary">
                         {"Register"}
                     </button>
                 </form>
+                <hr />
             </div>
         );
     }
