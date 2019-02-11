@@ -1,5 +1,5 @@
 import React from "react";
-import Routes from "../routes.js";
+import Routes from "../../../routes.js";
 import {Route, Redirect} from "react-router-dom";
 
 export const PrivateRoute = ({component: Component, ...rest}) => (
