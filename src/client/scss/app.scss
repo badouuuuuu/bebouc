@@ -1,7 +1,7 @@
 @charset "utf-8";
 @import "bulma";
 
-// COLORS
+/**************** COLORS *************/
 $color1: #1A2632;
 $color2: #63C3D1;
 $color3: #F57E29;
@@ -12,231 +12,240 @@ $text-dark: #1A2632;
 
 $color_success: rgb(81, 255, 0);
 
-// POLICES
-$font1: 'Roboto', sans-serif;
+/**************** FONTS *************/
+$font1: 'Roboto',
+sans-serif;
+
+/**************** DEBUT CSS *************/
+
 
 body {
-      font-family: $font1;
+    font-family: $font1;
 
-      // CSS Homepage
+    /**************** CSS HOME PAGE - SPA *************/
 
-      .backgroundhome {
-          position: relative;
-          width: 100%;
-          background-color: $color1;
-      }
+    .backgroundhome {
+        position: relative;
+        width: 100%;
+        background-color: $color1;
+    }
 
-      // BUTTONS
+    /**************** DEBUT BUTTONS *************/
 
-      .primary-button {
-          background-color: $color1;
-          border-radius: 20px;
-      }
+    .primary-button {
+        background-color: $color1;
+        border-radius: 20px;
 
-      .secondary-button {
-          background-color: $color2;
-          border-radius: 20px;
-      }
+    }
 
-      .selected-button {
-          background-color: $color4;
-      }
+    .secondary-button {
+        background-color: $color2;
+        border-radius: 20px;
+        color: white;
+    }
 
-      .success-button {
-          background-color: $color_success;
-          border-radius: 20px;
-      }
+    .selected-button {
+        background-color: $color4;
 
-      button {
-          font-family: $font1;
-          font-weight: 600;
-          padding: .5em .8em;
-          font-size: 1em;
-          border: none;
-          border-radius: .2em;
-      }
+    }
 
-      .button.is-text{
+    .submit-button {
+        background-color: $color3;
+        color: white;
+        margin: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .submit-button:hover {
+        background-color: white;
+        color: $color3;
+    }
+
+    .success-button {
+        background-color: $color_success;
+        border-radius: 20px;
+    }
+
+    button {
+        font-family: $font1;
+        font-weight: 600;
+        padding: .5em .8em;
+        font-size: 1em;
+        border: none;
+        border-radius: 1em;
+        cursor: pointer;
+    }
+
+    button:disabled {
+        color: rgba(255, 255, 255, 0.41);
+        background-color: grey;
+        opacity: 20;
+    }
+
+    .button.is-text {
         text-decoration: none;
-        color : #63C3D1;
-      }
-
-      // DEBUT LOGIN PAGE src/client/components/Pages/Authentification/Login.js
-
-            .login_container {
-                background-image: url('../../assets/backgroundimage-gradien-1080p.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-                width: 100%;
-                text-align: center;
-                margin: 0 auto;
-                
-
-                h1 {
-                    color: white;
-                    font-size: 72px;
-                    font-weight: bolder;
-                }
-                h2 {
-                    color: black;
-                    font-size: 30px;
-                    font-weight: 200;
-                }
-
-                img {
-                    width: 240px;
-                    
-                }
-
-                p {
-                    padding-top: 10px;
-                    cursor: pointer;
-                    color: $color3;
-                }
-                p:hover{
-                    color: white;
-                }
-
-                    input[type=text], input[type=password]  {
-                        outline: none;
-                        width: 15%;
-                        padding: 12px 20px;
-                        margin: 8px 0;
-                        display: inline-block;
-                        border: 1px solid #ccc;
-                        border-radius: 20px;
-                        box-sizing: border-box;
-                        text-align: center;
-                        background-color: rgba(255, 255, 255, 0.60);
-                        color: $color3;
-                    }
-                    
-                input:focus{
-                    outline: none;
-                    text-align: center;
-                    border: 1px solid rgba(245, 126, 41, 0.80);
-                }
-
-                ::-webkit-input-placeholder  {
-                    color: $color3;
-                    text-align: center;
-                    justify-content: center;
-                        }
-                        :-moz-placeholder  {
-                            text-align: center;
-                    }
-
-                        svg {
-                            padding-bottom: 4px;
-                            margin-left: 15px;
-                        }
-
-                    button {
-                        cursor: pointer;
-                        color: white;
-                        background-color: $color3;
-                        padding-left:30px;
-                        padding-right: 30px;
-
-                    }
-                .success-button {
-                    background-color: $color_success;
-                    border-radius: 20px;
-                }
-
-            }
-
-   
-      // FIN LOGIN PAGE
-
-      // DEBUT ADD USERS PAGE  src/client/components/Pages/Authentification/Register.js
-
-                    .container {
-                        text-align: center
-                    }
-
-                    hr {
-                        background-color: $color3;
-                        width: 250px;
-                        margin: 0 auto;
-                        margin-top: 10px;
-                        margin-bottom: 10px;
-                    }
-
-                    .addusers {
-                        margin: 0 auto;
-                        background-color: rgba(255, 255, 255, 0.50);
-                        width: 560px;
-                        height: 520px;
-                        border-radius: 20px;
-                        text-align: center;
-                        padding: 40px;
-                    }
-
-                    .addusers button {
-                        color: white;
-                        cursor: pointer;
-                        margin: 10px;
-                        padding-left:10px;
-                        padding-right: 10px;
-                    }
-
-                    .addusers button:hover {
-                        background-color: white;
-                        color: $color3;
-                    }
-
-                    .addusers button:disabled {
-                        color: rgba(255, 255, 255, 0.41);
-                        background-color: grey;
-                        opacity: 20;
-                    }
-
-                    .addusers_title {
-                        font-size: 48px;
-                        color: white;
-                    }
-
-                    input[type=text], input[type=password]  {
-
-                        width: 50%;
-                        padding: 12px 20px;
-                        margin: 8px 0;
-                        display: inline-block;
-                        border: 1px solid #ccc;
-                        border-radius: 15px;
-                        box-sizing: border-box;
-                        text-align: center;
-                        }
-
-                        input[type=checkbox] {
-                            margin: 10px;
-                        }
-
-                        .icon {
-                        position: absolute;
-                        width: 10px;
-                        text-align: center;
-                        margin-top: 18px;
-                        margin-left: 10px;
-                        color: rgba(245, 126, 41, 0.80);
-                        opacity: 30%;
-                        }
+        color: #63C3D1;
+    }
 
 
-                        input:focus{
-                            outline: none;
-                            text-align: center;
-                            border: 2px solid rgba(245, 126, 41, 0.80);
-                        }
+    /**************** FIN BUTTONS *************/
 
-                        ::-webkit-input-placeholder  {
-                            color: rgba(0, 0, 0, 0.5);
-                            text-align: center;
-                            justify-content: center;
-                        }
-                    :-moz-placeholder  {
-                        text-align: center;
-                    }
-                }
-      // FIN ADD USERS PAGE 
+    /*******************************************/
+
+    /************* DEBUT LOGIN PAGE  ***********/
+
+    .login_container {
+        background-image: url('../../assets/backgroundimage-gradien-1080p.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        text-align: center;
+        margin: 0 auto;
+
+
+        h1 {
+            color: white;
+            font-size: 72px;
+            font-weight: bolder;
+        }
+
+        h2 {
+            color: black;
+            font-size: 30px;
+            font-weight: 200;
+        }
+
+        img {
+            width: 240px;
+
+        }
+
+        p {
+            padding-top: 10px;
+            cursor: pointer;
+            color: $color3;
+        }
+
+        p:hover {
+            color: white;
+        }
+
+        input[type=text],
+        input[type=password] {
+            outline: none;
+            width: 15%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.60);
+            color: $color3;
+        }
+
+        input:focus {
+            outline: none;
+            text-align: center;
+            border: 1px solid rgba(245, 126, 41, 0.80);
+        }
+
+        ::-webkit-input-placeholder {
+            color: $color3;
+            text-align: center;
+            justify-content: center;
+        }
+
+        :-moz-placeholder {
+            text-align: center;
+        }
+
+        svg {
+            padding-bottom: 4px;
+            margin-left: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            color: white;
+            background-color: $color3;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
+    }
+
+    input[type=text],
+    input[type=password] {
+
+        width: 50%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    input[type=checkbox] {
+        margin: 10px;
+    }
+
+    input:focus {
+        outline: none;
+        text-align: center;
+        border: 2px solid rgba(245, 126, 41, 0.80);
+    }
+
+    ::-webkit-input-placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        text-align: center;
+        justify-content: center;
+    }
+
+    :-moz-placeholder {
+        text-align: center;
+    }
+
+
+    /**************** FIN LOGIN PAGE **********************/
+
+    /*******************************************************/
+
+    /**************** DEBUT ADD USERS COMPONENTS *************/
+
+    .container {
+        text-align: center
+    }
+
+    hr {
+        background-color: $color3;
+        width: 250px;
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+    .adduser-component {
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.50);
+        width: 560px;
+        height: 520px;
+        border-radius: 20px;
+        text-align: center;
+        padding: 40px;
+    }
+
+
+    .addusers_title {
+        font-size: 48px;
+        color: white;
+    }
+
+}
+
+/**************** FIN ADD USERS COMPONENTS *************/

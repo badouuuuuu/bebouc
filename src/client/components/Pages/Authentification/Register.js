@@ -12,7 +12,7 @@ export class Register extends React.Component {
             email: "",
             password: "",
             admin: false,
-            addusers_button: "primary-button",
+            addusers_button: "submit-button",
             addusers_success: "Add User",
             disabled_button: "",
         };
@@ -61,11 +61,11 @@ export class Register extends React.Component {
                 <section className="section_addusers_title">
                     <h1 className="addusers_title">{" Add New User"}</h1>
                 </section>
-                <div className="addusers">
+                <div className="adduser-component">
                     <form onSubmit={this.handleSubmit}>
-                        <i className="far fa-envelope icon" />
+                        <i className="far fa-envelope icon-input-field" />
 
-                        <label id="icon" htmlFor="email" />
+                        <label id="icon-input-field" htmlFor="email" />
                         <input
                             className="input_addusers is-small"
                             type="text"
@@ -78,9 +78,9 @@ export class Register extends React.Component {
                         />
 
                         <br />
-                        <i className="far fa-user icon" />
+                        <i className="far fa-user icon-input-field" />
 
-                        <label id="icon" htmlFor="name" />
+                        <label id="icon-input-field" htmlFor="name" />
                         <input
                             className="input_addusers is-small"
                             type="text"
@@ -93,9 +93,9 @@ export class Register extends React.Component {
                         />
                         <br />
 
-                        <i className="fas fa-signature icon" />
+                        <i className="fas fa-signature icon-input-field" />
 
-                        <label id="icon" htmlFor="surname" />
+                        <label id="icon-input-field" htmlFor="surname" />
                         <input
                             className="input_addusers is-small"
                             type="text"
@@ -108,8 +108,8 @@ export class Register extends React.Component {
                         />
 
                         <br />
-                        <i className="fas fa-key icon" />
-                        <label id="icon" htmlFor="password" />
+                        <i className="fas fa-key icon-input-field" />
+                        <label id="icon-input-field" htmlFor="password" />
                         <input
                             className="input_addusers is-small"
                             type="password"

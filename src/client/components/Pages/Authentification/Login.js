@@ -11,7 +11,7 @@ export class Login extends React.Component {
             email: "",
             password: "",
             admin: false,
-            login_button: "primary-button",
+            login_button: "submit-button",
             login: "Login",
             disabled_button: "",
         };
@@ -65,9 +65,9 @@ export class Login extends React.Component {
                 </section>
                 <div className="login_block">
                     <form onSubmit={this.handleSubmit}>
-                        <i className="far fa-envelope icon" />
+                        <i className="far fa-envelope icon-input-field" />
 
-                        <label id="icon" htmlFor="email" />
+                        <label id="icon-input-field" htmlFor="email" />
                         <input
                             className="input_login is-small"
                             type="text"
@@ -81,8 +81,8 @@ export class Login extends React.Component {
 
                         <br />
                         <br />
-                        <i className="fas fa-key icon" />
-                        <label id="icon" htmlFor="password" />
+                        <i className="fas fa-key icon-input-field" />
+                        <label id="icon-input-field" htmlFor="password" />
                         <input
                             className="input_login is-small"
                             type="password"

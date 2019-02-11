@@ -46,7 +46,6 @@ export class devpage extends React.Component {
                     </div>
                 </section>
 
-                <hr />
                 <br />
                 <strong>
                     <h1>{"Route crée pour environement dev"}</h1>
