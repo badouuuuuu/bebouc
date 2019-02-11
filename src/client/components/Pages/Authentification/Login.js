@@ -44,6 +44,8 @@ export class Login extends React.Component {
                         login_button: "success-button",
                         login: "Success",
                     });
+
+                    window.location = "/Homepagetest";
                 }
             })
             .catch(err => {
@@ -76,7 +78,6 @@ export class Login extends React.Component {
                         />
 
                         <br />
-
                         <br />
                         <i className="fas fa-key icon" />
                         <label id="icon" htmlFor="password" />

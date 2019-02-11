@@ -61,154 +61,182 @@ body {
         color : #63C3D1;
       }
 
-      // LOGIN PAGE
+      // DEBUT LOGIN PAGE src/client/components/Pages/Authentification/Login.js
 
-      .login_container {
-          background-image: url('../../assets/backgroundimage-test.jpg');
-          background-size: cover;
-          background-repeat: no-repeat;
-          width: 100%;
-         text-align: center;
-         margin: 0 auto;
-         
-
-          h1 {
-              color: white;
-              font-size: 72px;
-              font-weight: bolder;
-          }
-          h2 {
-              color: black;
-              font-size: 60px;
-              font-weight: 200;
-          }
-
-          img {
-              width: 240px;
-            
-          }
-
-          p {
-              padding-top: 10px;
-              cursor: pointer;
-              color: $color3;
-          }
-          p:hover{
-              color: white;
-          }
-
-            input[type=text], input[type=password]  {
-                outline: none;
-                width: 30%;
-                padding: 12px 20px;
-                margin: 8px 0;
-                display: inline-block;
-                border: 1px solid #ccc;
-                border-radius: 20px;
-                box-sizing: border-box;
+            .login_container {
+                background-image: url('../../assets/backgroundimage-gradien-1080p.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
                 text-align: center;
+                margin: 0 auto;
+                
+
+                h1 {
+                    color: white;
+                    font-size: 72px;
+                    font-weight: bolder;
+                }
+                h2 {
+                    color: black;
+                    font-size: 30px;
+                    font-weight: 200;
+                }
+
+                img {
+                    width: 240px;
+                    
+                }
+
+                p {
+                    padding-top: 10px;
+                    cursor: pointer;
+                    color: $color3;
+                }
+                p:hover{
+                    color: white;
+                }
+
+                    input[type=text], input[type=password]  {
+                        outline: none;
+                        width: 15%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 20px;
+                        box-sizing: border-box;
+                        text-align: center;
+                        background-color: rgba(255, 255, 255, 0.60);
+                        color: $color3;
+                    }
+                    
+                input:focus{
+                    outline: none;
+                    text-align: center;
+                    border: 1px solid rgba(245, 126, 41, 0.80);
+                }
+
+                ::-webkit-input-placeholder  {
+                    color: $color3;
+                    text-align: center;
+                    justify-content: center;
+                        }
+                        :-moz-placeholder  {
+                            text-align: center;
+                    }
+
+                        svg {
+                            padding-bottom: 4px;
+                            margin-left: 15px;
+                        }
+
+                    button {
+                        cursor: pointer;
+                        color: white;
+                        background-color: $color3;
+                        padding-left:30px;
+                        padding-right: 30px;
+
+                    }
+                .success-button {
+                    background-color: $color_success;
+                    border-radius: 20px;
+                }
+
             }
-            
-        input:focus{
-            outline: none;
-            text-align: center;
-            border: 1px solid rgba(245, 126, 41, 0.80);
-        }
-
-        svg {
-            padding-bottom: 1px;
-        }
-
-      }
 
    
+      // FIN LOGIN PAGE
 
-      // ADD USERS COMPONENTS from src/client/components/Pages/Authentification/Register.js
+      // DEBUT ADD USERS PAGE  src/client/components/Pages/Authentification/Register.js
 
-      .container {
-          text-align: center
-      }
+                    .container {
+                        text-align: center
+                    }
 
-      hr {
-          background-color: $color3;
-          width: 250px;
-          margin: 0 auto;
-          margin-top: 10px;
-          margin-bottom: 10px;
-      }
+                    hr {
+                        background-color: $color3;
+                        width: 250px;
+                        margin: 0 auto;
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
 
-      .AddUsers {
-          margin: 0 auto;
+                    .addusers {
+                        margin: 0 auto;
+                        background-color: rgba(255, 255, 255, 0.50);
+                        width: 560px;
+                        height: 520px;
+                        border-radius: 20px;
+                        text-align: center;
+                        padding: 40px;
+                    }
 
-          background-color: rgba(255, 255, 255, 0.50);
-          width: 560px;
-          height: 520px;
-          border-radius: 10px;
-          text-align: center;
-          padding: 40px;
-      }
+                    .addusers button {
+                        color: white;
+                        cursor: pointer;
+                        margin: 10px;
+                        padding-left:10px;
+                        padding-right: 10px;
+                    }
 
-      .AddUsers button {
-          color: white;
-          cursor: pointer;
-          margin: 10px;
-      }
+                    .addusers button:hover {
+                        background-color: white;
+                        color: $color3;
+                    }
 
-      .AddUsers button:hover {
-          background-color: white;
-          color: $color3;
-      }
+                    .addusers button:disabled {
+                        color: rgba(255, 255, 255, 0.41);
+                        background-color: grey;
+                        opacity: 20;
+                    }
 
-      .AddUsers button:disabled {
-          color: rgba(255, 255, 255, 0.41);
-          background-color: grey;
-          opacity: 20;
-      }
+                    .addusers_title {
+                        font-size: 48px;
+                        color: white;
+                    }
 
-      .addusers_title {
-          font-size: 48px;
-          color: white;
-      }
+                    input[type=text], input[type=password]  {
 
-      input[type=text], input[type=password]  {
+                        width: 50%;
+                        padding: 12px 20px;
+                        margin: 8px 0;
+                        display: inline-block;
+                        border: 1px solid #ccc;
+                        border-radius: 15px;
+                        box-sizing: border-box;
+                        text-align: center;
+                        }
 
-          width: 50%;
-          padding: 12px 20px;
-          margin: 8px 0;
-          display: inline-block;
-          border: 1px solid #ccc;
-          border-radius: 15px;
-          box-sizing: border-box;
-          text-align: center;
-        }
+                        input[type=checkbox] {
+                            margin: 10px;
+                        }
 
-        input[type=checkbox] {
-            margin: 10px;
-        }
-
-        .icon {
-          position: absolute;
-          width: 10px;
-          text-align: center;
-          margin-top: 18px;
-          margin-left: 10px;
-          color: rgba(245, 126, 41, 0.80);
-          opacity: 30%;
-        }
+                        .icon {
+                        position: absolute;
+                        width: 10px;
+                        text-align: center;
+                        margin-top: 18px;
+                        margin-left: 10px;
+                        color: rgba(245, 126, 41, 0.80);
+                        opacity: 30%;
+                        }
 
 
-        input:focus{
-            outline: none;
-            text-align: center;
-            border: 2px solid rgba(245, 126, 41, 0.80);
-        }
+                        input:focus{
+                            outline: none;
+                            text-align: center;
+                            border: 2px solid rgba(245, 126, 41, 0.80);
+                        }
 
-        ::-webkit-input-placeholder  {
-            color: rgba(0, 0, 0, 0.5);
-            text-align: center;
-            justify-content: center;
-        }
-      :-moz-placeholder  {
-          text-align: center;
-       }
-}
+                        ::-webkit-input-placeholder  {
+                            color: rgba(0, 0, 0, 0.5);
+                            text-align: center;
+                            justify-content: center;
+                        }
+                    :-moz-placeholder  {
+                        text-align: center;
+                    }
+                }
+      // FIN ADD USERS PAGE 

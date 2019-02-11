@@ -61,7 +61,7 @@ export class Register extends React.Component {
                 <section className="section_addusers_title">
                     <h1 className="addusers_title">{" Add New User"}</h1>
                 </section>
-                <div className="AddUsers">
+                <div className="addusers">
                     <form onSubmit={this.handleSubmit}>
                         <i className="far fa-envelope icon" />
 
