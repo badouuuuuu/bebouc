@@ -70,16 +70,20 @@ export class Login extends React.Component {
                     <p>{"SPA pour developpement FO"}</p>
                 </form>
                 <hr />
-                <a
-                    href="https://github.com/Elias2702/bebouc"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    <button className="button is-danger">
-                        {"Repo Github Bebook"}
-                    </button>
-                </a>
 
                 <hr />
+                <footer className="footer">
+                    <div className="content has-text-centered">
+                        <a
+                            href="https://github.com/Elias2702/bebouc"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <button className="button is-danger">
+                                {"Repo Github Bebook"}
+                            </button>
+                        </a>
+                    </div>
+                </footer>
             </div>
         );
         // <div className="Login">
