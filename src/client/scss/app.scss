@@ -15,142 +15,140 @@ $color_success: rgb(81, 255, 0);
 // POLICES
 $font1: 'Roboto', sans-serif;
 
-// CSS Homepage
+body {
+      font-family: $font1;
 
-.backgroundhome {
-    position: relative;
-    width: 100%;
-    background-color: $color1;
+      // CSS Homepage
+
+      .backgroundhome {
+          position: relative;
+          width: 100%;
+          background-color: $color1;
+      }
+
+      // BUTTONS
+
+      .primary-button {
+          background-color: $color1;
+          border-radius: 20px;
+      }
+
+      .secondary-button {
+          background-color: $color2;
+          border-radius: 20px;
+      }
+
+      .selected-button {
+          background-color: $color4;
+      }
+
+      .success-button {
+          background-color: $color_success;
+          border-radius: 20px;
+      }
+
+      button {
+          font-family: $font1;
+          font-weight: 600;
+          padding: .5em .8em;
+          font-size: 1em;
+          border: none;
+          border-radius: .2em;
+      }
+
+      .button.is-text{
+        text-decoration: none;
+        color : #63C3D1;
+      }
+
+
+
+      // ADD USERS COMPONENTS from src/client/components/Pages/Authentification/Register.js
+
+      .container {
+          text-align: center
+      }
+
+      hr {
+          background-color: $color3;
+          width: 250px;
+          margin: 0 auto;
+          margin-top: 10px;
+          margin-bottom: 10px;
+      }
+
+      .AddUsers {
+          margin: 0 auto;
+
+          background-color: rgba(255, 255, 255, 0.50);
+          width: 560px;
+          height: 520px;
+          border-radius: 10px;
+          text-align: center;
+          padding: 40px;
+      }
+
+      .AddUsers button {
+          color: white;
+          cursor: pointer;
+          margin: 10px;
+      }
+
+      .AddUsers button:hover {
+          background-color: white;
+          color: $color3;
+      }
+
+      .AddUsers button:disabled {
+          color: rgba(255, 255, 255, 0.41);
+          background-color: grey;
+          opacity: 20;
+      }
+
+      .addusers_title {
+          font-size: 48px;
+          color: white;
+      }
+
+      input[type=text], input[type=password]  {
+
+          width: 50%;
+          padding: 12px 20px;
+          margin: 8px 0;
+          display: inline-block;
+          border: 1px solid #ccc;
+          border-radius: 15px;
+          box-sizing: border-box;
+          text-align: center;
+        }
+
+        input[type=checkbox] {
+            margin: 10px;
+        }
+
+        .icon {
+          position: absolute;
+          width: 10px;
+          text-align: center;
+          margin-top: 18px;
+          margin-left: 10px;
+          color: rgba(245, 126, 41, 0.80);
+          opacity: 30%;
+        }
+
+
+        input:focus{
+            outline: none;
+            text-align: center;
+            border: 2px solid rgba(245, 126, 41, 0.80);
+        }
+
+        ::-webkit-input-placeholder  {
+            color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            justify-content: center;
+        }
+      :-moz-placeholder  {
+          text-align: center;
+       }
 }
-
-// BUTTONS
-
-.primary-button {
-    background-color: $color3;
-    border-radius: 20px;
-}
-
-.secondary-button {
-    background-color: $color2;
-    border-radius: 20px;
-}
-
-.selected-button {
-    background-color: $color4;
-}
-
-.success-button {
-    background-color: $color_success;
-    border-radius: 20px;
-}
-
-button {
-    font-family: $font1;
-    font-weight: 600;
-    padding: .5em .8em;
-    font-size: 1em;
-    border: none;
-    border-radius: .2em;
-}
-
-.button.is-text{
-  text-decoration: none;
-  color : #63C3D1;
-}
-
-
-
-// ADD USERS COMPONENTS from src/client/components/Pages/Authentification/Register.js
-
-.container {
-    text-align: center
-}
-
-hr {
-    background-color: $color3;
-    width: 250px;
-    margin: 0 auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.AddUsers {
-    margin: 0 auto;
-
-    background-color: rgba(255, 255, 255, 0.50);
-    width: 560px;
-    height: 520px;
-    border-radius: 10px;
-    text-align: center;
-    padding: 40px;
-}
-
-.AddUsers button {
-    color: white;
-    cursor: pointer;
-    margin: 10px;
-}
-
-.AddUsers button:hover {
-    background-color: white;
-    color: $color3;
-}
-
-.AddUsers button:disabled {
-    color: rgba(255, 255, 255, 0.41);
-    background-color: grey;
-    opacity: 20;
-}
-
-.addusers_title {
-    font-size: 48px;
-    color: white;
-}
-
-input[type=text], input[type=password]  {
-
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
-  }
-
-  input[type=checkbox] {
-      margin: 10px;
-  }
-
-  .icon {
-    position: absolute;
-    width: 10px;
-    text-align: center;
-    margin-top: 18px;
-    margin-left: 10px;
-    color: rgba(245, 126, 41, 0.80);
-    opacity: 30%;
-  }
-
-
-  input:focus{
-      outline: none;
-      text-align: center;
-      border: 2px solid rgba(245, 126, 41, 0.80);
-  }
-
-  ::-webkit-input-placeholder  {
-      color: rgba(0, 0, 0, 0.5);
-      text-align: center;
-      justify-content: center;
-  }
-:-moz-placeholder  {  
-    text-align: center; 
- }
-
-  body {
-      background-color: #1A2632;
-  }
-
- 

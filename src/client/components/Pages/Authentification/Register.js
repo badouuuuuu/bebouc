@@ -19,20 +19,11 @@ export class Register extends React.Component {
     }
 
     handleChange(e) {
-        let target = e.target,
-            value = target.type === "checkbox" ? target.checked : target.value,
-            name = target.name,
-            surname = target.surname,
-            email = target.email,
-            password = target.password,
-            admin = target.admin;
+        let target = e.target;
 
         this.setState({
-            [email]: value,
-            [password]: value,
-            [name]: value,
-            [surname]: value,
-            [admin]: value,
+            [target.name]:
+                target.type === "checkbox" ? target.checked : target.value,
         });
     }
 
