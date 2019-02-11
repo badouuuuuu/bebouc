@@ -1,10 +1,10 @@
 // Book Model
-const Book = require("../schema/schemaBook.js");
+const Book = require("../Models/Book.js");
 
 // @route   GET books
 // @desc    get All books
 // @access  Public
-const show = (req, res) => {
+const list = (req, res) => {
     Book.find()
         .sort({title: 1})
         .then(books => res.json(books));
@@ -34,7 +34,7 @@ const create = (req, res) => {
 // @route   PUT book/:id
 // @desc    Update A book
 // @access  Admin
-const store = (req, res) => {
+const edit = (req, res) => {
     const updatedBook = {
         title: req.body.title,
         author: req.body.author,
@@ -61,7 +61,7 @@ const destroy = (req, res) => {
 };
 
 // Exporting methods
-exports.show = show;
+exports.list = list;
 exports.create = create;
-exports.store = store;
+exports.edit = edit;
 exports.destroy = destroy;

@@ -1,6 +1,6 @@
-const Review = require("../schema/schemaReview.js");
+const Review = require("../Models/Review.js");
 
-const show = (req, res) => {
+const list = (req, res) => {
     Review.find()
         .sort({bookID: 1})
         .then(review => res.json(review));
@@ -72,7 +72,7 @@ const create = (req, res) => {
     );
 };
 
-const store = (req, res) => {
+const edit = (req, res) => {
     const updatedReview = {
         authorID: req.body.authorID,
         authorName: req.body.authorName,
@@ -94,7 +94,7 @@ const destroy = (req, res) => {
 };
 
 // Exporting methods
-exports.show = show;
+exports.list = list;
 exports.create = create;
-exports.store = store;
+exports.edit = edit;
 exports.destroy = destroy;

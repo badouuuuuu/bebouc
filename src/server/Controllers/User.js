@@ -1,9 +1,9 @@
-const User = require("../schema/schemaUser.js");
+const User = require("../Models/User.js");
 // crypt password
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
-const show = (req, res) => {
+const list = (req, res) => {
     User.find()
         .sort({name: 1})
         .then(users => res.json(users));
@@ -124,7 +124,7 @@ const login = (req, res) => {
     }
 };
 
-const store = (req, res) => {
+const edit = (req, res) => {
     const updatedUser = {
         name: req.body.name,
         surname: req.body.surname,
@@ -144,8 +144,8 @@ const destroy = (req, res) => {
 };
 
 // Exporting methods
-exports.show = show;
+exports.list = list;
 exports.login = login;
 exports.create = create;
-exports.store = store;
+exports.edit = edit;
 exports.destroy = destroy;
