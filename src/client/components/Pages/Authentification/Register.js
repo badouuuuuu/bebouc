@@ -14,6 +14,7 @@ export class Register extends React.Component {
             admin: false,
             addusers_button: "primary-button",
             addusers_success: "Add User",
+            disabled_button: "false",
         };
     }
 
@@ -71,8 +72,11 @@ export class Register extends React.Component {
                 </section>
                 <div className="AddUsers">
                     <form onSubmit={this.handleSubmit}>
+                        <i className="far fa-envelope icon" />
+
                         <label id="icon" htmlFor="email" />
                         <input
+                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="text"
                             name="email"
@@ -82,10 +86,13 @@ export class Register extends React.Component {
                             onChange={this.handleChange}
                             required
                         />
+
                         <br />
+                        <i className="far fa-user icon" />
 
                         <label id="icon" htmlFor="name" />
                         <input
+                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="text"
                             name="name"
@@ -96,8 +103,12 @@ export class Register extends React.Component {
                             required
                         />
                         <br />
+
+                        <i className="fas fa-signature icon" />
+
                         <label id="icon" htmlFor="surname" />
                         <input
+                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="text"
                             name="surname"
@@ -109,8 +120,10 @@ export class Register extends React.Component {
                         />
 
                         <br />
+                        <i className="fas fa-key icon" />
                         <label id="icon" htmlFor="password" />
                         <input
+                            disabled={!this.state.disabled_button}
                             className="input_addusers is-small"
                             type="password"
                             name="password"
@@ -126,9 +139,10 @@ export class Register extends React.Component {
                         <label
                             className="checkbox_admin"
                             htmlFor="checkbox_admin">
-                            {" Coach "}{" "}
+                            {" Coach "}
                         </label>
                         <input
+                            disabled={!this.state.disabled_button}
                             type="checkbox"
                             name="checkbox_admin"
                             value={this.state.admin}
@@ -138,6 +152,12 @@ export class Register extends React.Component {
                         <br />
                         <br />
                         <button
+                            disabled={
+                                !this.state.email &&
+                                !this.state.name &&
+                                !this.state.surname &&
+                                !this.state.password
+                            }
                             type="submit"
                             className={this.state.addusers_button}>
                             {this.state.addusers_success}
