@@ -1,6 +1,6 @@
 const User = require("../schema/schemaUser.js");
 // crypt password
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const saltRounds = 10;
 
 const show = (req, res) => {
