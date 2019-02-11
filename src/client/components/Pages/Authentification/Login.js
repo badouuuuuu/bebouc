@@ -54,7 +54,7 @@ export class Login extends React.Component {
     render() {
         return (
             <div className="login_container">
-                <section className="section_addusers_title">
+                <section className="section_login_title">
                     <img className="logo_login" src={Logo} />
                     <h1 className="login_title"> {"be </book>"} </h1>
                     <h2 className="login_subtitle">{"IN BOOK WE LEARN"}</h2>
@@ -65,7 +65,7 @@ export class Login extends React.Component {
 
                         <label id="icon" htmlFor="email" />
                         <input
-                            className="input_addusers is-small"
+                            className="input_login is-small"
                             type="text"
                             name="email"
                             id="email"
@@ -101,14 +101,6 @@ export class Login extends React.Component {
                             {this.state.login}
                         </button>
                     </form>
-                    <hr />
-
-                    <a href="/">
-                        {" "}
-                        <button type="submit" className="secondary-button">
-                            {"Back"}
-                        </button>
-                    </a>
                 </div>
             </div>
         );
