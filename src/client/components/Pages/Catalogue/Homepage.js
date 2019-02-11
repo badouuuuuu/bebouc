@@ -1,6 +1,6 @@
 import * as React from "react";
 import axios from "axios";
-import NavCatalogue from "./Catalogue/NavCatalogue.js";
+import NavCatalogue from "./NavCatalogue";
 
 export class Homepage extends React.Component {
     state = {

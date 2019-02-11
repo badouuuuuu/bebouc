@@ -30,7 +30,7 @@
     mongoexpress:
       image: "mongo-express"
       ports:
-        - "8003:8081"
+        - "8003:8080"
       depends_on:
         - "mongo"
       environment:
