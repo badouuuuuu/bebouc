@@ -15,6 +15,8 @@ export class Register extends React.Component {
             addusers_button: "submit-button",
             addusers_success: "Add User",
             disabled_button: "",
+            error_input: "input_addusers is-small",
+            error_alreadyexist: "",
         };
     }
 
@@ -24,6 +26,20 @@ export class Register extends React.Component {
         this.setState({
             [target.name]:
                 target.type === "checkbox" ? target.checked : target.value,
+        });
+    }
+
+    resetStates() {
+        this.setState({
+            name: "",
+            surname: "",
+            email: "",
+            password: "",
+            admin: false,
+            addusers_button: "submit-button",
+            addusers_success: "Add User",
+            disabled_button: "",
+            error_input: "input_addusers is-small",
         });
     }
 
@@ -41,12 +57,20 @@ export class Register extends React.Component {
             .then(res => {
                 if (res.status !== 200) {
                     console.log("Email déjà existante");
+                    this.setState({
+                        error_input: "error",
+                        error_alreadyexist: "Email already exist",
+                    });
+
+                    this.resetStates();
                 } else {
                     console.log(res.data);
 
                     this.setState({
                         addusers_button: "success-button",
                         addusers_success: "Success",
+                        error_input: "",
+                        error_alreadyexist: "",
                     });
                 }
             })
@@ -59,15 +83,14 @@ export class Register extends React.Component {
         return (
             <div className="container">
                 <section className="section_addusers_title">
-                    <h1 className="addusers_title">{" Add New User"}</h1>
-                </section>
+                    <h1 className="addusers_title"> {" Add New User"} </h1>{" "}
+                </section>{" "}
                 <div className="adduser-component">
                     <form onSubmit={this.handleSubmit}>
                         <i className="far fa-envelope icon-input-field" />
-
                         <label id="icon-input-field" htmlFor="email" />
                         <input
-                            className="input_addusers is-small"
+                            className={this.state.error_input}
                             type="text"
                             name="email"
                             id="email"
@@ -76,10 +99,8 @@ export class Register extends React.Component {
                             onChange={this.handleChange}
                             required
                         />
-
                         <br />
                         <i className="far fa-user icon-input-field" />
-
                         <label id="icon-input-field" htmlFor="name" />
                         <input
                             className="input_addusers is-small"
@@ -92,9 +113,7 @@ export class Register extends React.Component {
                             required
                         />
                         <br />
-
                         <i className="fas fa-signature icon-input-field" />
-
                         <label id="icon-input-field" htmlFor="surname" />
                         <input
                             className="input_addusers is-small"
@@ -106,7 +125,6 @@ export class Register extends React.Component {
                             onChange={this.handleChange}
                             required
                         />
-
                         <br />
                         <i className="fas fa-key icon-input-field" />
                         <label id="icon-input-field" htmlFor="password" />
@@ -122,8 +140,7 @@ export class Register extends React.Component {
                         />
                         <br />
                         <br />
-
-                        <label htmlFor="admin">{" Coach "}</label>
+                        <label htmlFor="admin"> {" Coach "} </label>{" "}
                         <input
                             className="checkbox"
                             type="checkbox"
@@ -132,8 +149,11 @@ export class Register extends React.Component {
                             onChange={this.handleChange}
                             checked={this.state.admin}
                         />
-
                         <br />
+                        <p className="error">
+                            {" "}
+                            {this.state.error_alreadyexist}{" "}
+                        </p>{" "}
                         <button
                             disabled={
                                 !this.state.email &&
@@ -143,18 +163,19 @@ export class Register extends React.Component {
                             }
                             type="submit"
                             className={this.state.addusers_button}>
-                            {this.state.addusers_success}
-                        </button>
-                    </form>
+                            {" "}
+                            {this.state.addusers_success}{" "}
+                        </button>{" "}
+                    </form>{" "}
                     <hr />
-
                     <a href="/">
                         {" "}
                         <button type="submit" className="secondary-button">
-                            {"Back"}
-                        </button>
-                    </a>
-                </div>
+                            {" "}
+                            {"Back"}{" "}
+                        </button>{" "}
+                    </a>{" "}
+                </div>{" "}
             </div>
         );
     }

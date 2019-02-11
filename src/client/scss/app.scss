@@ -7,6 +7,8 @@ $color2: #63C3D1;
 $color3: #F57E29;
 $color4: #A4AEB8;
 
+$color_error:red;
+
 $text-light: #FFFFFF;
 $text-dark: #1A2632;
 
@@ -88,6 +90,9 @@ body {
         color: #63C3D1;
     }
 
+    .error {
+        color: $color_error,
+    }
 
     /**************** FIN BUTTONS *************/
 
@@ -198,7 +203,8 @@ body {
 
     input[type=text],
     input[type=password] {
-
+        background-color: rgba(255, 255, 255, 0.60);
+        color: $color3;
         width: 50%;
         padding: 12px 20px;
         margin: 8px 0;
@@ -216,16 +222,17 @@ body {
     input:focus {
         outline: none;
         text-align: center;
-        border: 2px solid rgba(245, 126, 41, 0.80);
+        border: 1px solid rgba(245, 126, 41, 0.80);
     }
 
     ::-webkit-input-placeholder {
-        color: rgba(0, 0, 0, 0.5);
+        color: $color3;
         text-align: center;
         justify-content: center;
     }
 
     :-moz-placeholder {
+        // FireFox
         text-align: center;
     }
 
