@@ -61,7 +61,48 @@ body {
         color : #63C3D1;
       }
 
+      // LOGIN PAGE
 
+      .login_container {
+          background-image: url('../../assets/backgroundimage.jpg');
+          background-size: cover;
+          background-repeat: no-repeat;
+          width: 100%;
+         text-align: center;
+         margin: 0 auto;
+         
+
+          h1 {
+              color: white;
+              font-size: 72px;
+              font-weight: bolder;
+          }
+          h2 {
+              color: black;
+              font-size: 60px;
+              font-weight: 200;
+          }
+
+          img {
+              width: 240px;
+            
+          }
+
+            input[type=text], input[type=password]  {
+
+                width: 20%;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 15px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+
+      }
+
+   
 
       // ADD USERS COMPONENTS from src/client/components/Pages/Authentification/Register.js
 

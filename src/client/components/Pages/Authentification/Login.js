@@ -1,108 +1,116 @@
-import React from "react";
-// import Routes from "../../routes";
+import * as React from "react";
+import axios from "axios";
+import Logo from "../../../../assets/logo_Becode.png";
 
 export class Login extends React.Component {
     constructor(props) {
         super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
         this.state = {
             email: "",
             password: "",
+            admin: false,
+            login_button: "primary-button",
+            login: "Login",
+            disabled_button: "",
         };
-        //   this.handleChange.bind(this);
-        //   this.send.bind(this);
     }
-    // send = event => {
-    //     if (this.state.email.length === 0) {
-    //         return;
-    //     }
-    //     if (this.state.password.length === 0) {
-    //         return;
-    //     }
-    //     Routes.login(this.state.email, this.state.password).then(
-    //         data => {
-    //             localStorage.setItem("token", data.data.token);
-    //             window.location = "/homepage";
-    //         },
-    //         error => {
-    //             console.log(error);
-    //             return;
-    //         },
-    //     );
-    // };
-    // handleChange = event => {
-    //     this.setState({
-    //         [event.target.id]: event.target.value,
-    //     });
-    // };
+
+    handleChange(e) {
+        let target = e.target;
+
+        this.setState({
+            [target.name]:
+                target.type === "checkbox" ? target.checked : target.value,
+        });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        console.log(this.state.admin);
+        axios
+            .post(`http://localhost/api/login`, {
+                email: this.state.email,
+                password: this.state.password,
+            })
+            .then(res => {
+                if (res.status !== 200) {
+                    console.log("email ou mot de pass incorrect");
+                } else {
+                    console.log(res.data);
+
+                    this.setState({
+                        login_button: "success-button",
+                        login: "Success",
+                    });
+                }
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    }
+
     render() {
         return (
-            <div className="container">
-                <section className="hero is-danger">
-                    <div className="hero-body">
-                        <div className="container">
-                            <h1 className="title">{"Login"}</h1>
-                            <h2>{"Cette page est destiné au login"}</h2>
-                        </div>
-                    </div>
+            <div className="login_container">
+                <section className="section_addusers_title">
+                    <img className="logo_login" src={Logo} />
+                    <h1 className="login_title"> {"be </book>"} </h1>
+                    <h2 className="login_subtitle">{"IN BOOK WE LEARN"}</h2>
                 </section>
+                <div className="login_block">
+                    <form onSubmit={this.handleSubmit}>
+                        <i className="far fa-envelope icon" />
 
-                <hr />
-                <br />
-                <strong>
-                    <h1>{"Route crée pour environement dev"}</h1>
-                </strong>
-                <br />
-                <hr />
-                <form action="/addbooks" method="get">
-                    <button className="button is-info">{"New Books"}</button>
-                    <p>{"Test d'ajout de livre avec la bd"}</p>
-                </form>
-                <hr />
-                <form action="/Register" method="get">
-                    <button className="button is-primary">{"New Users"}</button>
-                    <p>{"Test d'ajout d'utilisateur avec droit ou non"}</p>
-                </form>
-                <hr />
-                <form action="/Homepagetest" method="get">
-                    <button className="button is-warning">
-                        {"Front-Ent Dev"}
-                    </button>
-                    <p>{"SPA pour developpement FO"}</p>
-                </form>
-                <hr />
+                        <label id="icon" htmlFor="email" />
+                        <input
+                            className="input_addusers is-small"
+                            type="text"
+                            name="email"
+                            id="email"
+                            placeholder="email"
+                            value={this.state.email}
+                            onChange={this.handleChange}
+                            required
+                        />
 
-                <hr />
-                <footer className="footer">
-                    <div className="content has-text-centered">
-                        <a
-                            href="https://github.com/Elias2702/bebouc"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            <button className="button is-danger">
-                                {"Repo Github Bebook"}
-                            </button>
-                        </a>
-                    </div>
-                </footer>
+                        <br />
+
+                        <br />
+                        <i className="fas fa-key icon" />
+                        <label id="icon" htmlFor="password" />
+                        <input
+                            className="input_login is-small"
+                            type="password"
+                            name="password"
+                            id="password"
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            required
+                        />
+                        <br />
+                        <br />
+
+                        <br />
+                        <button
+                            disabled={!this.state.email && !this.state.password}
+                            type="submit"
+                            className={this.state.login_button}>
+                            {this.state.login}
+                        </button>
+                    </form>
+                    <hr />
+
+                    <a href="/">
+                        {" "}
+                        <button type="submit" className="secondary-button">
+                            {"Back"}
+                        </button>
+                    </a>
+                </div>
             </div>
         );
-        // <div className="Login">
-        //     <FormGroup controlId="email" bsSize="large">
-        //     <ControlLabel>Email</ControlLabel>
-        //     <FormControl autoFocus type="email" value={this.state.email} onChange={this.handleChange}/>
-        //     </FormGroup>
-        //     <FormGroup controlId="password" bsSize="large">
-        //     <ControlLabel>Password</ControlLabel>
-        //     <FormControl value={this.state.password} onChange={this.handleChange} type="password"/>
-        //     </FormGroup>
-        //     <Button
-        //     onClick={this.send}
-        //     block
-        //     bsSize="large"
-        //     type="submit"
-        //     >
-        //     Connexion
-        //     </Button>
-        // </div>
     }
 }

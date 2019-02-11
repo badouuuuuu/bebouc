@@ -4,6 +4,7 @@ import {BrowserRouter} from "react-router-dom";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
 import {PrivateRoute} from "./components/Pages/Redirection/PrivateRoute";
+import {devpage} from "./components/Pages/Authentification/devpage";
 import {Login} from "./components/Pages/Authentification/Login";
 import {Register} from "./components/Pages/Authentification/Register";
 import {Homepage} from "./components/Pages/Catalogue/Homepage";
@@ -23,7 +24,8 @@ class App extends Component {
             <div className="App">
                 <div className="App-content">
                     <Switch>
-                        <Route exact path="/" component={Login} />
+                        <Route exact path="/" component={devpage} />
+                        <Route exact path="/login" component={Login} />
                         <Route exact path="/addbooks" component={AddBooks} />
                         <Route
                             exact
