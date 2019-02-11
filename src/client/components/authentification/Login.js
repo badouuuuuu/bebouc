@@ -36,9 +36,9 @@ export class Login extends React.Component {
     // };
     render() {
         return (
-            <div>
+            <div className="container">
+                <hr />
                 <p>{"Cette page est destiné au login"}</p>
-                <br />
                 <hr />
                 <br />
                 <strong>
