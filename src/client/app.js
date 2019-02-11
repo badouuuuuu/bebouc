@@ -3,12 +3,11 @@ import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
-import {Homepage} from "./components/Homepage";
-import {Login} from "./components/authentification/Login";
-import {Signup} from "./components/authentification/Signup";
-import {PrivateRoute} from "./components/PrivateRoute";
-import {AddBooks} from "./components/addbooks";
-import {RegisterTest} from "./components/authentification/RegisiterTest";
+import {PrivateRoute} from "./components/Pages/Redirection/PrivateRoute";
+import {Login} from "./components/Pages/Authentification/Login";
+import {Register} from "./components/Pages/Authentification/Register";
+import {Homepage} from "./components/Pages/Catalogue/Homepage";
+import {AddBooks} from "./components/Pages/Catalogue/AddBooks";
 
 import "./scss/app.scss";
 
@@ -27,7 +26,6 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Login} />
                         <Route exact path="/addbooks" component={AddBooks} />
-                        <Route exact path="/signup" component={Signup} />
                         <Route
                             exact
                             path="/homepagetest"
@@ -36,8 +34,8 @@ class App extends Component {
                         {/* Pour l'integration d'Olivier*/}
                         <Route
                             exact
-                            path="/RegisterTest"
-                            component={RegisterTest}
+                            path="/Register"
+                            component={Register}
                         />{" "}
                         {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />

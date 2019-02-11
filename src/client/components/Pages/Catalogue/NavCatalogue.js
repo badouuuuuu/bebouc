@@ -1,6 +1,6 @@
 import * as React from "react";
-import "../../scss/app.scss";
-import {FontAwesomeIcon} from "../../../../node_modules/@fortawesome/react-fontawesome";
+import "../../../scss/app.scss";
+import {FontAwesomeIcon} from "../../../../../node_modules/@fortawesome/react-fontawesome";
 
 export default class NavCatalogue extends React.Component {
     render() {
