@@ -176,7 +176,7 @@ export class AddBooks extends React.Component {
                     <hr />
 
                     <button type="submit" className="button is-info">
-                        {"Register"}
+                        {"Add Book"}
                     </button>
                 </form>
                 <hr />

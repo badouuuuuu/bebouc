@@ -133,7 +133,7 @@ export class RegisterTest extends React.Component {
                     <br />
                     <br />
                     <button type="submit" className="button is-primary">
-                        {"Register"}
+                        {"Add User"}
                     </button>
                 </form>
                 <hr />
