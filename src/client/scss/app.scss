@@ -46,5 +46,40 @@ button {
 
 .button.is-text{
   text-decoration: none;
-  color : #63C3D1;
+  color : $color2;
+}
+
+.button.is-info{
+ background-color: transparent;
+
+}
+.button.is-info:hover{
+color : $color2;
+background-color: transparent;
+
+}
+
+//input
+
+.inputsearch{
+  width: 149px;
+  height: 26px;
+  left: 1093px;
+  top: 308px;
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 30px;
+  border : none;
+  padding : 2px;
+  font-family: $font1;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+
+//display
+
+.NavCatalogue{
+  width : 100%;
+  display : inline-flex;
+  justify-content: flex-end;
+  padding-right: 10px;
 }

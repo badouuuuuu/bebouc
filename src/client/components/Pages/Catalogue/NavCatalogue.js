@@ -5,8 +5,8 @@ import {FontAwesomeIcon} from "../../../../../node_modules/@fortawesome/react-fo
 export default class NavCatalogue extends React.Component {
     render() {
         return (
-            <div>
-                <div className="dropdown is-hoverable">
+            <div className="NavCatalogue">
+                <div className="dropdown is-hoverable is-up is-right">
                     <div className="dropdown-trigger">
                         <button
                             className="button is-text"
@@ -31,9 +31,22 @@ export default class NavCatalogue extends React.Component {
                     </div>
                 </div>
 
-                <span className="icon">
-                    <FontAwesomeIcon icon="search" />
-                </span>
+                <div className="field has-addons">
+                    <div className="control">
+                        <input
+                            className="inputsearch"
+                            type="text"
+                            placeholder="Find a freaking book"
+                        />
+                    </div>
+                    <div className="control">
+                        <a className="button is-info">
+                            <span className="icon">
+                                <FontAwesomeIcon icon="search" />
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         );
     }
