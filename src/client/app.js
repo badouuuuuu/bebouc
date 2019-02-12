@@ -1,10 +1,22 @@
 import React, {Component} from "react";
+import ReactDOM from "react-dom";
+import {BrowserRouter} from "react-router-dom";
+// import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
-import {Homepage} from "./components/homepage.js";
-import {Login} from "./components/authentification/Login.js";
-import {Signup} from "./components/authentification/Signup.js";
-import {PrivateRoute} from "./components/PrivateRoute.js";
-import "./app.scss";
+import {PrivateRoute} from "./components/Pages/Redirection/PrivateRoute";
+import {Login} from "./components/Pages/Authentification/Login";
+import {Register} from "./components/Pages/Authentification/Register";
+import {Homepage} from "./components/Pages/Catalogue/Homepage";
+import {AddBooks} from "./components/Pages/Catalogue/AddBooks";
+
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faTag} from "@fortawesome/free-solid-svg-icons";
+import {faSearch} from "@fortawesome/free-solid-svg-icons";
+
+library.add(faTag);
+library.add(faSearch);
+
+import "./scss/app.scss";
 
 class App extends Component {
     render() {
@@ -13,7 +25,19 @@ class App extends Component {
                 <div className="App-content">
                     <Switch>
                         <Route exact path="/" component={Login} />
-                        <Route exact path="/signup" component={Signup} />
+                        <Route exact path="/addbooks" component={AddBooks} />
+                        <Route
+                            exact
+                            path="/homepagetest"
+                            component={Homepage}
+                        />{" "}
+                        {/* Pour l'integration d'Olivier*/}
+                        <Route
+                            exact
+                            path="/Register"
+                            component={Register}
+                        />{" "}
+                        {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />
                     </Switch>
                 </div>
@@ -21,4 +45,11 @@ class App extends Component {
         );
     }
 }
-export default App;
+
+ReactDOM.render(
+    <BrowserRouter>
+        <App />
+    </BrowserRouter>,
+    document.getElementById("app"),
+);
+// registerServiceWorker();
