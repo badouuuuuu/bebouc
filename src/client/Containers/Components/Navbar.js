@@ -1,7 +1,7 @@
 import * as React from "react";
 
 // Components
-import Logo from "./logo";
+import Logo from "./Logo";
 
 export default class NavBar extends React.Component {
     ComponentDidMount() {

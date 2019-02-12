@@ -6,12 +6,12 @@ import {Route, Switch} from "react-router-dom";
 import {PrivateRoute} from "./Containers/Pages/Redirection/PrivateRoute";
 import {Login} from "./Containers/Pages/Authentification/Login";
 import {Register} from "./Containers/Pages/Authentification/Register";
-import {Homepage} from "./Containers/Pages/Catalogue/Homepage";
+import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBooks} from "./Containers/Pages/Catalogue/AddBooks";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import {devpage} from "./Containers/Pages/Authentification/devpage";
+// import {devpage} from "./Containers/Pages/Authentification/devpage";
 
 library.add(faTag);
 library.add(faSearch);
@@ -24,7 +24,7 @@ class App extends Component {
             <div className="App">
                 <div className="App-content">
                     <Switch>
-                        <Route exact path="/" component={devpage} />
+                        <Route exact path="/" component={Homepage} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/addbooks" component={AddBooks} />
                         <Route
