@@ -1,8 +1,8 @@
-const userController = require("./controllers/User.js");
-const bookController = require("./controllers/Book.js");
-const loanController = require("./controllers/Loan.js");
-const reviewController = require("./controllers/Review.js");
-const tagController = require("./controllers/Tag.js");
+const userController = require("./Controllers/User.js");
+const bookController = require("./Controllers/Book.js");
+const loanController = require("./Controllers/Loan.js");
+const reviewController = require("./Controllers/Review.js");
+const tagController = require("./Controllers/Tag.js");
 
 module.exports = function(app) {
     // user
