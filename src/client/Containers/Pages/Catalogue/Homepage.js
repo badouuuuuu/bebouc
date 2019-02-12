@@ -1,7 +1,8 @@
 import * as React from "react";
 import axios from "axios";
 import NavCatalogue from "./NavCatalogue";
-import NavBar from "../../../components/navbar";
+import NavBar from "../../Components/navbar";
+import NavActions from "../../Components/navactions";
 
 export class Homepage extends React.Component {
     state = {
@@ -21,11 +22,7 @@ export class Homepage extends React.Component {
         return (
             <div className="backgroundhome">
                 <NavBar />
-                <small>{"Laura, Olivier, Youssef, Elias"}</small>
-                <form action="/addbooks" method="get">
-                    <button className="primary-button">{"Books"}</button>
-                </form>
-
+                <NavActions />
                 <NavCatalogue />
             </div>
         );

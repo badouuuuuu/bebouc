@@ -1,7 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 import LogoBecode from "../../../../assets/logo_Becode.png";
-import Logo from "../../../components/logo";
+import Logo from "../../Components/logo";
 
 export class Login extends React.Component {
     constructor(props) {

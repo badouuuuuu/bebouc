@@ -44,15 +44,17 @@ button {
 // Headings
 
 h1 {
-    color: $text-light;
+    color: $color1;
     font-weight: 900;
     margin: 0;
+    font-size: 2em;
 }
 
 h2 {
     color: $color2;
     font-weight: 300;
     margin: 0;
+    font-size: 1.1em;
 }
 
 h3 {
@@ -65,7 +67,6 @@ h3 {
 .primary-button {
     background-color: $color1;
     border-radius: 20px;
-
 }
 
 .secondary-button {
@@ -74,8 +75,10 @@ h3 {
     color: white;
 }
 
-.selected-button {
+.active-button {
     background-color: $color4;
+    border-radius: 20px;
+    color: white;
 
 }
 
@@ -310,7 +313,15 @@ hr {
 
 //NAVBAR
 
-.navbar {
+.navigation {
     background-color: $color1;
 }
 
+.navactions {
+    display: flex;
+    justify-content: flex-end;
+
+    button {
+        margin: .4em .7em;
+    }
+}
