@@ -29,20 +29,11 @@ export class AddBooks extends React.Component {
     }
 
     handleChange(e) {
-        let target = e.target,
-            value = target.type === "checkbox" ? target.checked : target.value,
-            name = target.name,
-            author = target.author,
-            isbn = target.isbn,
-            language = target.language,
-            summary = target.summary;
+        let target = e.target;
 
         this.setState({
-            [isbn]: value,
-            [language]: value,
-            [name]: value,
-            [summary]: value,
-            [author]: value,
+            [target.name]:
+                target.type === "checkbox" ? target.checked : target.value,
         });
     }
 

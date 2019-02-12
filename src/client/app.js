@@ -4,11 +4,11 @@ import {BrowserRouter} from "react-router-dom";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
 import {PrivateRoute} from "./components/Pages/Redirection/PrivateRoute";
+import {devpage} from "./components/Pages/Authentification/devpage";
 import {Login} from "./components/Pages/Authentification/Login";
 import {Register} from "./components/Pages/Authentification/Register";
 import {Homepage} from "./components/Pages/Catalogue/Homepage";
 import {AddBooks} from "./components/Pages/Catalogue/AddBooks";
-
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -24,7 +24,8 @@ class App extends Component {
             <div className="App">
                 <div className="App-content">
                     <Switch>
-                        <Route exact path="/" component={Login} />
+                        <Route exact path="/" component={devpage} />
+                        <Route exact path="/login" component={Login} />
                         <Route exact path="/addbooks" component={AddBooks} />
                         <Route
                             exact
@@ -32,11 +33,7 @@ class App extends Component {
                             component={Homepage}
                         />{" "}
                         {/* Pour l'integration d'Olivier*/}
-                        <Route
-                            exact
-                            path="/Register"
-                            component={Register}
-                        />{" "}
+                        <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />
                     </Switch>

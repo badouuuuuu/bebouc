@@ -1,38 +1,36 @@
 @charset "utf-8";
 @import "bulma";
 
-// COLORS
+/**************** COLORS *************/
 $color1: #1A2632;
 $color2: #63C3D1;
 $color3: #F57E29;
 $color4: #A4AEB8;
 
+$color_error:red;
+
 $text-light: #FFFFFF;
 $text-dark: #1A2632;
 
-// POLICES
-$font1: 'Roboto', sans-serif;
+$color_success: rgb(81, 255, 0);
 
-// CSS Homepage
+/**************** FONTS *************/
+$font1: 'Roboto',
+sans-serif;
 
-#app {
-    background-color: $color1;
+/**************** DEBUT CSS *************/
+
+
+body {
     font-family: $font1;
-}
 
-// BUTTONS
+    /**************** CSS HOME PAGE - SPA *************/
 
-.primary-button {
-    background-color: $color3;
-}
-
-.secondary-button {
-    background-color: $color2;
-}
-
-.selected-button {
-    background-color: $color4;
-}
+    .backgroundhome {
+        position: relative;
+        width: 100%;
+        background-color: $color1;
+    }
 
 button {
     font-weight: 600;
@@ -62,14 +60,238 @@ h3 {
     font-weight: 400;
     margin: 0;
 }
+/**************** DEBUT BUTTONS *************/
 
-.button.is-text{
-  text-decoration: none;
-  color : #63C3D1;
+.primary-button {
+    background-color: $color1;
+    border-radius: 20px;
+
 }
+
+.secondary-button {
+    background-color: $color2;
+    border-radius: 20px;
+    color: white;
+}
+
+.selected-button {
+    background-color: $color4;
+
+}
+
+.submit-button {
+    background-color: $color3;
+    color: white;
+    margin: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.submit-button:hover {
+    background-color: white;
+    color: $color3;
+}
+
+.success-button {
+    background-color: $color_success;
+    border-radius: 20px;
+}
+
+button {
+    font-family: $font1;
+    font-weight: 600;
+    padding: .5em .8em;
+    font-size: 1em;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+button:disabled {
+    color: rgba(255, 255, 255, 0.41);
+    background-color: grey;
+    opacity: 20;
+}
+
+.button.is-text {
+    text-decoration: none;
+    color: #63C3D1;
+}
+
+.error {
+    color: $color_error,
+}
+
+/**************** FIN BUTTONS *************/
+
+/*******************************************/
+
+/**************** ICON INPUTS LOGIN AND ADDUSERS *************/
+
+.icon-input-field {
+
+    position: absolute;
+    width: 10px;
+    text-align: center;
+    margin-top: 18px;
+    margin-left: 10px;
+    color: rgba(245, 126, 41, 0.80);
+    opacity: 30%;
+
+}
+
+/**************** FIN ICON  INPUTS LOGIN AND ADDUSERS *************/
+
+/*******************************************/
+
+/************* DEBUT LOGIN PAGE  ***********/
+
+.login_container {
+    background-image: url('../../assets/backgroundimage-gradien-1080p.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
+    text-align: center;
+    margin: 0 auto;
+
+    img {
+        width: 180px;
+
+    }
+
+    p {
+        padding-top: 10px;
+        cursor: pointer;
+        color: $color3;
+    }
+
+    p:hover {
+        color: white;
+    }
+
+    input[type=text],
+    input[type=password] {
+        outline: none;
+        width: 15%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.60);
+        color: $color3;
+    }
+
+    input:focus {
+        outline: none;
+        text-align: center;
+        border: 1px solid rgba(245, 126, 41, 0.80);
+    }
+
+    ::-webkit-input-placeholder {
+        color: $color3;
+        text-align: center;
+        justify-content: center;
+    }
+
+    :-moz-placeholder {
+        text-align: center;
+    }
+
+    svg {
+        padding-bottom: 4px;
+        margin-left: 15px;
+    }
+
+    button {
+        cursor: pointer;
+        color: white;
+        background-color: $color3;
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+}
+
+input[type=text],
+input[type=password] {
+    background-color: rgba(255, 255, 255, 0.60);
+    color: $color3;
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input[type=checkbox] {
+    margin: 10px;
+}
+
+input:focus {
+    outline: none;
+    text-align: center;
+    border: 1px solid rgba(245, 126, 41, 0.80);
+}
+
+::-webkit-input-placeholder {
+    color: $color3;
+    text-align: center;
+    justify-content: center;
+}
+
+:-moz-placeholder {
+    // FireFox
+    text-align: center;
+}
+
+
+/**************** FIN LOGIN PAGE **********************/
+
+/*******************************************************/
+
+/**************** DEBUT ADD USERS COMPONENTS *************/
+
+.container {
+    text-align: center;
+}
+
+hr {
+    background-color: $color3;
+    width: 250px;
+    margin: 10px auto;
+    height: 1px;
+}
+
+.adduser-component {
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.50);
+    width: 560px;
+    height: 520px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px;
+}
+
+
+.addusers_title {
+    font-size: 48px;
+    color: white;
+}
+
+}
+
+/**************** FIN ADD USERS COMPONENTS *************/
 
 //NAVBAR
 
 .navbar {
     background-color: $color1;
 }
+
