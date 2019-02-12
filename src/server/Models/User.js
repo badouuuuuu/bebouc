@@ -43,7 +43,7 @@ userSchema.methods = {
         });
     },
     getToken: function() {
-        return jwt.encode(this, process.env.JWT_SECRET);
+        return jwt.encode(this, "lol");
     },
 };
 
