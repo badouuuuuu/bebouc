@@ -1,6 +1,6 @@
-const Loan = require("../schema/schemaLoan.js");
+const Loan = require("../Models/Loan.js");
 
-const show = (req, res) => {
+const list = (req, res) => {
     Loan.find()
         .sort({borrowerID: 1})
         .then(loan => res.json(loan));
@@ -18,7 +18,7 @@ const create = (req, res) => {
         .catch(err => res.status(400).send(err));
 };
 
-const store = (req, res) => {
+const edit = (req, res) => {
     Loan.findByIdAndUpdate(req.params.id, req.body, {new: true})
         .then(loan => res.json(loan))
         .catch(err => res.status(400).send(err));
@@ -31,7 +31,7 @@ const destroy = (req, res) => {
 };
 
 // Exporting methods
-exports.show = show;
+exports.list = list;
 exports.create = create;
-exports.store = store;
+exports.edit = edit;
 exports.destroy = destroy;
