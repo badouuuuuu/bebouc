@@ -1,7 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 import NavCatalogue from "./NavCatalogue";
-import NavBar from "../../../components/navbar";
+import NavBar from "../../Components/Navbar";
 
 export class Homepage extends React.Component {
     state = {
