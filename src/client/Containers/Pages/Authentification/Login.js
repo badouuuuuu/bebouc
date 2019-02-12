@@ -1,7 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 import LogoBecode from "../../../../assets/logo_Becode.png";
-import Logo from "../../logo";
+import Logo from "../../../components/logo";
 
 export class Login extends React.Component {
     constructor(props) {
@@ -56,57 +56,62 @@ export class Login extends React.Component {
 
     render() {
         return (
-            <div className="login_container">
-                <section className="section_login_title">
-                    <a href="https://becode.org">
-                        <img className="logo_login" src={LogoBecode} />
-                    </a>
-                    <Logo />
-                </section>
-                <div className="login_block">
-                    <form onSubmit={this.handleSubmit}>
-                        <i className="far fa-envelope icon-input-field" />
+            <>
+                <div className="backgoundImage" />
+                <div className="login_container">
+                    <section className="section_login_title">
+                        <a href="https://becode.org">
+                            <img className="logo_login" src={LogoBecode} />
+                        </a>
+                        <Logo />
+                    </section>
+                    <div className="login_block">
+                        <form onSubmit={this.handleSubmit}>
+                            <i className="far fa-envelope icon-input-field" />
 
-                        <label id="icon-input-field" htmlFor="email" />
-                        <input
-                            className="input_login is-small"
-                            type="text"
-                            name="email"
-                            id="email"
-                            placeholder="email"
-                            value={this.state.email}
-                            onChange={this.handleChange}
-                            required
-                        />
+                            <label id="icon-input-field" htmlFor="email" />
+                            <input
+                                className="input_login is-small"
+                                type="text"
+                                name="email"
+                                id="email"
+                                placeholder="email"
+                                value={this.state.email}
+                                onChange={this.handleChange}
+                                required
+                            />
 
-                        <br />
-                        <br />
-                        <i className="fas fa-key icon-input-field" />
-                        <label id="icon-input-field" htmlFor="password" />
-                        <input
-                            className="input_login is-small"
-                            type="password"
-                            name="password"
-                            id="password"
-                            placeholder="password"
-                            value={this.state.password}
-                            onChange={this.handleChange}
-                            required
-                        />
-                        <br />
-                        <br />
+                            <br />
+                            <br />
+                            <i className="fas fa-key icon-input-field" />
+                            <label id="icon-input-field" htmlFor="password" />
+                            <input
+                                className="input_login is-small"
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="password"
+                                value={this.state.password}
+                                onChange={this.handleChange}
+                                required
+                            />
+                            <br />
+                            <br />
 
-                        <br />
-                        <button
-                            disabled={!this.state.email && !this.state.password}
-                            type="submit"
-                            className={this.state.login_button}>
-                            {this.state.login}
-                        </button>
-                        <p>{"Forgot your password ?"}</p>
-                    </form>
+                            <br />
+                            <button
+                                disabled={
+                                    !this.state.email && !this.state.password
+                                }
+                                type="submit"
+                                className={this.state.login_button}>
+                                {this.state.login}
+                            </button>
+                            <p>{"Forgot your password ?"}</p>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </>
         );
     }
 }
