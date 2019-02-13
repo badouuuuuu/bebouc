@@ -9,12 +9,6 @@ export class Catalogue extends React.Component {
         super(props);
         this.state = {
             books: [],
-            title: "",
-            author: "",
-            isbn: "",
-            language: "",
-            summary: "",
-            owner: "",
             isBook: false,
             isEbook: false,
         };

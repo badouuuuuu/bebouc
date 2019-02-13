@@ -303,9 +303,10 @@ body {
         text-align: center;
         padding: 40px;
 
-        input {
+        input[type=text],
+        input[type=password] {
             outline: none;
-            width: 25%;
+            width: 40%;
             height: 30px;
             padding: 12px 20px;
             margin: 8px 0;
@@ -317,12 +318,33 @@ body {
             background-color: rgba(255, 255, 255, 0.60);
             color: $color1;
         }
+
+        input:focus {
+            outline: none;
+            text-align: center;
+            border: 1px solid rgba(245, 126, 41, 0.80);
+        }
+
+        ::-webkit-input-placeholder {
+            text-align: center;
+            justify-content: center;
+        }
+
+        :-moz-placeholder {
+            text-align: center;
+        }
+
+        svg {
+            padding-top: 2px;
+            margin-top: 15px;
+        }
+
     }
 
 
     .addusers_title {
         font-size: 48px;
-        color: wite;
+        color: white;
     }
 
 }
