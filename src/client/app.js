@@ -17,6 +17,7 @@ library.add(faTag);
 library.add(faSearch);
 
 import "./scss/app.scss";
+import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
 
 class App extends Component {
     render() {
@@ -27,6 +28,11 @@ class App extends Component {
                         <Route exact path="/" component={devpage} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/addbooks" component={AddBooks} />
+                        <Route
+                            exact
+                            path="/editprofil"
+                            component={EditProfil}
+                        />
                         <Route
                             exact
                             path="/homepagetest"
