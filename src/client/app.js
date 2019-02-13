@@ -11,6 +11,7 @@ import {AddBooks} from "./Containers/Pages/Catalogue/AddBooks";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import "./scss/app.scss";
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
 
 library.add(faTag);

@@ -28,7 +28,7 @@ body {
 
     .backgroundhome {
         position: relative;
-        width: 100%;
+
         background-color: $color1;
     }
 
@@ -152,14 +152,6 @@ background-color: transparent;
   margin-left: 20px;
 }
 
-//display
-
-.NavCatalogue{
-  width : 100%;
-  display : inline-flex;
-  justify-content: flex-end;
-  padding-right: 10px;
-}
 
 /**************** FIN BUTTONS *************/
 
@@ -351,4 +343,21 @@ hr {
 
 .navbar {
     background-color: $color1;
+}
+
+/**************** Catalogue *************/
+
+.backgroundcat{
+width: 75%;
+margin: 0 auto auto auto;
+background-color: rgba(255, 255, 255, 0.17);
+padding: 30px;
+
+}
+.NavCatalogue{
+  width : 75%;
+  margin: 100px auto auto 100px;
+  display : inline-flex;
+  justify-content: flex-end;
+  padding-right: 10px;
 }
