@@ -26,11 +26,10 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Homepage} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/addbooks" component={AddBooks} />
                         <Route
                             exact
-                            path="/homepagetest"
-                            component={Homepage}
+                            path="/addbooks"
+                            component={AddBooks}
                         />{" "}
                         {/* Pour l'integration d'Olivier*/}
                         <Route exact path="/Register" component={Register} />
