@@ -1,6 +1,4 @@
 import * as React from "react";
-
-// Components
 import Logo from "./Logo";
 
 export default class NavBar extends React.Component {
