@@ -28,7 +28,8 @@ export class Catalogue extends React.Component {
                 <Card
                     index={index}
                     key={book._id}
-                    Laura={book.title}
+                    title={book.title}
+                    isbn={book.isbn}
                     author={book.author}
                     language={book.language}
                     owner={book.owner}

@@ -1,5 +1,6 @@
 import * as React from "react";
 import Modal from "./Modal";
+import Magazine from "../../../assets/logo_Becode.png";
 
 export class Card extends React.Component {
     constructor(props) {
@@ -14,19 +15,21 @@ export class Card extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="bookCard">
                 <ul>
                     <li>
-                        <h1>{`Book card number ${this.props.index}`}</h1>
+                        <h1 id="bookCardHeader">{`${this.props.title}`}</h1>
                     </li>
-                    <li>{`Title : ${this.props.title}`}</li>
-                    <li>{`Author : ${this.props.author}`}</li>
-                    <li>{`ISBN : ${this.props.isbn}`}</li>
-                    <li>{`Language : ${this.props.language}`}</li>
-                    <li>{`Summary : ${this.props.summary}`}</li>
-                    <li>{`Owner : ${this.props.owner}`}</li>
                     <li>
-                        <button type="button" onClick={this.handleClick}>
+                        <img src={Magazine} id="cardImage" />
+                    </li>
+                    <li>{`Author : ${this.props.author}`}</li>
+                    <li>{`Language : ${this.props.language}`}</li>
+                    <li>
+                        <button
+                            type="button"
+                            onClick={this.handleClick}
+                            id="cardButton">
                             {"See book"}
                         </button>
                     </li>
