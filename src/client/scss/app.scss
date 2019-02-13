@@ -135,7 +135,8 @@ background-color: transparent;
 
 //input
 
-.inputsearch{
+.inputsearch
+{
   width: 149px;
   height: 26px;
   left: 1093px;
@@ -210,9 +211,10 @@ background-color: transparent;
         text-align: center;
         position: relative;
         overflow: hidden;
+        margin-top: 50px;
 
         img {
-            width: 180px;
+            width: 280px;
         }
 
         p {
@@ -228,7 +230,8 @@ background-color: transparent;
         input[type=text],
         input[type=password] {
             outline: none;
-            width: 15%;
+            width: 25%;
+            height: 30px;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -237,7 +240,7 @@ background-color: transparent;
             box-sizing: border-box;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.60);
-            color: $color3;
+            color: $color1;
         }
 
         input:focus {
@@ -247,7 +250,6 @@ background-color: transparent;
         }
 
         ::-webkit-input-placeholder {
-            color: $color3;
             text-align: center;
             justify-content: center;
         }
@@ -258,7 +260,7 @@ background-color: transparent;
 
         svg {
             padding-top: 2px;
-            margin-left: 15px;
+            margin-top: 15px;
         }
 
         button {
@@ -272,40 +274,6 @@ background-color: transparent;
 
     }
 
-    input[type=text],
-    input[type=password] {
-        background-color: rgba(255, 255, 255, 0.60);
-        color: $color3;
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    input[type=checkbox] {
-        margin: 10px;
-    }
-
-    input:focus {
-        outline: none;
-        text-align: center;
-        border: 1px solid rgba(245, 126, 41, 0.80);
-    }
-
-    ::-webkit-input-placeholder {
-        color: $color3;
-        text-align: center;
-        justify-content: center;
-    }
-
-    :-moz-placeholder {
-        // FireFox
-        text-align: center;
-    }
 
 
     /**************** FIN LOGIN PAGE **********************/
@@ -479,7 +447,7 @@ background-color: transparent;
 width: 75%;
 margin: 0 auto auto auto;
 background-color: rgba(255, 255, 255, 0.17);
-padding: 30px;
+padding: 30px
 
 }
 .NavCatalogue{

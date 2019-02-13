@@ -65,6 +65,7 @@ export class Login extends React.Component {
                         </a>
                         <Logo />
                     </section>
+                    <br />
                     <div className="login_block">
                         <form onSubmit={this.handleSubmit}>
                             <i className="far fa-envelope icon-input-field" />
@@ -95,8 +96,6 @@ export class Login extends React.Component {
                                 onChange={this.handleChange}
                                 required
                             />
-                            <br />
-                            <br />
 
                             <br />
                             <button
@@ -107,6 +106,7 @@ export class Login extends React.Component {
                                 className={this.state.login_button}>
                                 {this.state.login}
                             </button>
+                            <br />
                             <p>{"Forgot your password ?"}</p>
                         </form>
                     </div>
