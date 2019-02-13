@@ -1,7 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 
-export class AddBooks extends React.Component {
+export class AddBook extends React.Component {
     constructor(props) {
         super(props);
         this.handleSubmit = this.handleSubmit.bind(this);

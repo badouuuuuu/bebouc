@@ -7,7 +7,8 @@ import {PrivateRoute} from "./Containers/Pages/Redirection/PrivateRoute";
 import {Login} from "./Containers/Pages/Authentification/Login";
 import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
-import {AddBooks} from "./Containers/Pages/Catalogue/AddBooks";
+import {AddBook} from "./Containers/Pages/Catalogue/AddBook";
+import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -27,7 +28,8 @@ class App extends Component {
                     <Switch>
                         <Route exact path="/" component={Homepage} />
                         <Route exact path="/login" component={Login} />
-                        <Route exact path="/addbooks" component={AddBooks} />
+                        <Route exact path="/addbook" component={AddBook} />
+                        <Route exact path="/addloan" component={AddLoan} />
                         <Route
                             exact
                             path="/editprofil"
