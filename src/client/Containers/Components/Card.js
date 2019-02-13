@@ -7,10 +7,17 @@ export class Card extends React.Component {
         super(props);
         this.state = {showModal: ""};
         this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     handleClick() {
+        console.log("click is open");
         this.setState({showModal: "is-active"});
+    }
+
+    handleClose() {
+        console.log("Modal is close");
+        this.setState({showModal: ""});
     }
 
     render() {
@@ -36,6 +43,7 @@ export class Card extends React.Component {
                     <li>
                         {" "}
                         <Modal
+                            closeModal={this.handleClose}
                             show={this.state.showModal}
                             index={this.props.index}
                             key={this.props._id}

@@ -11,7 +11,11 @@ export class Modal extends React.Component {
                     <img src={Magazine} />
                     <h1>{`Book modal number ${this.props.index}`}</h1>
                 </div>
-                <button className="modal-close is-large" aria-label="close" />
+                <button
+                    onClick={this.props.closeModal}
+                    className="modal-close is-large"
+                    aria-label="close"
+                />
             </div>
         );
     }
