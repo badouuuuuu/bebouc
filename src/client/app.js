@@ -38,6 +38,11 @@ class App extends Component {
                         <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />
+                        <Route
+                            exact
+                            path="*"
+                            component={() => "404 NOT FOUND"}
+                        />
                     </Switch>
                 </div>
             </div>
