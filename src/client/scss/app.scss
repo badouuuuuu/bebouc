@@ -508,10 +508,12 @@ body {
 /**************** Catalogue *************/
 .backgroundhome {
     .backgroundcat {
-        width: 75%;
+        width: 95%;
         margin: 0 auto auto auto;
         background-color: rgba(255, 255, 255, 0.17);
-        padding: 30px
+        padding: 30px;
+        border-radius: 5rem;
+        margin-top: 5rem;
     }
 
 
@@ -523,14 +525,19 @@ body {
   padding-right: 10px;
 }
 .titleCat {
-
+background-color: rgba(255,255,255,0.5);
+margin: auto;
+margin-top: 2rem;
+width: 15rem;
+border-radius: 1rem;
+padding: 0.5rem;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
 line-height: normal;
 font-size: 38px;
 text-align: center;
-color: #F57E29;
+color: rgb(26, 38, 50);
 }
 }
 
@@ -593,6 +600,7 @@ color: #F57E29;
     width: 90%;
     margin: auto;
     display: flex;
+    margin-bottom: 5rem;
 }
  #bookCardHeader {
      color: white;
