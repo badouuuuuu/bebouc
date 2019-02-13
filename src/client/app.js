@@ -12,13 +12,12 @@ import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
+import "./scss/app.scss";
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
 
 library.add(faTag);
 library.add(faSearch);
-
-import "./scss/app.scss";
-import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
 
 class App extends Component {
     render() {
@@ -35,11 +34,6 @@ class App extends Component {
                             path="/editprofil"
                             component={EditProfil}
                         />
-                        <Route
-                            exact
-                            path="/homepagetest"
-                            component={Homepage}
-                        />{" "}
                         {/* Pour l'integration d'Olivier*/}
                         <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}

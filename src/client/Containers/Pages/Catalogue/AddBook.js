@@ -8,12 +8,6 @@ export class AddBook extends React.Component {
         this.handleChange = this.handleChange.bind(this);
         this.state = {
             books: [],
-            title: "",
-            author: "",
-            isbn: "",
-            language: "",
-            summary: "",
-            owner: "",
             isBook: false,
             isEbook: false,
         };
@@ -157,7 +151,7 @@ export class AddBook extends React.Component {
                     />
                     <hr />
 
-                    <button type="submit" className="button is-info">
+                    <button type="submit" className="primary-button">
                         {"Add Book"}
                     </button>
                 </form>

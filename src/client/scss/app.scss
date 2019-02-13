@@ -28,7 +28,7 @@ body {
 
     .backgroundhome {
         position: relative;
-        width: 100%;
+
         background-color: $color1;
     }
 
@@ -114,6 +114,44 @@ body {
         opacity: 20;
     }
 
+
+    .error {
+        color: $color_error;
+    }
+
+    .button.is-text {
+        text-decoration: none;
+        color: $color2;
+    }
+
+    .button.is-info {
+        background-color: transparent;
+
+    }
+
+    .button.is-info:hover {
+        color: $color2;
+        background-color: transparent;
+
+    }
+
+    //input
+
+    .inputsearch {
+        width: 149px;
+        height: 26px;
+        left: 1093px;
+        top: 308px;
+        background: rgba(255, 255, 255, 0.84);
+        border-radius: 30px;
+        border: none;
+        padding: 2px;
+        font-family: $font1;
+        padding-left: 10px;
+        margin-left: 20px;
+    }
+
+
     .button.is-text {
         text-decoration: none;
         color: #63C3D1;
@@ -174,9 +212,10 @@ body {
         text-align: center;
         position: relative;
         overflow: hidden;
+        margin-top: 50px;
 
         img {
-            width: 180px;
+            width: 280px;
         }
 
         p {
@@ -192,7 +231,8 @@ body {
         input[type=text],
         input[type=password] {
             outline: none;
-            width: 15%;
+            width: 25%;
+            height: 30px;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -201,7 +241,7 @@ body {
             box-sizing: border-box;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.60);
-            color: $color3;
+            color: $color1;
         }
 
         input:focus {
@@ -211,7 +251,6 @@ body {
         }
 
         ::-webkit-input-placeholder {
-            color: $color3;
             text-align: center;
             justify-content: center;
         }
@@ -222,7 +261,7 @@ body {
 
         svg {
             padding-top: 2px;
-            margin-left: 15px;
+            margin-top: 15px;
         }
 
         button {
@@ -236,40 +275,6 @@ body {
 
     }
 
-    input[type=text],
-    input[type=password] {
-        background-color: rgba(255, 255, 255, 0.60);
-        color: $color3;
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    input[type=checkbox] {
-        margin: 10px;
-    }
-
-    input:focus {
-        outline: none;
-        text-align: center;
-        border: 1px solid rgba(245, 126, 41, 0.80);
-    }
-
-    ::-webkit-input-placeholder {
-        color: $color3;
-        text-align: center;
-        justify-content: center;
-    }
-
-    :-moz-placeholder {
-        // FireFox
-        text-align: center;
-    }
 
 
     /**************** FIN LOGIN PAGE **********************/
@@ -297,6 +302,43 @@ body {
         border-radius: 20px;
         text-align: center;
         padding: 40px;
+
+        input[type=text],
+        input[type=password] {
+            outline: none;
+            width: 40%;
+            height: 30px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.60);
+            color: $color1;
+        }
+
+        input:focus {
+            outline: none;
+            text-align: center;
+            border: 1px solid rgba(245, 126, 41, 0.80);
+        }
+
+        ::-webkit-input-placeholder {
+            text-align: center;
+            justify-content: center;
+        }
+
+        :-moz-placeholder {
+            text-align: center;
+        }
+
+        svg {
+            padding-top: 2px;
+            margin-top: 15px;
+        }
+
     }
 
 
@@ -421,31 +463,156 @@ body {
     padding: 40px;
     position: relative;
 
-    .editprofil-image {
-        position: relative;
-        display: flex;
-        float: left;
-        width: 260px;
-        height: 260px;
-    }
+            .editprofil-image {
+                position: relative;
+                display: flex;
+                float: left;
+                width: 260px;
+                height: 260px;
+            }
 
-    h1 {
-        color: $color3;
-        font-size: 30px;
-        position: relative;
-        float: right;
-        font-weight: 600;
-    }
 
-    hr {
-        margin-bottom: 5em;
-        margin-top: 5em;
-        width: 100%;
-    }
+            h1 {
+                color: $color3;
+                font-size: 30px;
+                position: relative;
+                float: right;
+                font-weight: 600;
+            }
 
-    button {
-        margin-left: 15em;
-    }
+            hr {
+                margin-bottom: 5em;
+                margin-top: 5em;
+                width: 100%;
+            }
+
+
+            svg {
+                padding-top: 2px;
+                margin-top: 15px;
+            }
+
+            input {
+                outline: none;
+                width: 25%;
+                height: 30px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.60);
+                color: $color1;
+            }
+
+
 }
 
-/*********** FIN EDIT PROFIL **************/
+
+
+/**************** Catalogue *************/
+.backgroundhome {
+    .backgroundcat {
+        width: 95%;
+        margin: 0 auto auto auto;
+        background-color: rgba(255, 255, 255, 0.17);
+        padding: 30px;
+        border-radius: 5rem;
+        margin-top: 5rem;
+    }
+
+
+.NavCatalogue{
+  width : 75%;
+  margin: 100px auto auto 100px;
+  display : inline-flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+.titleCat {
+background-color: rgba(255,255,255,0.5);
+margin: auto;
+margin-top: 2rem;
+width: 15rem;
+border-radius: 1rem;
+padding: 0.5rem;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+line-height: normal;
+font-size: 38px;
+text-align: center;
+color: rgb(26, 38, 50);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ELIAS CSS JUST FOR CARDS AND Modal
+#bookCard {
+    width: 15rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    padding: 1.2rem;
+    margin: 3rem;
+    text-align: center;
+    display: inline-block;
+}
+
+#cardImage {
+    width: 8rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#cardButton {
+    margin-top: 1rem;
+    color: white;
+    background-color: rgb(26, 38, 50);
+}
+
+#catalogue {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 5rem;
+}
+ #bookCardHeader {
+     color: white;
+     background-color: rgb(26, 38, 50);
+     border-radius: 1rem;
+     padding-top: 0.5rem;
+     padding-bottom: 0.5rem;
+ }
