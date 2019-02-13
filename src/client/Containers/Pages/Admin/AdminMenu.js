@@ -1,11 +1,11 @@
 import * as React from "react";
 
 // Components
-// import BooksList from "../Lists/BooksList";
-// import UsersList from "../Lists/UsersList";
-// import LoansList from "../Lists/LoansList";
+import BooksList from "../Lists/BooksList";
+import UsersList from "../Lists/UsersList";
+import LoansList from "../Lists/LoansList";
 
-export default class NavActions extends React.Component {
+export default class AdminMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -43,9 +43,19 @@ export default class NavActions extends React.Component {
     }
 
     render() {
+        let List = null;
+
+        if (this.state.buttonUsers === "active-button") {
+            List = <UsersList />;
+        } else if (this.state.buttonBooks === "active-button") {
+            List = <BooksList />;
+        } else if (this.state.buttonLoans === "active-button") {
+            List = <LoansList />;
+        }
+
         return (
-            <div className="backgroundhome">
-                <div className="navactions">
+            <div className="container">
+                <div className="navadmin">
                     <button
                         className={this.state.buttonUsers}
                         onClick={this.manageUsers}>
@@ -62,7 +72,7 @@ export default class NavActions extends React.Component {
                         {"Manage Loans"}
                     </button>
                 </div>
-                <div />
+                <div className="table-container"> {List} </div>
             </div>
         );
     }
