@@ -1,6 +1,7 @@
 import * as React from "react";
 import axios from "axios";
 import NavCatalogue from "./NavCatalogue.js";
+import NavBar from "../../Components/Navbar.js";
 
 export class Catalogue extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ export class Catalogue extends React.Component {
             owner: "",
             isBook: false,
             isEbook: false,
+            titleprinc: "List of Books",
         };
     }
 
@@ -28,9 +30,10 @@ export class Catalogue extends React.Component {
 
         return (
             <div className="backgroundhome">
+                <NavBar />
                 <NavCatalogue />
                 <div className="backgroundcat">
-                    <h1>{"List of Books"}</h1>
+                    <h1 className="titleCat">{this.state.titleprinc}</h1>
                     <ul>
                         {this.state.books.map(book => (
                             <li key={book._id}>
