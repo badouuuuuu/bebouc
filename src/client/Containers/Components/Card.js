@@ -1,6 +1,7 @@
 import * as React from "react";
 import Modal from "./Modal";
 import Magazine from "../../../assets/logo_Becode.png";
+import axios from "axios";
 
 export class Card extends React.Component {
     constructor(props) {
@@ -8,6 +9,21 @@ export class Card extends React.Component {
         this.state = {showModal: ""};
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
+    }
+
+    componentDidMount() {
+        // DOC OpenLibrary API : https://openlibrary.org/dev/docs/api/books
+        axios
+            .get(
+                `https://openlibrary.org/api/books?bibkeys=ISBN:${
+                    this.props.isbn
+                }&format=json`,
+            )
+            .then(res => {
+                const thumbnail = res.data;
+
+                console.log(thumbnail);
+            });
     }
 
     handleClick() {
