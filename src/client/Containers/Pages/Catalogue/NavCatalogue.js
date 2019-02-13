@@ -50,7 +50,7 @@ export default class NavCatalogue extends React.Component {
                             ref={input => (this.search = input)}
                         />
                     </div>
-                    <div className="control" Onclick={this.handleInputChange}>
+                    <div className="control" onClick={this.handleInputChange}>
                         <a className="button is-info">
                             <span className="icon">
                                 <FontAwesomeIcon icon="search" />

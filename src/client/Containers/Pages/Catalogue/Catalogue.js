@@ -1,7 +1,6 @@
 import * as React from "react";
 import axios from "axios";
 import NavCatalogue from "./NavCatalogue.js";
-// import NavCatalogue from "./NavCatalogue";
 
 export class Catalogue extends React.Component {
     constructor(props) {

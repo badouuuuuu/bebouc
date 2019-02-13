@@ -9,6 +9,7 @@ import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBooks} from "./Containers/Pages/Catalogue/AddBooks";
 import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
+import {Catalogue} from "./Containers/Pages/Catalogue/Catalogue";
 
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
@@ -33,11 +34,8 @@ class App extends Component {
                             path="/editprofil"
                             component={EditProfil}
                         />
-                        <Route
-                            exact
-                            path="/homepagetest"
-                            component={Homepage}
-                        />{" "}
+                        <Route exact path="/catalogue" component={Catalogue} />
+
                         {/* Pour l'integration d'Olivier*/}
                         <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}

@@ -3,6 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import path from "path";
+import cors from "cors";
 
 // Database connection
 mongoose.connect("mongodb://dev:dev@mongo:27017/bebook?authSource=admin");
@@ -25,21 +26,22 @@ const urlencodedParser = bodyParser.urlencoded({
 
 app.use(urlencodedParser);
 app.use(bodyParser.json());
+app.use(cors());
 
 // CORS config (even if we aim to deploy product in https)
-app.use((req, res, next) => {
-    res.setHeader(
-        "Access-Control-Allow-Headers",
-        "X-Requested-With,content-type",
-    );
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader(
-        "Access-Control-Allow-Methods",
-        "GET, POST, OPTIONS, PUT, PATCH, DELETE",
-    );
-    res.setHeader("Access-Control-Allow-Credentials", true);
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader(
+//         "Access-Control-Allow-Headers",
+//         "X-Requested-With,content-type",
+//     );
+//     res.setHeader("Access-Control-Allow-Origin", "*");
+//     res.setHeader(
+//         "Access-Control-Allow-Methods",
+//         "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+//     );
+//     res.setHeader("Access-Control-Allow-Credentials", true);
+//     next();
+// });
 
 //  ??
 app.use(express.static(path.resolve(__dirname, "../../bin/client")));
