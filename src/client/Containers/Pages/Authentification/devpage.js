@@ -75,6 +75,13 @@ export class devpage extends React.Component {
                 </form>
 
                 <hr />
+                <form action="/editprofil" method="get">
+                    <button className="button is-warning">
+                        {"Edit Profil"}
+                    </button>
+                    <p>{"Component Edit Profil"}</p>
+                </form>
+
                 <footer className="footer">
                     <div className="content has-text-centered">
                         <a
