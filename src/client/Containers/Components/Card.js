@@ -6,13 +6,14 @@ import axios from "axios";
 export class Card extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: "", thumbnail: {}};
+        this.state = {showModal: "", thumbnail: []};
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
 
     componentDidMount() {
         // DOC OpenLibrary API : https://openlibrary.org/dev/docs/api/books
+        // Test avec Google Book API - A rediscuter
         axios
             .get(
                 `https://www.googleapis.com/books/v1/volumes?q=isbn:${
