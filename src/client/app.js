@@ -8,6 +8,8 @@ import {Login} from "./Containers/Pages/Authentification/Login";
 import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBooks} from "./Containers/Pages/Catalogue/AddBooks";
+import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
+
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -26,6 +28,11 @@ class App extends Component {
                         <Route exact path="/" component={Homepage} />
                         <Route exact path="/login" component={Login} />
                         <Route exact path="/addbooks" component={AddBooks} />
+                        <Route
+                            exact
+                            path="/editprofil"
+                            component={EditProfil}
+                        />
                         <Route
                             exact
                             path="/homepagetest"

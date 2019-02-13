@@ -32,91 +32,88 @@ body {
         background-color: $color1;
     }
 
-button {
-    font-weight: 600;
-    padding: .3em .6em;
-    font-size: 1.7em;
-    border: none;
-    border-radius: .6em;
-    color: $text-light;
-}
+    button {
+        font-weight: 600;
+        padding: .3em .6em;
+        font-size: 1.7em;
+        border: none;
+        border-radius: .6em;
+        color: $text-light;
+    }
 
-// Headings
+    // Headings
 
-h1 {
-    color: $text-light;
-    font-weight: 900;
-    margin: 0;
-}
+    h1 {
+        color: $text-light;
+        font-weight: 900;
+        margin: 0;
+    }
 
-h2 {
-    color: $color2;
-    font-weight: 300;
-    margin: 0;
-}
+    h2 {
+        color: $color2;
+        font-weight: 300;
+        margin: 0;
+    }
 
-h3 {
-    color: $text-light;
-    font-weight: 400;
-    margin: 0;
-}
-/**************** DEBUT BUTTONS *************/
+    h3 {
+        color: $text-light;
+        font-weight: 400;
+        margin: 0;
+    }
 
-.primary-button {
-    background-color: $color1;
-    border-radius: 20px;
+    /**************** DEBUT BUTTONS *************/
 
-}
+    .primary-button {
+        background-color: $color1;
+        border-radius: 20px;
 
-.secondary-button {
-    background-color: $color2;
-    border-radius: 20px;
-    color: white;
-}
+    }
 
-.selected-button {
-    background-color: $color4;
+    .secondary-button {
+        background-color: $color2;
+        border-radius: 20px;
+        color: white;
+    }
 
-}
+    .selected-button {
+        background-color: $color4;
 
-.submit-button {
-    background-color: $color3;
-    color: white;
-    margin: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
-}
+    }
 
-.submit-button:hover {
-    background-color: white;
-    color: $color3;
-}
+    .submit-button {
+        background-color: $color3;
+        color: white;
+        margin: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
-.success-button {
-    background-color: $color_success;
-    border-radius: 20px;
-}
+    .submit-button:hover {
+        background-color: white;
+        color: $color3;
+    }
 
-button {
-    font-family: $font1;
-    font-weight: 600;
-    padding: .5em .8em;
-    font-size: 1em;
-    border: none;
-    border-radius: 1em;
-    cursor: pointer;
-}
+    .success-button {
+        background-color: $color_success;
+        border-radius: 20px;
+    }
 
-button:disabled {
-    color: rgba(255, 255, 255, 0.41);
-    background-color: grey;
-    opacity: 20;
-}
+    button {
+        font-family: $font1;
+        font-weight: 600;
+        padding: .5em .8em;
+        font-size: 1em;
+        border: none;
+        border-radius: 1em;
+        cursor: pointer;
+    }
 
-.button.is-text {
-    text-decoration: none;
-    color: #63C3D1;
-}
+    button:disabled {
+        color: rgba(255, 255, 255, 0.41);
+        background-color: grey;
+        opacity: 20;
+    }
+
 
 .error {
     color: $color_error;
@@ -153,85 +150,144 @@ background-color: transparent;
 }
 
 
-/**************** FIN BUTTONS *************/
+    .button.is-text {
+        text-decoration: none;
+        color: #63C3D1;
+    }
 
-/*******************************************/
+    .error {
+        color: $color_error,
+    }
 
-/**************** ICON INPUTS LOGIN AND ADDUSERS *************/
+    /**************** FIN BUTTONS *************/
 
-.icon-input-field {
+    /*******************************************/
 
-    position: absolute;
-    width: 10px;
-    text-align: center;
-    margin-top: 18px;
-    margin-left: 10px;
-    color: rgba(245, 126, 41, 0.80);
-    opacity: 30%;
+    /**************** ICON INPUTS LOGIN AND ADDUSERS *************/
 
-}
+    .icon-input-field {
 
-/**************** FIN ICON  INPUTS LOGIN AND ADDUSERS *************/
+        position: absolute;
+        width: 10px;
+        text-align: center;
+        margin-top: 18px;
+        margin-left: 10px;
+        color: rgba(245, 126, 41, 0.80);
+        opacity: 30%;
 
-/*******************************************/
+    }
 
-/************* DEBUT LOGIN PAGE  ***********/
+    /**************** FIN ICON  INPUTS LOGIN AND ADDUSERS *************/
 
-.backgoundImage {
-    background-image: url('../../assets/backgroundimage-gradien-1080p.jpg');
-    background-size: cover;
-    margin: 0 auto;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    /*******************************************/
 
-    &:before {
-        content: '';
+    /************* DEBUT LOGIN PAGE  ***********/
+
+    .backgoundImage {
+        background-image: url('../../assets/backgroundimage-gradien-1080p.jpg');
+        background-size: cover;
+        margin: 0 auto;
+        position: absolute;
         top: 0;
         right: 0;
         bottom: 0;
         left: 0;
-        position: absolute;
-        background-image: linear-gradient(to bottom right, $color1, $color2);
-        opacity: 0.7;
-    }
-}
 
-.login_container {
-
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-
-    img {
-        width: 180px;
+        &:before {
+            content: '';
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            background-image: linear-gradient(to bottom right, $color1, $color2);
+            opacity: 0.7;
+        }
     }
 
-    p {
-        padding-top: 10px;
-        cursor: pointer;
-        color: $color3;
-    }
+    .login_container {
 
-    p:hover {
-        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+
+        img {
+            width: 180px;
+        }
+
+        p {
+            padding-top: 10px;
+            cursor: pointer;
+            color: $color3;
+        }
+
+        p:hover {
+            color: white;
+        }
+
+        input[type=text],
+        input[type=password] {
+            outline: none;
+            width: 15%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.60);
+            color: $color3;
+        }
+
+        input:focus {
+            outline: none;
+            text-align: center;
+            border: 1px solid rgba(245, 126, 41, 0.80);
+        }
+
+        ::-webkit-input-placeholder {
+            color: $color3;
+            text-align: center;
+            justify-content: center;
+        }
+
+        :-moz-placeholder {
+            text-align: center;
+        }
+
+        svg {
+            padding-top: 2px;
+            margin-left: 15px;
+        }
+
+        button {
+            cursor: pointer;
+            color: white;
+            background-color: $color3;
+            padding-left: 20px;
+            padding-right: 20px;
+
+        }
+
     }
 
     input[type=text],
     input[type=password] {
-        outline: none;
-        width: 15%;
+        background-color: rgba(255, 255, 255, 0.60);
+        color: $color3;
+        width: 50%;
         padding: 12px 20px;
         margin: 8px 0;
         display: inline-block;
         border: 1px solid #ccc;
-        border-radius: 20px;
+        border-radius: 15px;
         box-sizing: border-box;
         text-align: center;
-        background-color: rgba(255, 255, 255, 0.60);
-        color: $color3;
+    }
+
+    input[type=checkbox] {
+        margin: 10px;
     }
 
     input:focus {
@@ -247,93 +303,43 @@ background-color: transparent;
     }
 
     :-moz-placeholder {
+        // FireFox
         text-align: center;
     }
 
-    svg {
-        padding-top: 2px;
-        margin-left: 15px;
+
+    /**************** FIN LOGIN PAGE **********************/
+
+    /*******************************************************/
+
+    /**************** DEBUT ADD USERS COMPONENTS *************/
+
+    .container {
+        text-align: center;
     }
 
-    button {
-        cursor: pointer;
-        color: white;
+    hr {
         background-color: $color3;
-        padding-left: 20px;
-        padding-right: 20px;
-
+        width: 250px;
+        margin: 10px auto;
+        height: 1px;
     }
 
-}
-
-input[type=text],
-input[type=password] {
-    background-color: rgba(255, 255, 255, 0.60);
-    color: $color3;
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 15px;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-input[type=checkbox] {
-    margin: 10px;
-}
-
-input:focus {
-    outline: none;
-    text-align: center;
-    border: 1px solid rgba(245, 126, 41, 0.80);
-}
-
-::-webkit-input-placeholder {
-    color: $color3;
-    text-align: center;
-    justify-content: center;
-}
-
-:-moz-placeholder {
-    // FireFox
-    text-align: center;
-}
+    .adduser-component {
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.50);
+        width: 560px;
+        height: 520px;
+        border-radius: 20px;
+        text-align: center;
+        padding: 40px;
+    }
 
 
-/**************** FIN LOGIN PAGE **********************/
-
-/*******************************************************/
-
-/**************** DEBUT ADD USERS COMPONENTS *************/
-
-.container {
-    text-align: center;
-}
-
-hr {
-    background-color: $color3;
-    width: 250px;
-    margin: 10px auto;
-    height: 1px;
-}
-
-.adduser-component {
-    margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.50);
-    width: 560px;
-    height: 520px;
-    border-radius: 20px;
-    text-align: center;
-    padding: 40px;
-}
-
-
-.addusers_title {
-    font-size: 48px;
-    color: white;
-}
+    .addusers_title {
+        font-size: 48px;
+        color: white;
+    }
 
 }
 
@@ -344,6 +350,128 @@ hr {
 .navbar {
     background-color: $color1;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*********** DEBUT EDIT PROFIL **************/
+
+.editprofil-component {
+    margin: 0 auto;
+    background-color: white;
+    width: 800px;
+    height: 600px;
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px;
+    position: relative;
+
+    .editprofil-image {
+        position: relative;
+        display: flex;
+        float: left;
+        width: 260px;
+        height: 260px;
+    }
+
+    h1 {
+        color: $color3;
+        font-size: 30px;
+        position: relative;
+        float: right;
+        font-weight: 600;
+    }
+
+    hr {
+        margin-bottom: 5em;
+        margin-top: 5em;
+        width: 100%;
+    }
+
+    button {
+        margin-left: 15em;
+    }
+}
+
+
 
 /**************** Catalogue *************/
 
