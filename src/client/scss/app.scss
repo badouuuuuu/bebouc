@@ -315,8 +315,14 @@ background-color: transparent;
 
 //NAVBAR
 
-.navbar {
+.navigation {
     background-color: $color1;
+}
+
+.navactions {
+    display: flex;
+    justify-content: space-around;
+    margin: 1em 10em;
 }
 
 
