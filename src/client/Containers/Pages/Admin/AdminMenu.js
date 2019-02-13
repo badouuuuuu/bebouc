@@ -1,5 +1,10 @@
 import * as React from "react";
 
+// Components
+// import BooksList from "../Lists/BooksList";
+// import UsersList from "../Lists/UsersList";
+// import LoansList from "../Lists/LoansList";
+
 export default class NavActions extends React.Component {
     constructor(props) {
         super(props);
@@ -39,22 +44,25 @@ export default class NavActions extends React.Component {
 
     render() {
         return (
-            <div className="navactions">
-                <button
-                    className={this.state.buttonUsers}
-                    onClick={this.manageUsers}>
-                    {"Manage Users"}
-                </button>
-                <button
-                    className={this.state.buttonBooks}
-                    onClick={this.manageBooks}>
-                    {"Manage Books"}
-                </button>
-                <button
-                    className={this.state.buttonLoans}
-                    onClick={this.manageLoans}>
-                    {"Manage Loans"}
-                </button>
+            <div className="backgroundhome">
+                <div className="navactions">
+                    <button
+                        className={this.state.buttonUsers}
+                        onClick={this.manageUsers}>
+                        {"Manage Users"}
+                    </button>
+                    <button
+                        className={this.state.buttonBooks}
+                        onClick={this.manageBooks}>
+                        {"Manage Books"}
+                    </button>
+                    <button
+                        className={this.state.buttonLoans}
+                        onClick={this.manageLoans}>
+                        {"Manage Loans"}
+                    </button>
+                </div>
+                <div />
             </div>
         );
     }
