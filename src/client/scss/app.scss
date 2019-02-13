@@ -156,7 +156,13 @@ body {
         right: 0;
         bottom: 0;
         left: 0;
+        position: absolute;
+        background-image: linear-gradient(to bottom right, $color1, $color2);
+        opacity: 0.7;
+    }
+}
 
+.login_container {
         &:before {
             content: '';
             top: 0;
@@ -305,7 +311,6 @@ body {
         color: white;
     }
 
-}
 
 /**************** FIN ADD USERS COMPONENTS *************/
 
@@ -438,3 +443,11 @@ body {
 
 
 /*********** FIN EDIT PROFIL **************/
+
+.backgroundcat {
+    background-color: rgba(255,255,255, 0.5);
+    width: 75%;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 1rem;
+}
