@@ -28,7 +28,7 @@ body {
 
     .backgroundhome {
         position: relative;
-        width: 100%;
+
         background-color: $color1;
     }
 
@@ -114,6 +114,43 @@ body {
         opacity: 20;
     }
 
+
+.error {
+    color: $color_error;
+  }
+.button.is-text{
+  text-decoration: none;
+  color : $color2;
+}
+
+.button.is-info{
+ background-color: transparent;
+
+}
+.button.is-info:hover{
+color : $color2;
+background-color: transparent;
+
+}
+
+//input
+
+.inputsearch
+{
+  width: 149px;
+  height: 26px;
+  left: 1093px;
+  top: 308px;
+  background: rgba(255, 255, 255, 0.84);
+  border-radius: 30px;
+  border : none;
+  padding : 2px;
+  font-family: $font1;
+  padding-left: 10px;
+  margin-left: 20px;
+}
+
+
     .button.is-text {
         text-decoration: none;
         color: #63C3D1;
@@ -156,13 +193,7 @@ body {
         right: 0;
         bottom: 0;
         left: 0;
-        position: absolute;
-        background-image: linear-gradient(to bottom right, $color1, $color2);
-        opacity: 0.7;
-    }
-}
 
-.login_container {
         &:before {
             content: '';
             top: 0;
@@ -180,9 +211,10 @@ body {
         text-align: center;
         position: relative;
         overflow: hidden;
+        margin-top: 50px;
 
         img {
-            width: 180px;
+            width: 280px;
         }
 
         p {
@@ -198,7 +230,8 @@ body {
         input[type=text],
         input[type=password] {
             outline: none;
-            width: 15%;
+            width: 25%;
+            height: 30px;
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
@@ -207,7 +240,7 @@ body {
             box-sizing: border-box;
             text-align: center;
             background-color: rgba(255, 255, 255, 0.60);
-            color: $color3;
+            color: $color1;
         }
 
         input:focus {
@@ -217,7 +250,6 @@ body {
         }
 
         ::-webkit-input-placeholder {
-            color: $color3;
             text-align: center;
             justify-content: center;
         }
@@ -228,7 +260,7 @@ body {
 
         svg {
             padding-top: 2px;
-            margin-left: 15px;
+            margin-top: 15px;
         }
 
         button {
@@ -242,40 +274,6 @@ body {
 
     }
 
-    input[type=text],
-    input[type=password] {
-        background-color: rgba(255, 255, 255, 0.60);
-        color: $color3;
-        width: 50%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 15px;
-        box-sizing: border-box;
-        text-align: center;
-    }
-
-    input[type=checkbox] {
-        margin: 10px;
-    }
-
-    input:focus {
-        outline: none;
-        text-align: center;
-        border: 1px solid rgba(245, 126, 41, 0.80);
-    }
-
-    ::-webkit-input-placeholder {
-        color: $color3;
-        text-align: center;
-        justify-content: center;
-    }
-
-    :-moz-placeholder {
-        // FireFox
-        text-align: center;
-    }
 
 
     /**************** FIN LOGIN PAGE **********************/
@@ -311,6 +309,7 @@ body {
         color: white;
     }
 
+}
 
 /**************** FIN ADD USERS COMPONENTS *************/
 
@@ -421,6 +420,7 @@ body {
         height: 260px;
     }
 
+
     h1 {
         color: $color3;
         font-size: 30px;
@@ -437,17 +437,55 @@ body {
 
     button {
         margin-left: 15em;
+
     }
+    svg {
+        padding-top: 2px;
+        margin-top: 15px;
+    }
+    input {outline: none;
+    width: 25%;
+    height: 30px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.60);
+    color: $color1;
+  }
+
+  button {
+      cursor: pointer;
+      color: white;
+      background-color: $color3;
+      padding-left: 20px;
+      padding-right: 20px;
+
+  }
 }
 
 
 
-/*********** FIN EDIT PROFIL **************/
+/**************** Catalogue *************/
+.backgroundhome{
+.backgroundcat{
+width: 75%;
+margin: 0 auto auto auto;
+background-color: rgba(255, 255, 255, 0.17);
+padding: 30px
 
-.backgroundcat {
-    background-color: rgba(255,255,255, 0.5);
-    width: 75%;
-    margin: auto;
-    padding: 3rem;
-    border-radius: 1rem;
+}
+.NavCatalogue{
+  width : 75%;
+  margin: 100px auto auto 100px;
+  display : inline-flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+}
+h1 {
+  
+}
 }
