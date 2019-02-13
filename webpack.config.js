@@ -112,7 +112,7 @@ module.exports = env => {
                     ],
                 },
             ],
-        },
+        },         
         plugins,
         devServer: {
             historyApiFallback: true,
