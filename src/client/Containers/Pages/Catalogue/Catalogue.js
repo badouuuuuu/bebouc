@@ -9,8 +9,6 @@ export class Catalogue extends React.Component {
         super(props);
         this.state = {
             books: [],
-            isBook: false,
-            isEbook: false,
         };
     }
 
@@ -30,7 +28,7 @@ export class Catalogue extends React.Component {
                 <Card
                     index={index}
                     key={book._id}
-                    title={book.title}
+                    Laura={book.title}
                     author={book.author}
                     language={book.language}
                     owner={book.owner}
