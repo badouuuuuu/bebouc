@@ -1,16 +1,39 @@
 import * as React from "react";
 import Modal from "./Modal";
 import Magazine from "../../../assets/logo_Becode.png";
+import axios from "axios";
 
 export class Card extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: ""};
+        this.state = {showModal: "", thumbnail: []};
         this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    }
+
+    componentDidMount() {
+        // DOC OpenLibrary API : https://openlibrary.org/dev/docs/api/books
+        // Test avec Google Book API - A rediscuter
+        axios
+            .get(
+                `https://www.googleapis.com/books/v1/volumes?q=isbn:${
+                    this.props.isbn
+                }`,
+            )
+            .then(res => {
+                const thumbnail = res.data.items[0].volumeInfo;
+
+                this.setState({thumbnail});
+                console.log(thumbnail);
+            });
     }
 
     handleClick() {
         this.setState({showModal: "is-active"});
+    }
+
+    handleClose() {
+        this.setState({showModal: ""});
     }
 
     render() {
@@ -36,6 +59,7 @@ export class Card extends React.Component {
                     <li>
                         {" "}
                         <Modal
+                            closeModal={this.handleClose}
                             show={this.state.showModal}
                             index={this.props.index}
                             key={this.props._id}

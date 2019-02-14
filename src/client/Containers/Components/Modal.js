@@ -8,10 +8,16 @@ export class Modal extends React.Component {
             <div className={`modal ${this.props.show}`}>
                 <div className="modal-background" />
                 <div className="modal-content">
+                    <h1 id="modalTitle">{this.props.title}</h1>
+                    <p id="modalAuthor">{`By ${this.props.author}`}</p>
                     <img src={Magazine} />
-                    <h1>{`Book modal number ${this.props.index}`}</h1>
+                    <p id="modalSummary">{this.props.summary}</p>
                 </div>
-                <button className="modal-close is-large" aria-label="close" />
+                <button
+                    onClick={this.props.closeModal}
+                    className="modal-close is-large"
+                    aria-label="close"
+                />
             </div>
         );
     }

@@ -9,6 +9,7 @@ import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBook} from "./Containers/Pages/Catalogue/AddBook";
 import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
+import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -38,6 +39,11 @@ class App extends Component {
                         <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}
                         <PrivateRoute path="/homepage" component={Homepage} />
+                        <Route
+                            exact
+                            path="*"
+                            component={() => "404 NOT FOUND"}
+                        />
                     </Switch>
                 </div>
             </div>
