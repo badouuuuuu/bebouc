@@ -18,7 +18,7 @@ export class Card extends React.Component {
             .get(
                 `https://www.googleapis.com/books/v1/volumes?q=isbn:${
                     this.props.isbn
-                }`,
+                }&key=AIzaSyBYyqtzSRvEiwOIUfHR4KaMzlyo7sNjBgI`,
             )
             .then(res => {
                 const thumbnail =
@@ -60,6 +60,7 @@ export class Card extends React.Component {
                     <li>
                         {" "}
                         <Modal
+                            thumbnail={this.state.thumbnail}
                             closeModal={this.handleClose}
                             show={this.state.showModal}
                             index={this.props.index}

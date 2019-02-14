@@ -1,6 +1,5 @@
 import * as React from "react";
 // import Magazine from '../../../assets/open-magazine.svg';
-import Magazine from "../../../assets/logo_Becode.png";
 
 export class Modal extends React.Component {
     render() {
@@ -10,7 +9,7 @@ export class Modal extends React.Component {
                 <div className="modal-content">
                     <h1 id="modalTitle">{this.props.title}</h1>
                     <p id="modalAuthor">{`By ${this.props.author}`}</p>
-                    <img src={Magazine} />
+                    <img src={this.props.thumbnail} />
                     <p id="modalSummary">{this.props.summary}</p>
                 </div>
                 <button

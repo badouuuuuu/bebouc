@@ -35,15 +35,17 @@ let userSchema = new mongoose.Schema(
 // JTW methods
 userSchema.methods = {
     authenticate: function(password, next /* fonction callback */) {
-        bcrypt.compare(password, this.password).then(res => {
-            next(res);
-            console.log(`result ${res}`);
-            console.log(`password ${password}`);
-            console.log(`bd_password ${this.password}`);
-        });
+        bcrypt
+            .compare(password, this.password)
+            .then(res => {
+                next(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
     },
     getToken: function() {
-        return jwt.encode(this, "lol");
+        return jwt.encode(this, process.env.JWT_TOKEN);
     },
 };
 
