@@ -15,7 +15,6 @@ export class BooksList extends React.Component {
             const books = res.data;
 
             this.setState({books});
-            console.log(books);
         });
     }
 

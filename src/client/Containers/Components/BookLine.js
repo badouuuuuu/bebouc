@@ -1,6 +1,32 @@
 import * as React from "react";
+import DeleteModal from "./DeleteModal";
 
 export class BookLine extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            showmodal: "",
+        };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
+    }
+
+    // axios
+    // .delete(`http://localhost/api/books:/${this.props.key}`)
+    // .then(res => {
+    //     const books = res.data;
+
+    //     this.setState({books});
+    // });
+
+    handleClick() {
+        this.setState({showModal: "is-active"});
+    }
+
+    handleClose() {
+        this.setState({showModal: ""});
+    }
+
     render() {
         const isbook = this.props.book;
         const isebook = this.props.ebook;
@@ -16,8 +42,19 @@ export class BookLine extends React.Component {
                 <td>{isebook ? "Yes" : "No"}</td>
                 <td>
                     <button className="secondary-button">{"Edit"}</button>
-                    <button className="selected-button">{"Delete"}</button>
+                    <button
+                        className="selected-button"
+                        onClick={this.handleClick}>
+                        {"Delete"}
+                    </button>
                 </td>
+                <DeleteModal
+                    name={"a book"}
+                    closeModal={this.handleClose}
+                    show={this.state.showModal}
+                    title={this.props.title}
+                    delete={this.props.delete}
+                />
             </tr>
         );
     }
