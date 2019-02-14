@@ -29,12 +29,10 @@ export class Card extends React.Component {
     }
 
     handleClick() {
-        console.log("click is open");
         this.setState({showModal: "is-active"});
     }
 
     handleClose() {
-        console.log("Modal is close");
         this.setState({showModal: ""});
     }
 
