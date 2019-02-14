@@ -115,40 +115,41 @@ body {
     }
 
 
-.error {
-    color: $color_error;
-  }
-.button.is-text{
-  text-decoration: none;
-  color : $color2;
-}
+    .error {
+        color: $color_error;
+    }
 
-.button.is-info{
- background-color: transparent;
+    .button.is-text {
+        text-decoration: none;
+        color: $color2;
+    }
 
-}
-.button.is-info:hover{
-color : $color2;
-background-color: transparent;
+    .button.is-info {
+        background-color: transparent;
 
-}
+    }
 
-//input
+    .button.is-info:hover {
+        color: $color2;
+        background-color: transparent;
 
-.inputsearch
-{
-  width: 149px;
-  height: 26px;
-  left: 1093px;
-  top: 308px;
-  background: rgba(255, 255, 255, 0.84);
-  border-radius: 30px;
-  border : none;
-  padding : 2px;
-  font-family: $font1;
-  padding-left: 10px;
-  margin-left: 20px;
-}
+    }
+
+    //input
+
+    .inputsearch {
+        width: 149px;
+        height: 26px;
+        left: 1093px;
+        top: 308px;
+        background: rgba(255, 255, 255, 0.84);
+        border-radius: 30px;
+        border: none;
+        padding: 2px;
+        font-family: $font1;
+        padding-left: 10px;
+        margin-left: 20px;
+    }
 
 
     .button.is-text {
@@ -301,6 +302,43 @@ background-color: transparent;
         border-radius: 20px;
         text-align: center;
         padding: 40px;
+
+        input[type=text],
+        input[type=password] {
+            outline: none;
+            width: 40%;
+            height: 30px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.60);
+            color: $color1;
+        }
+
+        input:focus {
+            outline: none;
+            text-align: center;
+            border: 1px solid rgba(245, 126, 41, 0.80);
+        }
+
+        ::-webkit-input-placeholder {
+            text-align: center;
+            justify-content: center;
+        }
+
+        :-moz-placeholder {
+            text-align: center;
+        }
+
+        svg {
+            padding-top: 2px;
+            margin-top: 15px;
+        }
+
     }
 
 
@@ -313,19 +351,26 @@ background-color: transparent;
 
 /**************** FIN ADD USERS COMPONENTS *************/
 
-//NAVBAR
+// NAVBAR
 
 .navigation {
     background-color: $color1;
 }
 
-.navactions {
+.navadmin {
     display: flex;
     justify-content: space-around;
     margin: 1em 10em;
 }
 
+// TABLES
 
+.table {
+    margin: 0 auto;
+    margin-top: 4em;
+    margin-bottom: 4em;
+    border-radius: .6em;
+}
 
 
 
@@ -418,72 +463,69 @@ background-color: transparent;
     padding: 40px;
     position: relative;
 
-    .editprofil-image {
-        position: relative;
-        display: flex;
-        float: left;
-        width: 260px;
-        height: 260px;
-    }
+            .editprofil-image {
+                position: relative;
+                display: flex;
+                float: left;
+                width: 260px;
+                height: 260px;
+            }
 
 
-    h1 {
-        color: $color3;
-        font-size: 30px;
-        position: relative;
-        float: right;
-        font-weight: 600;
-    }
+            h1 {
+                color: $color3;
+                font-size: 30px;
+                position: relative;
+                float: right;
+                font-weight: 600;
+            }
 
-    hr {
-        margin-bottom: 5em;
-        margin-top: 5em;
-        width: 100%;
-    }
+            hr {
+                margin-bottom: 5em;
+                margin-top: 5em;
+                width: 100%;
+            }
 
-    button {
-        margin-left: 15em;
 
-    }
-    svg {
-        padding-top: 2px;
-        margin-top: 15px;
-    }
-    input {outline: none;
-    width: 25%;
-    height: 30px;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    box-sizing: border-box;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.60);
-    color: $color1;
-  }
+            svg {
+                padding-top: 2px;
+                margin-top: 15px;
+            }
 
-  button {
-      cursor: pointer;
-      color: white;
-      background-color: $color3;
-      padding-left: 20px;
-      padding-right: 20px;
+            input {
+                outline: none;
+                width: 25%;
+                height: 30px;
+                padding: 12px 20px;
+                margin: 8px 0;
+                display: inline-block;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                box-sizing: border-box;
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.60);
+                color: $color1;
+            }
 
-  }
+
 }
 
 
 
 /**************** Catalogue *************/
-.backgroundhome{
-.backgroundcat{
-width: 75%;
-margin: 0 auto auto auto;
-background-color: rgba(255, 255, 255, 0.17);
-padding: 30px
+.backgroundhome {
+    .backgroundcat {
+        width: 95%;
+        margin: 0 auto;
+        background-color: rgba(255, 255, 255, 0.17);
+        padding: 30px;
+        border-radius: 5rem;
+        margin-top: 5rem;
+        position: relative;
+        text-align: center;
+    }
 
-}
+
 .NavCatalogue{
   width : 75%;
   margin: 100px auto auto 100px;
@@ -492,13 +534,112 @@ padding: 30px
   padding-right: 10px;
 }
 .titleCat {
-
+background-color: rgba(255,255,255,0.5);
+margin: auto;
+margin-top: 2rem;
+width: 15rem;
+border-radius: 1rem;
+padding: 0.5rem;
 font-family: Roboto;
 font-style: normal;
 font-weight: bold;
 line-height: normal;
 font-size: 38px;
 text-align: center;
-color: #F57E29;
+color: rgb(26, 38, 50);
 }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ELIAS CSS JUST FOR CARDS AND Modal
+#bookCard {
+    width: 15rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
+    padding: 1.2rem;
+    margin: 3rem;
+    text-align: center;
+    display: inline-block;
+}
+
+#cardImage {
+    width: 8rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+#cardButton {
+    margin-top: 1rem;
+    color: white;
+    background-color: rgb(26, 38, 50);
+}
+
+#catalogue {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    margin-bottom: 5rem;
+}
+ #bookCardHeader {
+     color: white;
+     background-color: rgb(26, 38, 50);
+     border-radius: 1rem;
+     padding-top: 0.5rem;
+     padding-bottom: 0.5rem;
+ }
+ #modalTitle {
+     color: white;
+     font-size: 3rem;
+     background-color: rgb(26, 38, 50);
+     border-radius: 1rem;
+     padding-top: 0.5rem;
+     padding-bottom: 0.5rem;
+     padding-left: 1rem;
+     padding-right: 1rem;
+ }
+ #modalAuthor {
+    margin-top: 1rem;
+    margin-bottom: 0.6rem;
+    font-size: 1.5rem;
+    color: white;
+    font-style: italic;
+ }
+ #modalSummary {
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: white;
+    background-color: rgba(26, 38, 50, 0.3);
+    border-radius: 1.5rem;
+ }

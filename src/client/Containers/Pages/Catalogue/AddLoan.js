@@ -1,30 +1,22 @@
 import * as React from "react";
 import axios from "axios";
 
-export class AddBooks extends React.Component {
+export class AddLoan extends React.Component {
     constructor(props) {
         super(props);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
         this.state = {
-            books: [],
-            title: "",
-            author: "",
-            isbn: "",
-            language: "",
-            summary: "",
-            owner: "",
-            isBook: false,
-            isEbook: false,
+            loans: [],
         };
     }
 
     componentDidMount() {
-        axios.get(`http://localhost/api/books`).then(res => {
-            const books = res.data;
+        axios.get(`http://localhost/api/loans`).then(res => {
+            const loans = res.data;
 
-            this.setState({books});
-            console.log(books);
+            this.setState({loans});
+            console.log(loans);
         });
     }
 
@@ -37,34 +29,34 @@ export class AddBooks extends React.Component {
         });
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
-        axios
-            .post(`http://localhost/api/books`, {
-                title: this.state.title,
-                author: this.state.author,
-                isbn: this.state.isbn,
-                language: this.state.language,
-                summary: this.state.summary,
-                owner: "John",
-                isEbook: true,
-                isBook: false,
-            })
-            .then(res => {
-                if (res.status !== 200) {
-                    console.log("Livre déjà existant");
-                } else {
-                    this.setState(prevState => {
-                        return {
-                            books: [...prevState.books, res.data],
-                        };
-                    });
-                }
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    }
+    // handleSubmit(e) {
+    //     e.preventDefault();
+    //     axios
+    //         .post(`http://localhost/api/books`, {
+    //             title: this.state.title,
+    //             author: this.state.author,
+    //             isbn: this.state.isbn,
+    //             language: this.state.language,
+    //             summary: this.state.summary,
+    //             owner: "John",
+    //             isEbook: true,
+    //             isBook: false,
+    //         })
+    //         .then(res => {
+    //             if (res.status !== 200) {
+    //                 console.log("Livre déjà existant");
+    //             } else {
+    //                 this.setState(prevState => {
+    //                     return {
+    //                         books: [...prevState.books, res.data],
+    //                     };
+    //                 });
+    //             }
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // }
 
     render() {
         return (
@@ -77,7 +69,7 @@ export class AddBooks extends React.Component {
                     </div>
                 </section>
 
-                <hr />
+                {/* <hr />
                 <form onSubmit={this.handleSubmit}>
                     <label id="icon" htmlFor="title" />
                     <input
@@ -188,8 +180,8 @@ export class AddBooks extends React.Component {
                             <strong>{"owner : "} </strong> {book.owner} <br />
                             <strong>{"Database Id : "} </strong> {book._id}
                         </li>
-                    ))}
-                </ul>
+                    ))} */}
+                {/* </ul> */}
             </div>
         );
     }

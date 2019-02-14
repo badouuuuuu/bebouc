@@ -1,59 +1,51 @@
 import * as React from "react";
 import axios from "axios";
-import NavCatalogue from "./NavCatalogue.js";
-import NavBar from "../../Components/Navbar.js";
+import NavCatalogue from "./NavCatalogue";
+import Card from "../../Components/Card";
+// import NavCatalogue from "./NavCatalogue";
 
 export class Catalogue extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             books: [],
-            title: "",
-            author: "",
-            isbn: "",
-            language: "",
-            summary: "",
-            owner: "",
-            isBook: false,
-            isEbook: false,
-            titleprinc: "List of Books",
+            thumbnail: [],
         };
     }
 
-    render() {
+    componentDidMount() {
         axios.get(`http://localhost/api/books`).then(res => {
             const books = res.data;
 
             this.setState({books});
-            console.log(books);
+        });
+    }
+
+    render() {
+        const displayEachBook = this.state.books.map((book, i) => {
+            let index = i + 1;
+
+            return (
+                <Card
+                    index={index}
+                    key={book._id}
+                    title={book.title}
+                    isbn={book.isbn}
+                    author={book.author}
+                    language={book.language}
+                    owner={book.owner}
+                    summary={book.summary}
+                />
+            );
         });
 
         return (
             <div className="backgroundhome">
-                <NavBar />
                 <NavCatalogue />
                 <div className="backgroundcat">
-                    <h1 className="titleCat">{this.state.titleprinc}</h1>
-                    <ul>
-                        {this.state.books.map(book => (
-                            <li key={book._id}>
-                                {"-----------------"}
-                                <br />
-                                <strong>{"Title : "} </strong>
-                                {book.title} <br />
-                                <strong> {"Author : "} </strong>
-                                {book.author} <br />
-                                <strong>{"ISBN : "} </strong> {book.isbn} <br />
-                                <strong>{"language : "}</strong> {book.language}{" "}
-                                <br />
-                                <strong> {"summary : "}</strong> {book.summary}{" "}
-                                <br />
-                                <strong>{"owner : "} </strong> {book.owner}{" "}
-                                <br />
-                                <strong>{"Database Id : "} </strong> {book._id}
-                            </li>
-                        ))}
-                    </ul>
+                    <h1 className="titleCat">{"Catalogue"} </h1>
+                    <br />
+                    {displayEachBook}
                 </div>
             </div>
         );

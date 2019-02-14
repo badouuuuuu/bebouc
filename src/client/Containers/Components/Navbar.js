@@ -1,6 +1,4 @@
 import * as React from "react";
-
-// Components
 import Logo from "./Logo";
 import {Navbar} from "react-bulma-components/full";
 
