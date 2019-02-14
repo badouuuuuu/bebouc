@@ -1,6 +1,6 @@
 import * as React from "react";
 import Modal from "./Modal";
-import Magazine from "../../../assets/logo_Becode.png";
+// import Magazine from "../../../assets/logo_Becode.png";
 import axios from "axios";
 
 export class Card extends React.Component {
@@ -21,7 +21,8 @@ export class Card extends React.Component {
                 }`,
             )
             .then(res => {
-                const thumbnail = res.data.items[0].volumeInfo;
+                const thumbnail =
+                    res.data.items[0].volumeInfo.imageLinks.thumbnail;
 
                 this.setState({thumbnail});
                 console.log(thumbnail);
@@ -44,7 +45,7 @@ export class Card extends React.Component {
                         <h1 id="bookCardHeader">{`${this.props.title}`}</h1>
                     </li>
                     <li>
-                        <img src={Magazine} id="cardImage" />
+                        <img src={this.state.thumbnail} id="cardImage" />
                     </li>
                     <li>{`Author : ${this.props.author}`}</li>
                     <li>{`Language : ${this.props.language}`}</li>
