@@ -22,11 +22,18 @@ export default class NavBar extends React.Component {
         let AdminMenu = null;
 
         if (!this.state.isJunior) {
-            AdminMenu = <Navbar.Item href="/">{"Admin"}</Navbar.Item>;
+            AdminMenu = (
+                <button className="buttonNavadmin" href="/">
+                    {"Admin"}
+                </button>
+            );
         }
 
         return (
-            <Navbar id="navigation" active={this.state.active}>
+            <Navbar
+                className="navbarstyle"
+                id="navigation"
+                active={this.state.active}>
                 <Navbar.Brand>
                     <Navbar.Item>
                         <Logo />
@@ -36,12 +43,18 @@ export default class NavBar extends React.Component {
                         onClick={this.handleClick}
                     />
                 </Navbar.Brand>
-                <Navbar.Menu>
+                <Navbar.Menu className="MenuNav">
                     <div className="navbar-end">
                         {AdminMenu}
-                        <Navbar.Item href="/">{"Library"}</Navbar.Item>
-                        <Navbar.Item href="/about">{"Account"}</Navbar.Item>
-                        <Navbar.Item href="/contact">{"Logout"}</Navbar.Item>
+                        <button className="buttonNav" href="/">
+                            {"Library"}{" "}
+                        </button>
+                        <button className="buttonNav" href="/about">
+                            {"Account"}
+                        </button>
+                        <button className="buttonNavlogout" href="/contact">
+                            {"Logout"}
+                        </button>
                     </div>
                 </Navbar.Menu>
             </Navbar>

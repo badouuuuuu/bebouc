@@ -16,7 +16,8 @@ export default class NavCatalogue extends React.Component {
     render() {
         return (
             <div className="NavCatalogue">
-                <div className="dropdown is-hoverable is-up is-right">
+                <h1 className="titleCat">{"Catalogue"} </h1>
+                <div className="dropdown is-hoverable is-left is-right">
                     <div className="dropdown-trigger">
                         <button
                             className="button is-text"

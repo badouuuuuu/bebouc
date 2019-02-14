@@ -138,7 +138,7 @@ body {
     //input
 
     .inputsearch {
-        width: 149px;
+        width: 179px;
         height: 26px;
         left: 1093px;
         top: 308px;
@@ -353,8 +353,11 @@ body {
 
 // NAVBAR
 
-.navigation {
+
+
+.navbarstyle {
     background-color: $color1;
+    border-bottom: white;
 }
 
 .navadmin {
@@ -371,6 +374,58 @@ body {
     margin-bottom: 4em;
     border-radius: .6em;
 }
+
+.buttonNav {
+  font-family: $font1;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  color : white;
+  background-color: transparent;
+}
+
+.buttonNav:hover {
+  font-family: $font1;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  color : $color3;
+  background-color: transparent;
+
+}
+
+.buttonNavlogout {
+  font-family: $font1;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  color : white;
+  background-color: transparent;
+  font-size: 12px;
+
+}
+.buttonNavlogout:hover {
+
+  font-family: $font1;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  color : $color3;
+  background-color: transparent;
+  font-size: 12px;
+
+}
+
+.buttonNavadmin {
+  font-family: $font1;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  color : $color3;
+  background-color: transparent;
+}
+
+
 
 
 
@@ -515,78 +570,41 @@ body {
 /**************** Catalogue *************/
 .backgroundhome {
     .backgroundcat {
-        width: 95%;
+        width: 85%;
         margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.17);
+        background-color: rgba(255, 255, 255, 0.17);;
         padding: 30px;
-        border-radius: 5rem;
-        margin-top: 5rem;
+        margin-top: 1rem;
         position: relative;
         text-align: center;
+        border-radius: 20px;
     }
 
 
 .NavCatalogue{
   width : 75%;
-  margin: 100px auto auto 100px;
+  margin: 30px auto auto 150px;
   display : inline-flex;
   justify-content: flex-end;
   padding-right: 10px;
 }
 .titleCat {
-background-color: rgba(255,255,255,0.5);
-margin: auto;
-margin-top: 2rem;
-width: 15rem;
-border-radius: 1rem;
-padding: 0.5rem;
+font-family: $font1;
 font-family: Roboto;
 font-style: normal;
-font-weight: bold;
+font-weight: normal;
 line-height: normal;
-font-size: 38px;
-text-align: center;
-color: rgb(26, 38, 50);
+margin-right: 500px;
+font-size: 30px;
+text-align: left;
+color: $color3;
 }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // ELIAS CSS JUST FOR CARDS AND Modal
 #bookCard {
     width: 15rem;
-    background-color: rgba(255, 255, 255, 0.5);
-    border-radius: 2rem;
+    border-radius: 1rem;
     padding: 1.2rem;
     margin: 3rem;
     text-align: center;
@@ -605,18 +623,16 @@ color: rgb(26, 38, 50);
     background-color: rgb(26, 38, 50);
 }
 
-#catalogue {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    margin-bottom: 5rem;
-}
  #bookCardHeader {
      color: white;
-     background-color: rgb(26, 38, 50);
      border-radius: 1rem;
      padding-top: 0.5rem;
      padding-bottom: 0.5rem;
+     font-family: Roboto;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+     font-size: 14px;
  }
  #modalTitle {
      color: white;

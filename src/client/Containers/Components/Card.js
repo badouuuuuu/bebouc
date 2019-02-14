@@ -16,13 +16,12 @@ export class Card extends React.Component {
         // Test avec Google Book API - A rediscuter
         axios
             .get(
-                `https://www.googleapis.com/books/v1/volumes?q=isbn:${
+                `https://openlibrary.org/api/books?bibkeys=ISBN:${
                     this.props.isbn
                 }`,
             )
             .then(res => {
-                const thumbnail =
-                    res.data.items[0].volumeInfo.imageLinks.thumbnail;
+                const thumbnail = res;
 
                 this.setState({thumbnail});
                 console.log(thumbnail);
@@ -42,21 +41,16 @@ export class Card extends React.Component {
             <div id="bookCard">
                 <ul>
                     <li>
-                        <h1 id="bookCardHeader">{`${this.props.title}`}</h1>
+                        <img
+                            src={this.state.thumbnail}
+                            id="cardImage"
+                            onClick={this.handleClick}
+                        />
                     </li>
-                    <li>
-                        <img src={this.state.thumbnail} id="cardImage" />
-                    </li>
+                    <h1 id="bookCardHeader">{`${this.props.title}`}</h1>
                     <li>{`Author : ${this.props.author}`}</li>
                     <li>{`Language : ${this.props.language}`}</li>
-                    <li>
-                        <button
-                            type="button"
-                            onClick={this.handleClick}
-                            id="cardButton">
-                            {"See book"}
-                        </button>
-                    </li>
+
                     <li>
                         {" "}
                         <Modal

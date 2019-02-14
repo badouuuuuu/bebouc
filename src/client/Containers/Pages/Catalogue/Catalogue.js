@@ -42,11 +42,7 @@ export class Catalogue extends React.Component {
         return (
             <div className="backgroundhome">
                 <NavCatalogue />
-                <div className="backgroundcat">
-                    <h1 className="titleCat">{"Catalogue"} </h1>
-                    <br />
-                    {displayEachBook}
-                </div>
+                <div className="backgroundcat">{displayEachBook}</div>
             </div>
         );
     }
