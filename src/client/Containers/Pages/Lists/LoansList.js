@@ -1,8 +1,40 @@
 import * as React from "react";
-// import axios from "axios";
+import axios from "axios";
+
+import LoanLine from "../../Components/LoanLine";
 
 export default class LoansList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loans: [],
+        };
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost/api/loans`).then(res => {
+            const loans = res.data;
+
+            this.setState({loans});
+            console.log(loans);
+        });
+    }
+
     render() {
+        const displayEachLoanLine = this.state.loans.map((loan, i) => {
+            let index = i + 1;
+
+            return (
+                <LoanLine
+                    index={index}
+                    key={loan._id}
+                    book={loan.bookID}
+                    borrower={loan.borrowerID}
+                    date={loan.updatedAt}
+                />
+            );
+        });
+
         return (
             <>
                 <form action="/addloan" method="get">
@@ -17,21 +49,7 @@ export default class LoansList extends React.Component {
                             <th />
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th>{"1"}</th>
-                            <td>{"a"}</td>
-                            <td>{"38"}</td>
-                            <td>
-                                <button className="secondary-button">
-                                    {"Edit"}
-                                </button>
-                                <button className="selected-button">
-                                    {"Delete"}
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody>{displayEachLoanLine}</tbody>
                 </table>
             </>
         );

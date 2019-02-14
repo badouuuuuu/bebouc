@@ -13,7 +13,6 @@ import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
 import "./scss/app.scss";
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
 

@@ -1,8 +1,40 @@
 import * as React from "react";
-// import axios from "axios";
+import axios from "axios";
+import UserLine from "../../Components/UserLine";
 
 export default class UsersList extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            users: [],
+        };
+    }
+
+    componentDidMount() {
+        axios.get(`http://localhost/api/users`).then(res => {
+            const users = res.data;
+
+            this.setState({users});
+            console.log(users);
+        });
+    }
+
     render() {
+        const displayEachUserLine = this.state.users.map((user, i) => {
+            let index = i + 1;
+
+            return (
+                <UserLine
+                    index={index}
+                    key={user._id}
+                    name={user.name}
+                    surname={user.surname}
+                    admin={user.admin}
+                    email={user.email}
+                />
+            );
+        });
+
         return (
             <>
                 <form action="/Register" method="get">
@@ -18,19 +50,7 @@ export default class UsersList extends React.Component {
                             <th />
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th>{"1"}</th>
-                            <td>{"a"}</td>
-                            <td>{"38"}</td>
-                            <td>{"23"}</td>
-                            <td>
-                                <button className="selected-button">
-                                    {"Delete"}
-                                </button>
-                            </td>
-                        </tr>
-                    </tbody>
+                    <tbody>{displayEachUserLine}</tbody>
                 </table>
             </>
         );
