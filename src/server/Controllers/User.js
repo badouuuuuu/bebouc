@@ -122,6 +122,7 @@ const login = (req, res) => {
             },
         );
     }
+    return;
 };
 
 const edit = (req, res) => {

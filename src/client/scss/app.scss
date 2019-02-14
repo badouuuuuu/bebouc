@@ -593,6 +593,10 @@ color: rgb(26, 38, 50);
     display: inline-block;
 }
 
+#bookCard:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 #cardImage {
     width: 8rem;
     margin-bottom: 1rem;
@@ -611,6 +615,13 @@ color: rgb(26, 38, 50);
     display: flex;
     margin-bottom: 5rem;
 }
+
+#catalogueTitle {
+    font-family: 'Expletus Sans';
+    font-size: 2.7rem;
+    font-weight: 100;
+}
+
  #bookCardHeader {
      color: white;
      background-color: rgb(26, 38, 50);
