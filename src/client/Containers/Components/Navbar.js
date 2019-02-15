@@ -45,7 +45,7 @@ export default class NavBar extends React.Component {
                     <div className="navbar-end">
                         {AdminMenu}
                         <Navbar.Item href="/">
-                            <p className="colorNavCat">{"Library"} </p>
+                            <p className="colorNavCat">{"Catalogue"} </p>
                         </Navbar.Item>
                         <Navbar.Item href="/editprofil">
                             <p className="colorNavCat">{"Account"} </p>
