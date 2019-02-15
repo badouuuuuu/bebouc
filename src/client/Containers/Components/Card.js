@@ -1,12 +1,12 @@
 import * as React from "react";
 import Modal from "./Modal";
-// import Magazine from "../../../assets/logo_Becode.png";
+import Magazine from "../../../assets/logo_Becode.png";
 import axios from "axios";
 
 export class Card extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {showModal: "", thumbnail: []};
+        this.state = {showModal: "", thumbnail: Magazine};
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
     }
@@ -25,7 +25,6 @@ export class Card extends React.Component {
                     res.data.items[0].volumeInfo.imageLinks.thumbnail;
 
                 this.setState({thumbnail});
-                console.log(thumbnail);
             });
     }
 
