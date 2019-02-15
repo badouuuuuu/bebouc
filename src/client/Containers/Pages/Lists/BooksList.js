@@ -26,6 +26,7 @@ export class BooksList extends React.Component {
                 <BookLine
                     index={index}
                     key={book._id}
+                    bookid={book._id}
                     title={book.title}
                     author={book.author}
                     isbn={book.isbn}

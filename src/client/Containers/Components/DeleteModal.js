@@ -21,7 +21,10 @@ export class DeleteModal extends React.Component {
                     </section>
                     <footer className="modal-card-foot">
                         <form onSubmit={this.props.delete}>
-                            <button className="selected-button" type="submit">
+                            <button
+                                className="selected-button"
+                                type="submit"
+                                onClick={this.props.closeModal}>
                                 {"Delete"}
                             </button>
                         </form>

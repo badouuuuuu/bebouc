@@ -2,7 +2,7 @@ import * as React from "react";
 import Logo from "./Logo";
 import {Navbar} from "react-bulma-components/full";
 
-export default class NavBar extends React.Component {
+export class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,7 +22,12 @@ export default class NavBar extends React.Component {
         let AdminMenu = null;
 
         if (!this.state.isJunior) {
-            AdminMenu = <Navbar.Item href="/admin">{"Admin"}</Navbar.Item>;
+            AdminMenu = (
+                <Navbar.Item href="/admin">
+                    {" "}
+                    <p className="colorAdmin">{"Admin"} </p>
+                </Navbar.Item>
+            );
         }
 
         return (
@@ -39,14 +44,20 @@ export default class NavBar extends React.Component {
                 <Navbar.Menu>
                     <div className="navbar-end">
                         {AdminMenu}
-                        <Navbar.Item href="/">{"Library"}</Navbar.Item>
-                        <Navbar.Item href="/editprofil">
-                            {"Account"}
+                        <Navbar.Item href="/catalogue">
+                            <p className="colorNavCat">{"Catalogue"} </p>
                         </Navbar.Item>
-                        <Navbar.Item href="/login">{"Logout"}</Navbar.Item>
+                        <Navbar.Item href="/editprofil">
+                            <p className="colorNavCat">{"Account"} </p>
+                        </Navbar.Item>
+                        <Navbar.Item href="/login">
+                            <p className="colorNavCat">{"Logout"} </p>
+                        </Navbar.Item>
                     </div>
                 </Navbar.Menu>
             </Navbar>
         );
     }
 }
+
+export default NavBar;
