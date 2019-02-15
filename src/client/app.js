@@ -10,7 +10,7 @@ import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBook} from "./Containers/Pages/Catalogue/AddBook";
 import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
 import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
-import {AdminMenu} from "./Containers/Pages/Admin/AdminMenu";
+import {HomepageAdmin} from "./Containers/Pages/Admin/homepageAdmin";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,7 @@ class App extends Component {
                             path="/editprofil"
                             component={EditProfil}
                         />
-                        <Route exact path="/admin" component={AdminMenu} />
+                        <Route exact path="/admin" component={HomepageAdmin} />
                         {/* Pour l'integration d'Olivier*/}
                         <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}
