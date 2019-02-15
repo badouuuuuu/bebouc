@@ -16,6 +16,7 @@ import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
 import "./scss/app.scss";
+
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
 
 library.add(faTag);
@@ -29,38 +30,52 @@ class App extends Component {
         if (auth) {
             RoutingAuth = (
                 <>
-                    <NavBar />
-                    <div className="App-content">
-                        <Switch>
-                            <Route exact path="/" component={Homepage} />
-                            <Route exact path="/addbook" component={AddBook} />
-                            <Route exact path="/addloan" component={AddLoan} />
-                            <Route
-                                exact
-                                path="/catalogue"
-                                component={Catalogue}
-                            />
-                            <Route
-                                exact
-                                path="/editprofil"
-                                component={EditProfil}
-                            />
-                            <Route exact path="/admin" component={Homepage} />
-                            <Route
-                                exact
-                                path="/Register"
-                                component={Register}
-                            />
-                            <PrivateRoute
-                                path="/homepage"
-                                component={Homepage}
-                            />
-                            <Route
-                                exact
-                                path="*"
-                                component={() => "404 NOT FOUND"}
-                            />
-                        </Switch>
+                    <div className="App">
+                        <div className="App-content">
+                            <NavBar />
+                            <Switch>
+                                <Route exact path="/" component={Homepage} />
+                                <Route
+                                    exact
+                                    path="/addbook"
+                                    component={AddBook}
+                                />
+                                <Route
+                                    exact
+                                    path="/addloan"
+                                    component={AddLoan}
+                                />
+                                <Route
+                                    exact
+                                    path="/catalogue"
+                                    component={Catalogue}
+                                />
+                                <Route
+                                    exact
+                                    path="/editprofil"
+                                    component={EditProfil}
+                                />
+                                <Route
+                                    exact
+                                    path="/admin"
+                                    component={Homepage}
+                                />
+                                <Route
+                                    exact
+                                    path="/Register"
+                                    component={Register}
+                                />
+                                <PrivateRoute
+                                    path="/homepage"
+                                    component={Homepage}
+                                />
+                                <Route
+                                    exact
+                                    path="*"
+                                    component={() => "404 NOT FOUND"}
+                                />
+                            </Switch>
+                        </div>
                     </div>
                 </>
             );
