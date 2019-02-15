@@ -47,7 +47,9 @@ export class BookLine extends React.Component {
                 <td>{isbook ? "Yes" : "No"}</td>
                 <td>{isebook ? "Yes" : "No"}</td>
                 <td>
-                    <button className="secondary-button">{"Edit"}</button>
+                    <form action="/addbook" method="get">
+                        <button className="secondary-button">{"Edit"}</button>
+                    </form>
                     <button
                         className="selected-button"
                         onClick={this.handleClick}>
