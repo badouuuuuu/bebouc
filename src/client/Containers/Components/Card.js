@@ -55,6 +55,7 @@ export class Card extends React.Component {
                     <li>
                         {" "}
                         <Modal
+                            thumbnail={this.state.thumbnail}
                             closeModal={this.handleClose}
                             show={this.state.showModal}
                             index={this.props.index}

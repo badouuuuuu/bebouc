@@ -6,7 +6,10 @@ const saltRounds = 10;
 const list = (req, res) => {
     User.find()
         .sort({name: 1})
-        .then(users => res.json(users));
+        .then(users => res.json(users))
+        .catch(err => {
+            console.log(err);
+        });
 };
 
 const create = (req, res) => {
@@ -109,6 +112,7 @@ const login = (req, res) => {
                     user.authenticate(req.body.password, isChecked => {
                         if (isChecked) {
                             res.status(200).json({
+                                auth: true,
                                 token: user.getToken(),
                                 text: "Authentification succesful",
                             });
@@ -122,6 +126,7 @@ const login = (req, res) => {
             },
         );
     }
+    return;
 };
 
 const edit = (req, res) => {

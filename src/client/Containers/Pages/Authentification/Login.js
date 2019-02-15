@@ -46,7 +46,7 @@ export class Login extends React.Component {
                         login: "Success",
                     });
 
-                    window.location = "/Homepagetest";
+                    window.location = "/homepage";
                 }
             })
             .catch(err => {
