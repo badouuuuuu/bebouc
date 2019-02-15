@@ -285,6 +285,8 @@ body {
 
     .container {
         text-align: center;
+        background-color: $color1;
+
     }
 
     hr {
@@ -363,7 +365,15 @@ body {
 .navadmin {
     display: flex;
     justify-content: space-around;
-    margin: 1em 10em;
+    margin: 5em auto 6em auto;
+}
+
+
+
+.navAdminpicto{
+  display: flex;
+  justify-content: space-around;
+  margin: 10em 2em 2em 4em ;
 }
 
 // TABLES
@@ -572,6 +582,7 @@ body {
 .backgroundhome {
     .backgroundcat {
         width: 85%;
+        height: 100%;
         margin: 0 auto;
         background-color: rgba(255, 255, 255, 0.17);;
         padding: 30px;
