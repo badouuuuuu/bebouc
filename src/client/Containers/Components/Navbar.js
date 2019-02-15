@@ -22,11 +22,7 @@ export default class NavBar extends React.Component {
         let AdminMenu = null;
 
         if (!this.state.isJunior) {
-            AdminMenu = (
-                <button className="buttonNavadmin" href="/">
-                    {"Admin"}
-                </button>
-            );
+            AdminMenu = <Navbar.Item href="/admin">{"Admin"}</Navbar.Item>;
         }
 
         return (
