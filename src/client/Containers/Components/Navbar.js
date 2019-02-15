@@ -46,13 +46,15 @@ export default class NavBar extends React.Component {
                 <Navbar.Menu className="MenuNav">
                     <div className="navbar-end">
                         {AdminMenu}
-                        <button className="buttonNav" href="/">
+                        <button className="navbar-item buttonNav" href="/">
                             {"Library"}{" "}
                         </button>
-                        <button className="buttonNav" href="/about">
+                        <button className="navbar-item buttonNav" href="/about">
                             {"Account"}
                         </button>
-                        <button className="buttonNavlogout" href="/contact">
+                        <button
+                            className="navbar-item buttonNavlogout"
+                            href="/contact">
                             {"Logout"}
                         </button>
                     </div>

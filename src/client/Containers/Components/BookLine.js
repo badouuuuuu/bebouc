@@ -11,14 +11,6 @@ export class BookLine extends React.Component {
         this.handleClose = this.handleClose.bind(this);
     }
 
-    // axios
-    // .delete(`http://localhost/api/books:/${this.props.key}`)
-    // .then(res => {
-    //     const books = res.data;
-
-    //     this.setState({books});
-    // });
-
     handleClick() {
         this.setState({showModal: "is-active"});
     }

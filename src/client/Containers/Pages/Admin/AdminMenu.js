@@ -5,7 +5,7 @@ import BooksList from "../Lists/BooksList";
 import UsersList from "../Lists/UsersList";
 import LoansList from "../Lists/LoansList";
 
-export default class AdminMenu extends React.Component {
+export class AdminMenu extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -77,3 +77,5 @@ export default class AdminMenu extends React.Component {
         );
     }
 }
+
+export default AdminMenu;
