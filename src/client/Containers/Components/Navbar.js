@@ -47,7 +47,7 @@ export default class NavBar extends React.Component {
                         <Navbar.Item href="/editprofil">
                             {"Account"}
                         </Navbar.Item>
-                        <Navbar.Item href="/profil">{"Logout"}</Navbar.Item>
+                        <Navbar.Item href="/login">{"Logout"}</Navbar.Item>
                     </div>
                 </Navbar.Menu>
             </Navbar>
