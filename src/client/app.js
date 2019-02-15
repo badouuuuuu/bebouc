@@ -10,7 +10,8 @@ import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBook} from "./Containers/Pages/Catalogue/AddBook";
 import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
 import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
-import {HomepageAdmin} from "./Containers/Pages/Admin/HomepageAdmin";
+import {NavBar} from "./Containers/Components/Navbar";
+import {Catalogue} from "./Containers/Pages/Catalogue/Catalogue";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
@@ -22,33 +23,56 @@ library.add(faSearch);
 
 class App extends Component {
     render() {
-        return (
-            <div className="App">
-                <div className="App-content">
-                    <Switch>
-                        <Route exact path="/" component={Homepage} />
-                        <Route exact path="/login" component={Login} />
-                        <Route exact path="/addbook" component={AddBook} />
-                        <Route exact path="/addloan" component={AddLoan} />
-                        <Route
-                            exact
-                            path="/editprofil"
-                            component={EditProfil}
-                        />
-                        <Route exact path="/admin" component={HomepageAdmin} />
-                        {/* Pour l'integration d'Olivier*/}
-                        <Route exact path="/Register" component={Register} />
-                        {/* Route pour test Create User*/}
-                        <PrivateRoute path="/homepage" component={Homepage} />
-                        <Route
-                            exact
-                            path="*"
-                            component={() => "404 NOT FOUND"}
-                        />
-                    </Switch>
-                </div>
-            </div>
-        );
+        let auth = true,
+            RoutingAuth = "";
+
+        if (auth) {
+            RoutingAuth = (
+                <>
+                    <NavBar />
+                    <div className="App-content">
+                        <Switch>
+                            <Route exact path="/" component={Homepage} />
+                            <Route exact path="/addbook" component={AddBook} />
+                            <Route exact path="/addloan" component={AddLoan} />
+                            <Route
+                                exact
+                                path="/catalogue"
+                                component={Catalogue}
+                            />
+                            <Route
+                                exact
+                                path="/editprofil"
+                                component={EditProfil}
+                            />
+                            <Route exact path="/admin" component={Homepage} />
+                            <Route
+                                exact
+                                path="/Register"
+                                component={Register}
+                            />
+                            <PrivateRoute
+                                path="/homepage"
+                                component={Homepage}
+                            />
+                            <Route
+                                exact
+                                path="*"
+                                component={() => "404 NOT FOUND"}
+                            />
+                        </Switch>
+                    </div>
+                </>
+            );
+        } else {
+            RoutingAuth = (
+                <>
+                    <Route exact path="/" component={Login} />
+                </>
+            );
+        }
+
+        return <div className="App">{RoutingAuth}</div>;
     }
 }
 
