@@ -27,6 +27,7 @@ export default class UsersList extends React.Component {
                 <UserLine
                     index={index}
                     key={user._id}
+                    userid={user._id}
                     name={user.name}
                     surname={user.surname}
                     admin={user.admin}
