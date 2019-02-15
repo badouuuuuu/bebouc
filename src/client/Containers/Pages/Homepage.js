@@ -6,7 +6,7 @@ import HomepageAdmin from "./Admin/HomepageAdmin";
 
 export class Homepage extends React.Component {
     state = {
-        isJunior: false,
+        isJunior: true,
     };
 
     render() {
