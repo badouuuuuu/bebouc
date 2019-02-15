@@ -27,6 +27,9 @@ sans-serif;
 
 /**************** DEBUT CSS *************/
 
+html {
+    color: $color1;
+}
 
 body {
     font-family: $font1;
@@ -370,7 +373,7 @@ body {
 .navadmin {
     display: flex;
     justify-content: space-around;
-    margin: 5em auto 6em auto;
+    margin: 1rem auto 2rem auto;
 }
 
 
@@ -378,7 +381,9 @@ body {
 .navAdminpicto{
   display: flex;
   justify-content: space-around;
-  margin: 10em 2em 2em 4em ;
+  margin: 2rem 2rem 2rem 4rem ;
+  padding-top: 2rem;
+  padding-bottom: 0;
 }
 
 

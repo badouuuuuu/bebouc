@@ -2,7 +2,7 @@ import * as React from "react";
 import Logo from "./Logo";
 import {Navbar} from "react-bulma-components/full";
 
-export default class NavBar extends React.Component {
+export class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,7 +44,7 @@ export default class NavBar extends React.Component {
                 <Navbar.Menu>
                     <div className="navbar-end">
                         {AdminMenu}
-                        <Navbar.Item href="/">
+                        <Navbar.Item href="/catalogue">
                             <p className="colorNavCat">{"Catalogue"} </p>
                         </Navbar.Item>
                         <Navbar.Item href="/editprofil">
@@ -59,3 +59,5 @@ export default class NavBar extends React.Component {
         );
     }
 }
+
+export default NavBar;
