@@ -707,3 +707,21 @@ color: $color3;
     background-color: rgba(26, 38, 50, 0.3);
     border-radius: 1.5rem;
  }
+
+
+ .colorAdmin {
+   color:$color3;
+ }
+ .colorAdmin:hover {
+   color:white;
+ }
+
+ .colorNavCat{
+   color:white;
+ }
+ .colorNavCat:hover{
+   color:$color2;
+ }
+ .colorNavCat:focus{
+   color:$color2;
+ }
