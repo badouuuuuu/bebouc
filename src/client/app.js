@@ -10,7 +10,7 @@ import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBook} from "./Containers/Pages/Catalogue/AddBook";
 import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
 import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
-import {HomepageAdmin} from "./Containers/Pages/Admin/homepageAdmin";
+import {HomepageAdmin} from "./Containers/Pages/Admin/HomepageAdmin";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";

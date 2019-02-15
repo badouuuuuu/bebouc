@@ -2,7 +2,7 @@ import * as React from "react";
 // import axios from "axios";
 import NavBar from "../Components/Navbar";
 import Catalogue from "./Catalogue/Catalogue";
-import AdminMenu from "./Admin/AdminMenu";
+import HomepageAdmin from "./Admin/HomepageAdmin";
 
 export class Homepage extends React.Component {
     state = {
@@ -15,7 +15,7 @@ export class Homepage extends React.Component {
         if (this.state.isJunior) {
             Display = <Catalogue />;
         } else {
-            Display = <AdminMenu />;
+            Display = <HomepageAdmin />;
         }
 
         return (
