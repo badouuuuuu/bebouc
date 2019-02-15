@@ -6,7 +6,7 @@ import AdminMenu from "./Admin/AdminMenu";
 
 export class Homepage extends React.Component {
     state = {
-        isJunior: false,
+        isJunior: true,
     };
 
     render() {
