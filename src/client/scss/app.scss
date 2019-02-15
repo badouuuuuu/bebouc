@@ -1,4 +1,10 @@
-@charset "utf-8";
+// Before Bulma Import for navbar 
+$navbar-background-color: #1A2632;
+$navbar-item-hover-background-color : #1A2632;
+$navbar-item-hover-color: white;
+
+
+
 @import "bulma";
 
 /**************** COLORS *************/
@@ -350,21 +356,6 @@ body {
 }
 
 /**************** FIN ADD USERS COMPONENTS *************/
-
-// NAVBAR
-
-
-
-.navbarstyle {
-    background-color: $color1;
-
-}
-
-.navadmin {
-    display: flex;
-    justify-content: space-around;
-    margin: 1em 10em;
-}
 
 // TABLES
 
