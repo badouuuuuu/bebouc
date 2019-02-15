@@ -34,6 +34,7 @@ class App extends Component {
                             path="/editprofil"
                             component={EditProfil}
                         />
+                        <Route exact path="/admin" component={AdminMenu} />
                         {/* Pour l'integration d'Olivier*/}
                         <Route exact path="/Register" component={Register} />
                         {/* Route pour test Create User*/}

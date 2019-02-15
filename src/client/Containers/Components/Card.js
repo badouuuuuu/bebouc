@@ -16,12 +16,13 @@ export class Card extends React.Component {
         // Test avec Google Book API - A rediscuter
         axios
             .get(
-                `https://openlibrary.org/api/books?bibkeys=ISBN:${
+                `https://www.googleapis.com/books/v1/volumes?q=isbn:${
                     this.props.isbn
                 }`,
             )
             .then(res => {
-                const thumbnail = res;
+                const thumbnail =
+                    res.data.items[0].volumeInfo.imageLinks.thumbnail;
 
                 this.setState({thumbnail});
                 console.log(thumbnail);

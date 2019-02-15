@@ -1,4 +1,5 @@
 import * as React from "react";
+import NavBar from "../../Components/Navbar.js";
 import axios from "axios";
 
 export class EditProfil extends React.Component {
@@ -56,6 +57,7 @@ export class EditProfil extends React.Component {
     render() {
         return (
             <>
+                <NavBar />
                 <div className="editprofil-component">
                     <h1>{"Who's who"}</h1>
 
