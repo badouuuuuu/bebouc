@@ -16,7 +16,6 @@ export default class LoansList extends React.Component {
             const loans = res.data;
 
             this.setState({loans});
-            console.log(loans);
         });
     }
 
@@ -28,6 +27,7 @@ export default class LoansList extends React.Component {
                 <LoanLine
                     index={index}
                     key={loan._id}
+                    loanid={loan._id}
                     book={loan.bookID}
                     borrower={loan.borrowerID}
                     date={loan.updatedAt}
