@@ -15,6 +15,7 @@ import {Catalogue} from "./Containers/Pages/Catalogue/Catalogue";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import {Error404} from "./Containers/Pages/Authentification/404";
 import "./scss/app.scss";
 
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
@@ -69,11 +70,7 @@ class App extends Component {
                                     path="/homepage"
                                     component={Homepage}
                                 />
-                                <Route
-                                    exact
-                                    path="*"
-                                    component={() => "404 NOT FOUND"}
-                                />
+                                <Route exact path="*" component={Error404} />
                             </Switch>
                         </div>
                     </div>
