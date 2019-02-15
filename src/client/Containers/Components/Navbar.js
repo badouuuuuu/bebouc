@@ -30,10 +30,7 @@ export default class NavBar extends React.Component {
         }
 
         return (
-            <Navbar
-                className="navbarstyle"
-                id="navigation"
-                active={this.state.active}>
+            <Navbar id="navigation" active={this.state.active}>
                 <Navbar.Brand>
                     <Navbar.Item>
                         <Logo />
@@ -43,20 +40,14 @@ export default class NavBar extends React.Component {
                         onClick={this.handleClick}
                     />
                 </Navbar.Brand>
-                <Navbar.Menu className="MenuNav">
+                <Navbar.Menu>
                     <div className="navbar-end">
                         {AdminMenu}
-                        <button className="navbar-item buttonNav" href="/">
-                            {"Library"}{" "}
-                        </button>
-                        <button className="navbar-item buttonNav" href="/about">
+                        <Navbar.Item href="/">{"Library"}</Navbar.Item>
+                        <Navbar.Item href="/editprofil">
                             {"Account"}
-                        </button>
-                        <button
-                            className="navbar-item buttonNavlogout"
-                            href="/contact">
-                            {"Logout"}
-                        </button>
+                        </Navbar.Item>
+                        <Navbar.Item href="/login">{"Logout"}</Navbar.Item>
                     </div>
                 </Navbar.Menu>
             </Navbar>

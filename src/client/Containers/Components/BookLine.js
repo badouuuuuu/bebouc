@@ -1,5 +1,6 @@
 import * as React from "react";
 import DeleteModal from "./DeleteModal";
+import axios from "axios";
 
 export class BookLine extends React.Component {
     constructor(props) {
@@ -9,6 +10,7 @@ export class BookLine extends React.Component {
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
     handleClick() {
@@ -18,6 +20,18 @@ export class BookLine extends React.Component {
     handleClose() {
         this.setState({showModal: ""});
     }
+
+    handleDelete = event => {
+        event.preventDefault();
+        axios
+            .delete(`http://localhost/api/books/${this.props.bookid}`)
+            .then(res => {
+                console.log(res);
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    };
 
     render() {
         const isbook = this.props.book;
@@ -45,7 +59,7 @@ export class BookLine extends React.Component {
                     closeModal={this.handleClose}
                     show={this.state.showModal}
                     title={this.props.title}
-                    delete={this.props.delete}
+                    delete={this.handleDelete}
                 />
             </tr>
         );

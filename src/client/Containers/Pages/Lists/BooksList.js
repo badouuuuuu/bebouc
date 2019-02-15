@@ -8,7 +8,6 @@ export class BooksList extends React.Component {
         this.state = {
             books: [],
         };
-        this.componentWillUnmount = this.componentWillUnmount.bind(this);
     }
 
     componentDidMount() {
@@ -19,14 +18,6 @@ export class BooksList extends React.Component {
         });
     }
 
-    // componentWillUnmount() {
-    //     axios
-    //         .delete(`http://localhost/api/books:/${id}`)
-    //         .then(res => {
-    //             const books = res.data;
-    //         });
-    // }
-
     render() {
         const displayEachBookLine = this.state.books.map((book, i) => {
             let index = i + 1;
@@ -35,6 +26,7 @@ export class BooksList extends React.Component {
                 <BookLine
                     index={index}
                     key={book._id}
+                    bookid={book._id}
                     title={book.title}
                     author={book.author}
                     isbn={book.isbn}
@@ -42,7 +34,6 @@ export class BooksList extends React.Component {
                     owner={book.owner}
                     book={book.isBook}
                     ebook={book.isEbook}
-                    // delete={this.componentWillUnmount(book._id)}
                 />
             );
         });
