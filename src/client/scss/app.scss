@@ -3,6 +3,8 @@ $navbar-background-color: #1A2632;
 $navbar-item-hover-background-color : #1A2632;
 $navbar-item-hover-color: white;
 
+$dropdown-item-hover-background-color:#1A2632;
+$dropdown-item-active-color: #1A2632;
 
 @import "bulma";
 
@@ -27,15 +29,16 @@ sans-serif;
 
 /**************** DEBUT CSS *************/
 
+html {
 
+    background-color: $color1;
+}
 body {
     font-family: $font1;
-
     /**************** CSS HOME PAGE - SPA *************/
 
     .backgroundhome {
         position: relative;
-
         background-color: $color1;
     }
 
@@ -145,7 +148,6 @@ body {
     //input
 
     .inputsearch {
-        width: 179px;
         height: 26px;
         left: 1093px;
         top: 308px;
@@ -154,10 +156,33 @@ body {
         border: none;
         padding: 2px;
         font-family: $font1;
-        padding-left: 10px;
-        margin-left: 20px;
+        margin-left: 15px;
+        margin-top: 5px;
+        width: 30px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        display: flex;
+    }
+    .icon-search {
+        text-align: center;
+        display: inline-flex;
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 60px;
+        color: $color3;
     }
 
+ 
+    .inputsearch:focus {
+        width: 260px;
+        text-align: center;
+        color: $color1;
+        
+    }
+    .inputsearch::placeholder{
+        color: #888;
+        text-align: center;
+    }
 
     .button.is-text {
         text-decoration: none;

@@ -44,6 +44,11 @@ export default class NavCatalogue extends React.Component {
 
                 <div className="field has-addons">
                     <div className="control">
+                        <FontAwesomeIcon
+                            className="icon-search"
+                            icon="search"
+                        />
+
                         <input
                             className="inputsearch"
                             type="text"
@@ -51,11 +56,10 @@ export default class NavCatalogue extends React.Component {
                             ref={input => (this.search = input)}
                         />
                     </div>
+
                     <div className="control" onClick={this.handleInputChange}>
                         <a className="button is-info">
-                            <span className="icon">
-                                <FontAwesomeIcon icon="search" />
-                            </span>
+                            <span className="icon" />
                         </a>
                     </div>
                 </div>
