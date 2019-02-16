@@ -192,9 +192,10 @@ body {
         margin-left: 15px;
         margin-top: 5px;
         width: 30px;
-        -webkit-transition: width 0.4s ease-in-out;
-        transition: width 0.4s ease-in-out;
+        -webkit-transition: width 0.6s ease-in-out;
+        transition: width 0.35s ease;
         display: flex;
+        outline: none;
     }
     .icon-search {
         text-align: center;
@@ -355,8 +356,8 @@ body {
     }
 
     hr {
-        background-color: $color3;
-        width: 250px;
+        background-color: $color1;
+        width: 200%;
         margin: 10px auto;
         height: 1px;
     }
@@ -718,7 +719,7 @@ body {
         width: 85%;
         height: 100%;
         margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.17);;
+        background-color: rgba(255, 255, 255, 0.054);;
         padding: 30px;
         margin-top: 1rem;
         position: relative;
@@ -881,3 +882,25 @@ color: $color3;
     text-align: center;
     justify-content: center;
 }
+
+.dropdown {
+    .button.is-text:hover {
+        background-color: $color1;
+        color: $color2;
+    }
+}
+
+.dropdown-content {
+    background-color: $color1;
+    p {
+        color: white;
+    }
+    p:hover {
+        color: $color2;
+    }
+    .dropdown-item:hover {
+        background: $color1;
+        
+    }
+}
+
