@@ -14,7 +14,13 @@ export class EditProfil extends React.Component {
             edit_button: "secondary-button",
             edit: "Edit",
             disabled_button: "",
+            inputEditClass: "input_editprofil is-small",
+            messageNotMatch: "",
         };
+    }
+
+    componentDidMount() {
+        this.setState.email = "id@email.com";
     }
 
     handleChange(e) {
@@ -29,28 +35,54 @@ export class EditProfil extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
 
-        let iduser = "5c6159be9c4d4800121f7a8c";
+        let iduser = "5c64540b0d7ff00016159534";
 
-        axios
-            .put(`http://localhost/api/users/${iduser}`, {
-                email: this.state.email,
-                password: this.state.password,
-            })
-            .then(res => {
-                if (res.status !== 200) {
-                    console.log("error");
-                } else {
-                    console.log(res.data);
+        if (this.state.password === this.state.confirm_password) {
+            axios
+                .put(`http://localhost/api/users/${iduser}`, {
+                    email: this.state.email,
+                    password: this.state.password,
+                })
+                .then(res => {
+                    if (res.status !== 200) {
+                        console.log("error");
+                    } else {
+                        console.log(res.data);
 
+                        this.setState({
+                            edit_button: "success-button",
+                            edit: "Success",
+                            messageNotMatch: "",
+                        });
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+            setTimeout(
+                () =>
                     this.setState({
-                        edit_button: "success-button",
-                        login: "Success",
-                    });
-                }
-            })
-            .catch(err => {
-                console.log(err);
+                        email: "",
+                        password: "",
+                        confirm_password: "",
+                        admin: false,
+                        edit_button: "secondary-button",
+                        edit: "Edit",
+                        disabled_button: "",
+                        inputEditClass: "input_editprofil is-small",
+                        messageNotMatch: "",
+                    }),
+                back,
+                1000,
+            );
+        } else {
+            this.setState({
+                messageNotMatch: "Passwords don't match",
+                password: "",
+                confirm_password: "",
             });
+        }
     }
 
     render() {
@@ -102,7 +134,7 @@ export class EditProfil extends React.Component {
 
                             <label id="icon-input-field" htmlFor="email" />
                             <input
-                                className="input_editprofil is-small"
+                                className={this.state.inputEditClass}
                                 type="text"
                                 name="email"
                                 id="email"
@@ -117,7 +149,7 @@ export class EditProfil extends React.Component {
                             <i className="fas fa-key icon-input-field" />
                             <label id="icon-input-field" htmlFor="password" />
                             <input
-                                className="input_editprofil is-small"
+                                className={this.state.inputEditClass}
                                 type="password"
                                 name="password"
                                 id="password"
@@ -132,7 +164,7 @@ export class EditProfil extends React.Component {
                             <i className="fas fa-key icon-input-field" />
                             <label id="icon-input-field" htmlFor="password" />
                             <input
-                                className="input_editprofil is-small"
+                                className={this.state.inputEditClass}
                                 type="password"
                                 name="confirm_password"
                                 id="confirm_password"
@@ -144,7 +176,6 @@ export class EditProfil extends React.Component {
                             <br />
                             <br />
 
-                            <br />
                             <button
                                 disabled={
                                     !this.state.email && !this.state.password
@@ -154,7 +185,14 @@ export class EditProfil extends React.Component {
                                 {this.state.edit}
                             </button>
                         </form>
+                        <p className="error">{this.state.messageNotMatch}</p>
                     </div>
+                    <br />
+
+                    <a className="back-button" href="/">
+                        {" "}
+                        <button className="submit-button">{"Back"}</button>{" "}
+                    </a>
                 </div>
             </>
         );

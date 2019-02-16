@@ -17,12 +17,16 @@ export class DeleteModal extends React.Component {
                         />
                     </header>
                     <section className="modal-card-body">
-                        {`Are you sure you want to delete ${this.props.title}`}
+                        {`Are you sure you want to delete :`}
+                        <br />
+                        <strong className="delete-book-title">
+                            <p> {`${this.props.title}`} </p>{" "}
+                        </strong>
                     </section>
                     <footer className="modal-card-foot">
                         <form onSubmit={this.props.delete}>
                             <button
-                                className="selected-button"
+                                className="secondary-button"
                                 type="submit"
                                 onClick={this.props.closeModal}>
                                 {"Delete"}

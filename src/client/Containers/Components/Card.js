@@ -40,6 +40,7 @@ export class Card extends React.Component {
         return (
             <div id="bookCard">
                 <ul>
+                    <h1 id="bookCardHeader">{`${this.props.title}`}</h1>
                     <li>
                         <img
                             src={this.state.thumbnail}
@@ -47,11 +48,11 @@ export class Card extends React.Component {
                             onClick={this.handleClick}
                         />
                     </li>
-                    <h1 id="bookCardHeader">{`${this.props.title}`}</h1>
+
                     <li>{`Author : ${this.props.author}`}</li>
                     <li>{`Language : ${this.props.language}`}</li>
 
-                    <li>
+                    <li id="bookCardFooter">
                         {" "}
                         <Modal
                             thumbnail={this.state.thumbnail}
