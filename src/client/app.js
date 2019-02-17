@@ -15,6 +15,8 @@ import {Catalogue} from "./Containers/Pages/Catalogue/Catalogue";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
+import axios from "axios";
+
 import "./scss/app.scss";
 
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
@@ -23,11 +25,39 @@ library.add(faTag);
 library.add(faSearch);
 
 class App extends Component {
-    render() {
-        let auth = true,
-            RoutingAuth = "";
+    constructor(props) {
+        super(props);
+        this.state = {
+            auth: false,
+        };
+    }
 
-        if (auth) {
+    componentWillMount() {
+        axios
+            .get("http://localhost/api/auth")
+            .then(response => {
+                console.log(response);
+
+                if (response.status === 200) {
+                    this.setState({
+                        auth: true,
+                    });
+                    this.props.history.push("/");
+                } else {
+                    this.setState({
+                        auth: false,
+                    });
+                }
+            })
+            .then(error => {
+                console.log(error);
+            });
+    }
+
+    render() {
+        let RoutingAuth = "";
+
+        if (this.state.auth) {
             RoutingAuth = (
                 <>
                     <div className="App">
@@ -68,11 +98,6 @@ class App extends Component {
                                 <PrivateRoute
                                     path="/homepage"
                                     component={Homepage}
-                                />
-                                <Route
-                                    exact
-                                    path="*"
-                                    component={() => "404 NOT FOUND"}
                                 />
                             </Switch>
                         </div>

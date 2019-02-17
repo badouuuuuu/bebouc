@@ -45,6 +45,7 @@ userSchema.methods = {
             });
     },
     getToken: function() {
+        console.log(this.admin);
         return jwt.encode(
             {id: this._id, admin: this.admin},
             process.env.JWT_TOKEN,

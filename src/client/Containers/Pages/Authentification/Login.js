@@ -39,14 +39,12 @@ export class Login extends React.Component {
                 if (res.status !== 200) {
                     console.log("email ou mot de pass incorrect");
                 } else {
-                    console.log(res.data);
+                    console.log(res);
 
                     this.setState({
                         login_button: "success-button",
                         login: "Success",
                     });
-
-                    window.location = "/homepage";
                 }
             })
             .catch(err => {

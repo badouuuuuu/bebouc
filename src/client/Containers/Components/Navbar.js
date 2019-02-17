@@ -18,6 +18,14 @@ export class NavBar extends React.Component {
         this.setState({active: !active});
     };
 
+    logout() {
+        return (
+            (window.location = "/logout"),
+            localStorage.clear(),
+            sessionStorage.clear()
+        );
+    }
+
     render() {
         let AdminMenu = null;
 
@@ -50,7 +58,7 @@ export class NavBar extends React.Component {
                         <Navbar.Item href="/editprofil">
                             <p className="colorNavCat">{"Account"} </p>
                         </Navbar.Item>
-                        <Navbar.Item href="/login">
+                        <Navbar.Item onClick={this.logout}>
                             <p className="colorNavCat">{"Logout"} </p>
                         </Navbar.Item>
                     </div>
