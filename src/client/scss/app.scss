@@ -401,14 +401,19 @@ body {
     margin: 5em auto 6em auto;
 }
 
-
-
 .navAdminpicto{
   display: flex;
   justify-content: space-around;
-  margin: 10em 2em 2em 4em ;
+  margin: 2rem 2rem 4rem 2rem ;
 }
 
+.navAdminItem {
+  justify-content: center;
+}
+
+.navAdminButton {
+
+}
 
 // TABLES
 

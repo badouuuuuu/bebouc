@@ -39,7 +39,7 @@ export default class UsersList extends React.Component {
         return (
             <>
                 <form action="/Register" method="get">
-                    <button className="submit-button">{"New User"}</button>
+                    <button className="submit-button">{"Add a User"}</button>
                 </form>
                 <table className="table">
                     <thead>

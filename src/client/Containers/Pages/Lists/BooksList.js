@@ -41,7 +41,7 @@ export class BooksList extends React.Component {
         return (
             <>
                 <form action="/addbook" method="get">
-                    <button className="submit-button">{"New Book"}</button>
+                    <button className="submit-button">{"Add a Book"}</button>
                 </form>
                 <table className="table">
                     <thead>
