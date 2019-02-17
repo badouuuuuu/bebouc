@@ -181,12 +181,12 @@ body {
         color: $color3;
     }
 
- 
+
     .inputsearch:focus {
         width: 260px;
         text-align: center;
         color: $color1;
-        
+
     }
     .inputsearch::placeholder{
         color: #888;
@@ -578,7 +578,7 @@ body {
 /*********** DEBUT EDIT PROFIL **************/
 
 .editprofil-component {
-    
+
     margin: 100px auto;
     background-color: rgb(255, 255, 255);
     width: 800px;
@@ -800,4 +800,35 @@ color: $color3;
 .colorNavCat:hover {
     color: $color2;
 
+}
+
+.reviewcont {
+ width: 40%;
+ display: block;
+ margin-top: 50px;
+}
+
+.titlereview {
+
+  color: $color3;
+  font-size: 1rem;
+  background-color: rgb(26, 38, 50);
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.InsideReview {
+
+  border: none;
+  width : 200%;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  border-radius: 1em;
+ padding: 12px 20px;
+ margin: 8px 0;
 }
