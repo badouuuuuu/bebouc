@@ -658,12 +658,12 @@ body {
 
 
 .NavCatalogue{
-  width : 75%;
-  margin: 30px auto auto 150px;
+  width : 100%;
+  margin: auto;
   display : inline-flex;
-  justify-content: flex-end;
-  padding-right: 10px;
+  justify-content: center;
 }
+
 .titleCat {
 font-family: $font1;
 font-style: normal;
@@ -771,7 +771,7 @@ color: $color3;
     padding-top: 20px;
     background-color: $color1;
     a {
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
 
 }
@@ -779,6 +779,15 @@ color: $color3;
 .logoNav{
   width:100px;
 }
+
+.navbar-start {
+    margin: auto;
+}
+
+.navbar-end {
+    margin-left: 0;
+}
+
 .navbar-burger {
     color: $color2;
 }
