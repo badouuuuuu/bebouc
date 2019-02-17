@@ -38,7 +38,7 @@ export default class LoansList extends React.Component {
         return (
             <>
                 <form action="/addloan" method="get">
-                    <button className="submit-button">{"New Loan"}</button>
+                    <button className="submit-button">{"Add a Loan"}</button>
                 </form>
                 <table className="table">
                     <thead>

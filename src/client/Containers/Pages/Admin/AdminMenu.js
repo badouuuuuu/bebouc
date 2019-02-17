@@ -15,6 +15,7 @@ export class AdminMenu extends React.Component {
             buttonUsers: "secondary-button",
             buttonBooks: "secondary-button",
             buttonLoans: "secondary-button",
+            showPicto: true,
         };
         this.manageUsers = this.manageUsers.bind(this);
         this.manageBooks = this.manageBooks.bind(this);
@@ -22,31 +23,65 @@ export class AdminMenu extends React.Component {
     }
 
     manageUsers() {
-        this.setState({
-            buttonUsers: "active-button",
-            buttonBooks: "secondary-button",
-            buttonLoans: "secondary-button",
-        });
+        if (this.state.buttonUsers === "secondary-button") {
+            this.setState({
+                buttonUsers: "active-button",
+                buttonBooks: "secondary-button",
+                buttonLoans: "secondary-button",
+                showPicto: false,
+            });
+        } else {
+            this.setState({
+                buttonUsers: "secondary-button",
+                buttonBooks: "secondary-button",
+                buttonLoans: "secondary-button",
+                showPicto: true,
+            });
+        }
     }
 
     manageBooks() {
-        this.setState({
-            buttonUsers: "secondary-button",
-            buttonBooks: "active-button",
-            buttonLoans: "secondary-button",
-        });
+        if (this.state.buttonBooks === "secondary-button") {
+            this.setState({
+                buttonUsers: "secondary-button",
+                buttonBooks: "active-button",
+                buttonLoans: "secondary-button",
+                showPicto: false,
+            });
+        } else {
+            this.setState({
+                buttonUsers: "secondary-button",
+                buttonBooks: "secondary-button",
+                buttonLoans: "secondary-button",
+                showPicto: true,
+            });
+        }
     }
 
     manageLoans() {
-        this.setState({
-            buttonUsers: "secondary-button",
-            buttonBooks: "secondary-button",
-            buttonLoans: "active-button",
-        });
+        if (this.state.buttonLoans === "secondary-button") {
+            this.setState({
+                buttonUsers: "secondary-button",
+                buttonBooks: "secondary-button",
+                buttonLoans: "active-button",
+                showPicto: false,
+            });
+        } else {
+            this.setState({
+                buttonUsers: "secondary-button",
+                buttonBooks: "secondary-button",
+                buttonLoans: "secondary-button",
+                showPicto: true,
+            });
+        }
     }
 
     render() {
-        let List = null;
+        // Display the appropriate List according to the right Button click
+        let List = null,
+            PictoUsers = "",
+            PictoBooks = "",
+            PictoLoans = "";
 
         if (this.state.buttonUsers === "active-button") {
             List = <UsersList />;
@@ -56,13 +91,35 @@ export class AdminMenu extends React.Component {
             List = <LoansList />;
         }
 
+        //  Display or hide menu item pictures whether a list is displayed or not
+
+        if (this.state.showPicto) {
+            PictoUsers = (
+                <div className="navAdminpicto">
+                    <SvgUserwhite />
+                </div>
+            );
+            PictoBooks = (
+                <div className="navAdminpicto">
+                    <SvgOpenMagazine />
+                </div>
+            );
+            PictoLoans = (
+                <div className="navAdminpicto">
+                    <SvgList />
+                </div>
+            );
+        } else {
+            PictoUsers = "";
+            PictoBooks = "";
+            PictoLoans = "";
+        }
+
         return (
             <div className="container">
                 <div className="navadmin">
                     <div className="navAdminItem">
-                        <div className="navAdminpicto">
-                            <SvgUserwhite />
-                        </div>
+                        {PictoUsers}
                         <button
                             className={`navAdminButton ${
                                 this.state.buttonUsers
@@ -72,9 +129,7 @@ export class AdminMenu extends React.Component {
                         </button>
                     </div>
                     <div className="navAdminItem">
-                        <div className="navAdminpicto">
-                            <SvgOpenMagazine />
-                        </div>
+                        {PictoBooks}
                         <button
                             className={`navAdminButton ${
                                 this.state.buttonBooks
@@ -84,9 +139,7 @@ export class AdminMenu extends React.Component {
                         </button>
                     </div>
                     <div className="navAdminItem">
-                        <div className="navAdminpicto">
-                            <SvgList />
-                        </div>
+                        {PictoLoans}
                         <button
                             className={`navAdminButton ${
                                 this.state.buttonLoans
