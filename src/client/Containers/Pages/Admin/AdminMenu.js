@@ -4,6 +4,9 @@ import * as React from "react";
 import BooksList from "../Lists/BooksList";
 import UsersList from "../Lists/UsersList";
 import LoansList from "../Lists/LoansList";
+import SvgUserwhite from "../../Components/Userwhite.js";
+import SvgOpenMagazine from "../../Components/OpenMagazine.js";
+import SvgList from "../../Components/List.js";
 
 export class AdminMenu extends React.Component {
     constructor(props) {
@@ -56,21 +59,42 @@ export class AdminMenu extends React.Component {
         return (
             <div className="container">
                 <div className="navadmin">
-                    <button
-                        className={this.state.buttonUsers}
-                        onClick={this.manageUsers}>
-                        {"Manage Users"}
-                    </button>
-                    <button
-                        className={this.state.buttonBooks}
-                        onClick={this.manageBooks}>
-                        {"Manage Books"}
-                    </button>
-                    <button
-                        className={this.state.buttonLoans}
-                        onClick={this.manageLoans}>
-                        {"Manage Loans"}
-                    </button>
+                    <div className="navAdminItem">
+                        <div className="navAdminpicto">
+                            <SvgUserwhite />
+                        </div>
+                        <button
+                            className={`navAdminButton ${
+                                this.state.buttonUsers
+                            }`}
+                            onClick={this.manageUsers}>
+                            {"Manage Users"}
+                        </button>
+                    </div>
+                    <div className="navAdminItem">
+                        <div className="navAdminpicto">
+                            <SvgOpenMagazine />
+                        </div>
+                        <button
+                            className={`navAdminButton ${
+                                this.state.buttonBooks
+                            }`}
+                            onClick={this.manageBooks}>
+                            {"Manage Books"}
+                        </button>
+                    </div>
+                    <div className="navAdminItem">
+                        <div className="navAdminpicto">
+                            <SvgList />
+                        </div>
+                        <button
+                            className={`navAdminButton ${
+                                this.state.buttonLoans
+                            }`}
+                            onClick={this.manageLoans}>
+                            {"Manage Loans"}
+                        </button>
+                    </div>
                 </div>
                 <div className="table-container"> {List} </div>
             </div>
