@@ -36,13 +36,12 @@ class App extends Component {
         axios
             .get("http://localhost/api/auth")
             .then(response => {
-                console.log(response);
+                console.log(response.data);
 
                 if (response.status === 200) {
                     this.setState({
                         auth: true,
                     });
-                    this.props.history.push("/");
                 } else {
                     this.setState({
                         auth: false,
