@@ -1,11 +1,12 @@
 // Before Bulma Import for navbar
-$navbar-background-color: #1A2632;
-$navbar-item-hover-background-color : #1A2632;
+$navbar-background-color: !important #1A2632;
+$navbar-item-hover-background-color :!important  #1A2632;
 $navbar-item-hover-color: white;
 
+$dropdown-item-hover-background-color:!important #1A2632;
+$dropdown-item-active-color: #1A2632;
 
-@import "bulma";
-
+@import "~bulma/bulma";
 
 
 /**************** COLORS *************/
@@ -28,17 +29,25 @@ sans-serif;
 /**************** DEBUT CSS *************/
 
 html {
-    color: $color1;
+
+    background-color: $color1;
+}
+
+
+.App {
+    background-color: $color1;
+}
+
+.App-content {
+    background-color: $color1;
 }
 
 body {
     font-family: $font1;
-
     /**************** CSS HOME PAGE - SPA *************/
 
     .backgroundhome {
         position: relative;
-
         background-color: $color1;
     }
 
@@ -148,7 +157,6 @@ body {
     //input
 
     .inputsearch {
-        width: 179px;
         height: 26px;
         left: 1093px;
         top: 308px;
@@ -157,10 +165,33 @@ body {
         border: none;
         padding: 2px;
         font-family: $font1;
-        padding-left: 10px;
-        margin-left: 20px;
+        margin-left: 15px;
+        margin-top: 5px;
+        width: 30px;
+        -webkit-transition: width 0.4s ease-in-out;
+        transition: width 0.4s ease-in-out;
+        display: flex;
+    }
+    .icon-search {
+        text-align: center;
+        display: inline-flex;
+        position: absolute;
+        margin-top: 10px;
+        margin-left: 60px;
+        color: $color3;
     }
 
+ 
+    .inputsearch:focus {
+        width: 260px;
+        text-align: center;
+        color: $color1;
+        
+    }
+    .inputsearch::placeholder{
+        color: #888;
+        text-align: center;
+    }
 
     .button.is-text {
         text-decoration: none;
@@ -364,16 +395,10 @@ body {
 /**************** FIN ADD USERS COMPONENTS *************/
 
 
-
-.navbarstyle {
-    background-color: $color1;
-
-}
-
 .navadmin {
     display: flex;
     justify-content: space-around;
-    margin: 1rem auto 2rem auto;
+    margin: 5em auto 6em auto;
 }
 
 
@@ -381,9 +406,7 @@ body {
 .navAdminpicto{
   display: flex;
   justify-content: space-around;
-  margin: 2rem 2rem 2rem 4rem ;
-  padding-top: 2rem;
-  padding-bottom: 0;
+  margin: 10em 2em 2em 4em ;
 }
 
 
@@ -396,6 +419,8 @@ body {
     border-radius: .6em;
 }
 
+
+/*
 .buttonNav {
   font-family: $font1;
   font-style: normal;
@@ -448,10 +473,7 @@ body {
 }
 
 
-
-
-
-
+*/
 
 
 
@@ -556,8 +578,9 @@ body {
 /*********** DEBUT EDIT PROFIL **************/
 
 .editprofil-component {
-    margin: 0 auto;
-    background-color: white;
+    
+    margin: 100px auto;
+    background-color: rgb(255, 255, 255);
     width: 800px;
     height: 600px;
     border-radius: 20px;
@@ -620,7 +643,7 @@ body {
         width: 85%;
         height: 100%;
         margin: 0 auto;
-        background-color: rgba(255, 255, 255, 0.17);;
+        background-color: rgba(255, 255, 255, 0);;
         padding: 30px;
         margin-top: 1rem;
         position: relative;
@@ -638,7 +661,6 @@ body {
 }
 .titleCat {
 font-family: $font1;
-font-family: Roboto;
 font-style: normal;
 font-weight: normal;
 line-height: normal;
@@ -651,22 +673,30 @@ color: $color3;
 
 // ELIAS CSS JUST FOR CARDS AND Modal
 #bookCard {
+    outline: none;
     width: 15rem;
     border-radius: 1rem;
     padding: 1.2rem;
     margin: 3rem;
     text-align: center;
     display: inline-block;
+
+    li {
+        color: white;
+        font-size: 0.75rem;
+    }
 }
 
 #bookCard:hover {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.285);
+    outline: none;
 }
 
 #cardImage {
     width: 8rem;
     margin-bottom: 1rem;
     margin-top: 1rem;
+    border-radius: 1rem;
 }
 
 #cardButton {
@@ -677,19 +707,28 @@ color: $color3;
 
 
  #bookCardHeader {
-     color: white;
+     border-bottom: 0.05rem solid $color3;
+     color: $color3;
      border-radius: 1rem;
      padding-top: 0.5rem;
      padding-bottom: 0.5rem;
-     font-family: Roboto;
       font-style: normal;
-      font-weight: normal;
+      font-weight: bolder;
       line-height: normal;
      font-size: 14px;
+     margin-bottom: 0.5rem;
  }
+
+ .modal-content {
+     img {
+         width: 40%;
+         border-radius: 1rem;
+     }
+ }
+
  #modalTitle {
-     color: white;
-     font-size: 3rem;
+     color: $color3;
+     font-size: 1.5rem;
      background-color: rgb(26, 38, 50);
      border-radius: 1rem;
      padding-top: 0.5rem;
@@ -697,36 +736,68 @@ color: $color3;
      padding-left: 1rem;
      padding-right: 1rem;
  }
+
  #modalAuthor {
     margin-top: 1rem;
     margin-bottom: 0.6rem;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white;
     font-style: italic;
  }
+
  #modalSummary {
     margin-top: 1rem;
     padding: 1rem;
     font-size: 1.2rem;
     color: white;
     background-color: rgba(26, 38, 50, 0.3);
-    border-radius: 1.5rem;
+    border-radius: 1rem;
  }
 
 
+
+
+
+
+
+
+
+.navbar {
+    padding-top: 20px;
+    background-color: $color1;
+    a {
+        font-size: 1.3rem;
+    }
+}
+
+.navbar-burger {
+    color: $color2;
+}
  .colorAdmin {
-   color:$color3;
- }
- .colorAdmin:hover {
-   color:white;
+     color: $color3;
  }
 
- .colorNavCat{
-   color:white;
+ .navbar-brand {
+     background-color: $color1;
  }
- .colorNavCat:hover{
-   color:$color2;
+
+ .navbar-menu {
+    background-color: $color1;
+
  }
- .colorNavCat:focus{
-   color:$color2;
- }
+
+.navbar a {
+    color: white;
+
+}
+
+
+.navbar-item:hover {
+    background-color: $color1;
+    color: $color2;
+}
+
+.colorNavCat:hover {
+    color: $color2;
+
+}

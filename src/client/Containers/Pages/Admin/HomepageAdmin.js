@@ -1,5 +1,4 @@
 import * as React from "react";
-import "../../../scss/app.scss";
 import AdminMenu from "./AdminMenu.js";
 import SvgUserwhite from "../../Components/Userwhite.js";
 import SvgOpenMagazine from "../../Components/OpenMagazine.js";
