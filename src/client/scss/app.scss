@@ -12,7 +12,7 @@ $dropdown-item-active-color: #1A2632;
 /**************** COLORS *************/
 $color1: #1A2632;
 $color2: #63C3D1;
-$color3: #F57E29;
+$color3: #63C3D1;
 $color4: #A4AEB8;
 
 $color_error:red;
@@ -768,8 +768,12 @@ color: $color3;
     a {
         font-size: 1.3rem;
     }
+
 }
 
+.logoNav{
+  width:100px;
+}
 .navbar-burger {
     color: $color2;
 }

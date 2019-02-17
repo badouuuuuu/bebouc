@@ -33,9 +33,10 @@ export class NavBar extends React.Component {
         return (
             <Navbar id="navigation" active={this.state.active}>
                 <Navbar.Brand>
-                    <Navbar.Item>
+                    <div className="logoNav">
                         <Logo />
-                    </Navbar.Item>
+                    </div>
+
                     <Navbar.Burger
                         active={this.state.active}
                         onClick={this.handleClick}
