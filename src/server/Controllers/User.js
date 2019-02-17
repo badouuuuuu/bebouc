@@ -1,4 +1,4 @@
-const User = require("../User.js");
+const User = require("../Models/User.js");
 // crypt password
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;

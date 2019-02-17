@@ -27,8 +27,11 @@ library.add(faSearch);
 class App extends Component {
     constructor(props) {
         super(props);
+        this.logout = this.logout.bind(this);
+
         this.state = {
             auth: false,
+            isJunior: false,
         };
     }
 
@@ -39,9 +42,19 @@ class App extends Component {
                 console.log(response.data);
 
                 if (response.status === 200) {
-                    this.setState({
-                        auth: true,
-                    });
+                    if (response.data.admin === true) {
+                        this.setState({
+                            auth: true,
+                            isJunior: true,
+                        });
+                    }
+
+                    if (reponse.data.admin === false) {
+                        this.setState({
+                            auth: true,
+                            isJunior: false,
+                        });
+                    }
                 } else {
                     this.setState({
                         auth: false,
@@ -53,6 +66,17 @@ class App extends Component {
             });
     }
 
+    logout() {
+        console.log("Logout");
+
+        this.setState({
+            auth: false,
+            isJunior: false,
+        });
+
+        window.location = "/";
+    }
+
     render() {
         let RoutingAuth = "";
 
@@ -61,7 +85,10 @@ class App extends Component {
                 <>
                     <div className="App">
                         <div className="App-content">
-                            <NavBar />
+                            <NavBar
+                                isJunior={this.state.isJunior}
+                                isLogout={this.logout}
+                            />
                             <Switch>
                                 <Route exact path="/" component={Homepage} />
                                 <Route
@@ -95,7 +122,8 @@ class App extends Component {
                                     component={Register}
                                 />
                                 <PrivateRoute
-                                    path="/homepage"
+                                    exact
+                                    path="/admin"
                                     component={Homepage}
                                 />
                             </Switch>

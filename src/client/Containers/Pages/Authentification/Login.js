@@ -11,7 +11,6 @@ export class Login extends React.Component {
         this.state = {
             email: "",
             password: "",
-            admin: false,
             login_button: "submit-button",
             login: "Login",
             disabled_button: "",
@@ -29,7 +28,7 @@ export class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state.admin);
+
         axios
             .post(`http://localhost/api/login`, {
                 email: this.state.email,

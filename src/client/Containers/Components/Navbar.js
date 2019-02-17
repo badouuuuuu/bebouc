@@ -5,9 +5,7 @@ import {Navbar} from "react-bulma-components/full";
 export class NavBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isJunior: false,
-        };
+        this.state = {};
     }
 
     state = {active: false};
@@ -18,18 +16,10 @@ export class NavBar extends React.Component {
         this.setState({active: !active});
     };
 
-    logout() {
-        return (
-            (window.location = "/logout"),
-            localStorage.clear(),
-            sessionStorage.clear()
-        );
-    }
-
     render() {
         let AdminMenu = null;
 
-        if (!this.state.isJunior) {
+        if (this.props.isJunior) {
             AdminMenu = (
                 <Navbar.Item href="/admin">
                     {" "}
@@ -58,7 +48,7 @@ export class NavBar extends React.Component {
                         <Navbar.Item href="/editprofil">
                             <p className="colorNavCat">{"Account"} </p>
                         </Navbar.Item>
-                        <Navbar.Item onClick={this.logout}>
+                        <Navbar.Item onClick={this.props.isLogout}>
                             <p className="colorNavCat">{"Logout"} </p>
                         </Navbar.Item>
                     </div>
