@@ -73,6 +73,7 @@ class App extends Component {
             auth: false,
             isJunior: false,
         });
+        localStorage.removeItem("token");
 
         window.location = "/";
     }
