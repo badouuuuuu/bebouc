@@ -24,17 +24,19 @@ export class Modal extends React.Component {
         const displayEachReviews = this.state.review.map((review, i) => {
             let index = i + 1;
 
-            return (
-                <Reviews
-                    index={index}
-                    key={review._id}
-                    author={review.authorName}
-                    book={review.bookID}
-                    rating={review.rating}
-                    comment={review.comment}
-                    created={review.created_at}
-                />
-            );
+            if (review.bookID === this.props.id) {
+                return (
+                    <Reviews
+                        index={index}
+                        key={review._id}
+                        author={review.authorName}
+                        book={review.bookID}
+                        rating={review.rating}
+                        comment={review.comment}
+                        created={review.created_at}
+                    />
+                );
+            }
         });
 
         return (
