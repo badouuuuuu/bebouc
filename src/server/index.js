@@ -6,7 +6,7 @@ import path from "path";
 import cors from "cors";
 
 // Database connection
-mongoose.connect("mongodb://becode:becode@bebouc-shard-00-00-pnqv7.mongodb.net:27017,bebouc-shard-00-01-pnqv7.mongodb.net:27017,bebouc-shard-00-02-pnqv7.mongodb.net:27017/test?ssl=true&replicaSet=Bebouc-shard-0&authSource=admin&retryWrites=true");
+mongoose.connect(`mongodb://${process.env.MONGO_ATLAS_LOGIN}:${process.env.MONGO_ATLAS_PASSWORD}@bebouc-shard-00-00-pnqv7.mongodb.net:27017,bebouc-shard-00-01-pnqv7.mongodb.net:27017,bebouc-shard-00-02-pnqv7.mongodb.net:27017/test?ssl=true&replicaSet=Bebouc-shard-0&authSource=admin&retryWrites=true`);
 
 const db = mongoose.connection;
 

@@ -7,6 +7,8 @@
         NODE_ENV: "development"
         APP_PORT: 12345
         JWT_TOKEN: "mybeboucbitchlollollollol"
+        MONGO_ATLAS_LOGIN: "bebouc"
+        MONGO_ATLAS_PASSWORD: "becode"
       volumes:
         - "./package.json:/src/app/package.json"
         - "./node_modules:/src/app/node_modules"
