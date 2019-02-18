@@ -42,6 +42,7 @@ export default class LoansList extends React.Component {
                     book={loan.bookID}
                     borrower={loan.borrowerID}
                     date={loan.updatedAt}
+                    active={loan.active}
                 />
             );
         });
@@ -59,6 +60,7 @@ export default class LoansList extends React.Component {
                             <th>{"Book"}</th>
                             <th>{"User"}</th>
                             <th>{"Date"}</th>
+                            <th>{"Active"}</th>
                             <th />
                         </tr>
                     </thead>
