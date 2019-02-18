@@ -9,6 +9,7 @@ import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
 import {AddBook} from "./Containers/Pages/Catalogue/AddBook";
 import {AddLoan} from "./Containers/Pages/Catalogue/AddLoan";
+import {EditBook} from "./Containers/Pages/Catalogue/EditBook";
 import {EditProfil} from "./Containers/Pages/Catalogue/EditProfil";
 import {NavBar} from "./Containers/Components/Navbar";
 import {Catalogue} from "./Containers/Pages/Catalogue/Catalogue";
@@ -35,6 +36,11 @@ class App extends Component {
                             <Route exact path="/" component={Homepage} />
                             <Route exact path="/addbook" component={AddBook} />
                             <Route exact path="/addloan" component={AddLoan} />
+                            <Route
+                                exact
+                                path="/editbook"
+                                component={EditBook}
+                            />
                             <Route
                                 exact
                                 path="/catalogue"
