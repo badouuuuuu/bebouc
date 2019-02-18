@@ -1,13 +1,17 @@
 import * as React from "react";
 import axios from "axios";
 import UserLine from "../../Components/UserLine";
+import Register from "../Authentification/Register";
 
 export default class UsersList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             users: [],
+            showModal: "",
         };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     componentDidMount() {
@@ -17,6 +21,14 @@ export default class UsersList extends React.Component {
             this.setState({users});
             console.log(users);
         });
+    }
+
+    handleClick() {
+        this.setState({showModal: "is-active"});
+    }
+
+    handleClose() {
+        this.setState({showModal: ""});
     }
 
     render() {
@@ -38,9 +50,14 @@ export default class UsersList extends React.Component {
 
         return (
             <>
-                <form action="/Register" method="get">
-                    <button className="submit-button">{"New User"}</button>
-                </form>
+                <button className="submit-button" onClick={this.handleClick}>
+                    {" "}
+                    {"Add a User"}{" "}
+                </button>
+                <Register
+                    show={this.state.showModal}
+                    close={this.handleClose}
+                />
                 <table className="table">
                     <thead>
                         <tr>

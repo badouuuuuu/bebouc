@@ -1,13 +1,17 @@
 import * as React from "react";
 import axios from "axios";
 import BookLine from "../../Components/BookLine";
+import AddBook from "../Catalogue/AddBook";
 
 export class BooksList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             books: [],
+            showModal: "",
         };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     componentDidMount() {
@@ -16,6 +20,14 @@ export class BooksList extends React.Component {
 
             this.setState({books});
         });
+    }
+
+    handleClick() {
+        this.setState({showModal: "is-active"});
+    }
+
+    handleClose() {
+        this.setState({showModal: ""});
     }
 
     render() {
@@ -40,9 +52,11 @@ export class BooksList extends React.Component {
 
         return (
             <>
-                <form action="/addbook" method="get">
-                    <button className="submit-button">{"New Book"}</button>
-                </form>
+                <button className="submit-button" onClick={this.handleClick}>
+                    {" "}
+                    {"Add a Book"}{" "}
+                </button>
+                <AddBook show={this.state.showModal} close={this.handleClose} />
                 <table className="table">
                     <thead>
                         <tr>

@@ -12,7 +12,7 @@ $dropdown-item-active-color: #1A2632;
 /**************** COLORS *************/
 $color1: #1A2632;
 $color2: #63C3D1;
-$color3: #F57E29;
+$color3: #63C3D1;
 $color4: #A4AEB8;
 
 $color_error:red;
@@ -51,7 +51,7 @@ body {
         background-color: $color1;
     }
 
-     
+
     .back-button {
         text-align: center;
         margin: 0 auto;
@@ -105,7 +105,7 @@ body {
     .secondary-button:hover {
         background-color: white;
         border-radius: 20px;
-        color: $color2; 
+        color: $color2;
     }
 
     .delete {
@@ -206,12 +206,12 @@ body {
         color: $color3;
     }
 
- 
+
     .inputsearch:focus {
         width: 260px;
         text-align: center;
         color: $color1;
-        
+
     }
     .inputsearch::placeholder{
         color: #888;
@@ -240,7 +240,7 @@ body {
         text-align: center;
         margin-top: 18px;
         margin-left: 10px;
-        color: rgba(245, 126, 41, 0.80);
+        color: $color2;
         opacity: 30%;
 
     }
@@ -313,7 +313,7 @@ body {
         input:focus {
             outline: none;
             text-align: center;
-            border: 1px solid rgba(245, 126, 41, 0.80);
+            border: 1px solid $color2;
         }
 
         ::-webkit-input-placeholder {
@@ -379,7 +379,7 @@ body {
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 20px;
             box-sizing: border-box;
             text-align: center;
@@ -390,7 +390,7 @@ body {
         input:focus {
             outline: none;
             text-align: center;
-            border: 1px solid rgba(245, 126, 41, 0.80);
+            border: 1px solid $color2;
         }
 
         ::-webkit-input-placeholder {
@@ -426,14 +426,19 @@ body {
     margin: 5em auto 6em auto;
 }
 
-
-
 .navAdminpicto{
   display: flex;
   justify-content: space-around;
-  margin: 10em 2em 2em 4em ;
+  margin: 2rem 2rem 4rem 2rem ;
 }
 
+.navAdminItem {
+  justify-content: center;
+}
+
+.navAdminButton {
+
+}
 
 // TABLES
 
@@ -619,7 +624,7 @@ body {
 /*********** DEBUT EDIT PROFIL **************/
 
 .editprofil-component {
-    
+
     margin: 100px auto;
     background-color: rgb(255, 255, 255);
     width: 800px;
@@ -666,18 +671,18 @@ body {
                 background-color: rgba(255, 255, 255, 0.60);
                 color: $color1;
             }
-    
+
             input:focus {
                 outline: none;
                 text-align: center;
                 border: 1px solid rgba(245, 126, 41, 0.80);
             }
-    
+
             ::-webkit-input-placeholder {
                 text-align: center;
                 justify-content: center;
             }
-    
+
             :-moz-placeholder {
                 text-align: center;
             }
@@ -729,12 +734,12 @@ body {
 
 
 .NavCatalogue{
-  width : 75%;
-  margin: 30px auto auto 150px;
+  width : 100%;
+  margin: auto;
   display : inline-flex;
-  justify-content: flex-end;
-  padding-right: 10px;
+  justify-content: center;
 }
+
 .titleCat {
 font-family: $font1;
 font-style: normal;
@@ -842,16 +847,27 @@ color: $color3;
     padding-top: 20px;
     background-color: $color1;
     a {
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
+
+}
+
+.logoNav{
+  width:100px;
+}
+
+.navbar-start {
+    margin: auto;
+}
+
+.navbar-end {
+    margin-left: 0;
 }
 
 .navbar-burger {
     color: $color2;
+
 }
- .colorAdmin {
-     color: $color3;
- }
 
  .navbar-brand {
      background-color: $color1;
@@ -878,6 +894,62 @@ color: $color3;
 
 }
 
+#button-is-active {
+    color: $color3;
+}
+
+.reviewcont {
+ width: 40%;
+ display: block;
+ margin-top: 50px;
+}
+
+.titlereview {
+
+  color: $color3;
+  font-size: 1rem;
+  background-color: rgb(26, 38, 50);
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  float: left;
+  margin-bottom: 50px;
+}
+
+.InsideReview {
+
+  border: none;
+  width : 200%;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  border-radius: 1em;
+ padding: 12px 20px;
+ margin: 8px 0;
+}
+
+.textarea.is-info.is-small{
+  resize: none;
+  outline: none;
+  width: 40%;
+  height: 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.60);
+  color: $color1;
+}
+
+.textarea.is-info.is-small:focus {
+    outline: none;
+    text-align: center;
+    border: 1px solid $color2;
+}
 .modal-card-foot{
     text-align: center;
     justify-content: center;
@@ -900,7 +972,6 @@ color: $color3;
     }
     .dropdown-item:hover {
         background: $color1;
-        
+
     }
 }
-

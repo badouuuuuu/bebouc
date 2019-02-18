@@ -89,7 +89,7 @@ export class EditProfil extends React.Component {
         return (
             <>
                 <div className="editprofil-component">
-                    <h1>{"Who's who"}</h1>
+                    <h1>{"Redefine Your Awesome Self"}</h1>
 
                     <hr />
                     <svg

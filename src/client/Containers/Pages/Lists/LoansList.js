@@ -1,6 +1,6 @@
 import * as React from "react";
 import axios from "axios";
-
+import AddLoan from "../Catalogue/AddLoan";
 import LoanLine from "../../Components/LoanLine";
 
 export default class LoansList extends React.Component {
@@ -8,7 +8,10 @@ export default class LoansList extends React.Component {
         super(props);
         this.state = {
             loans: [],
+            showModal: "",
         };
+        this.handleClick = this.handleClick.bind(this);
+        this.handleClose = this.handleClose.bind(this);
     }
 
     componentDidMount() {
@@ -17,6 +20,14 @@ export default class LoansList extends React.Component {
 
             this.setState({loans});
         });
+    }
+
+    handleClick() {
+        this.setState({showModal: "is-active"});
+    }
+
+    handleClose() {
+        this.setState({showModal: ""});
     }
 
     render() {
@@ -37,9 +48,11 @@ export default class LoansList extends React.Component {
 
         return (
             <>
-                <form action="/addloan" method="get">
-                    <button className="submit-button">{"New Loan"}</button>
-                </form>
+                <button className="submit-button" onClick={this.handleClick}>
+                    {" "}
+                    {"Add a Loan"}{" "}
+                </button>
+                <AddLoan show={this.state.showModal} close={this.handleClose} />
                 <table className="table">
                     <thead>
                         <tr>

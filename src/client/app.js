@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
+import axios from "axios";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
 import {Login} from "./Containers/Pages/Authentification/Login";
@@ -14,8 +15,7 @@ import {Catalogue} from "./Containers/Pages/Catalogue/Catalogue";
 import {library} from "@fortawesome/fontawesome-svg-core";
 import {faTag} from "@fortawesome/free-solid-svg-icons";
 import {faSearch} from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
-
+import {Error404} from "./Containers/Pages/Authentification/404";
 import "./scss/app.scss";
 
 // import {devpage} from "./Containers/Pages/Authentification/devpage";
@@ -31,7 +31,7 @@ class App extends Component {
 
         this.state = {
             auth: true,
-            isJunior: true,
+            isJunior: false,
         };
     }
 
@@ -135,6 +135,7 @@ class App extends Component {
                                     path="/Register"
                                     component={Register}
                                 />
+                                <Route exact path="*" component={Error404} />
                             </Switch>
                         </div>
                     </div>

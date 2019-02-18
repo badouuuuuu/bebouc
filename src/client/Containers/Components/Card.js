@@ -60,6 +60,7 @@ export class Card extends React.Component {
                             show={this.state.showModal}
                             index={this.props.index}
                             key={this.props._id}
+                            id={this.props.id}
                             title={this.props.title}
                             author={this.props.author}
                             language={this.props.language}

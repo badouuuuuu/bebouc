@@ -60,16 +60,19 @@ export class AddLoan extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <section className="hero is-info">
-                    <div className="hero-body">
-                        <div className="container">
-                            <h1 className="title">{" Add a book"}</h1>
-                        </div>
-                    </div>
-                </section>
+            <div className={`modal ${this.props.show}`}>
+                <div className="modal-background" />
+                <div className="modal-content">
+                    <div className="container">
+                        <section className="hero is-info">
+                            <div className="hero-body">
+                                <div className="container">
+                                    <h1 className="title">{" Add a Loan"}</h1>
+                                </div>
+                            </div>
+                        </section>
 
-                {/* <hr />
+                        {/* <hr />
                 <form onSubmit={this.handleSubmit}>
                     <label id="icon" htmlFor="title" />
                     <input
@@ -181,8 +184,17 @@ export class AddLoan extends React.Component {
                             <strong>{"Database Id : "} </strong> {book._id}
                         </li>
                     ))} */}
-                {/* </ul> */}
+                        {/* </ul> */}
+                    </div>
+                </div>
+                <button
+                    onClick={this.props.close}
+                    className="modal-close is-large"
+                    aria-label="close"
+                />
             </div>
         );
     }
 }
+
+export default AddLoan;
