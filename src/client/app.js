@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
+import axios from "axios";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
 import {Login} from "./Containers/Pages/Authentification/Login";
@@ -28,7 +29,7 @@ class App extends Component {
         this.logout = this.logout.bind(this);
 
         this.state = {
-            auth: false,
+            auth: true,
             isJunior: false,
         };
     }
