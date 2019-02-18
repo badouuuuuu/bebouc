@@ -3,16 +3,17 @@ import * as React from "react";
 import HomepageAdmin from "./Admin/HomepageAdmin";
 import HomepageJunior from "./Catalogue/HomepageJunior";
 
-export class Homepage extends React.Component {
-    render() {
-        let Display = null;
+let Display = null;
 
-        if (!this.props.isJunior) {
+export class Homepage extends React.Component {
+    componentWillMount() {
+        if (this.props.isJunior) {
             Display = <HomepageJunior />;
         } else {
             Display = <HomepageAdmin />;
         }
-
+    }
+    render() {
         return <div className="backgroundhome">{Display}</div>;
     }
 }

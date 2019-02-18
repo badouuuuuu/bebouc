@@ -35,7 +35,7 @@ class App extends Component {
         };
     }
 
-    componentWillMount() {
+    componentWillReceiveProps() {
         axios
             .get("http://localhost/api/auth")
             .then(response => {
@@ -45,14 +45,14 @@ class App extends Component {
                     if (response.data.admin === true) {
                         this.setState({
                             auth: true,
-                            isJunior: true,
+                            isJunior: false,
                         });
                     }
 
                     if (reponse.data.admin === false) {
                         this.setState({
                             auth: true,
-                            isJunior: false,
+                            isJunior: true,
                         });
                     }
                 } else {
