@@ -215,7 +215,7 @@ body {
         text-align: center;
         margin-top: 18px;
         margin-left: 10px;
-        color: rgba(245, 126, 41, 0.80);
+        color: $color2;
         opacity: 30%;
 
     }
@@ -288,7 +288,7 @@ body {
         input:focus {
             outline: none;
             text-align: center;
-            border: 1px solid rgba(245, 126, 41, 0.80);
+            border: 1px solid $color2;
         }
 
         ::-webkit-input-placeholder {
@@ -354,7 +354,7 @@ body {
             padding: 12px 20px;
             margin: 8px 0;
             display: inline-block;
-            border: 1px solid #ccc;
+            border: none;
             border-radius: 20px;
             box-sizing: border-box;
             text-align: center;
@@ -365,7 +365,7 @@ body {
         input:focus {
             outline: none;
             text-align: center;
-            border: 1px solid rgba(245, 126, 41, 0.80);
+            border: 1px solid $color2;
         }
 
         ::-webkit-input-placeholder {
@@ -851,4 +851,26 @@ color: $color3;
   border-radius: 1em;
  padding: 12px 20px;
  margin: 8px 0;
+}
+
+.textarea.is-info.is-small{
+  resize: none;
+  outline: none;
+  width: 40%;
+  height: 100px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-radius: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.60);
+  color: $color1;
+}
+
+.textarea.is-info.is-small:focus {
+    outline: none;
+    text-align: center;
+    border: 1px solid $color2;
 }

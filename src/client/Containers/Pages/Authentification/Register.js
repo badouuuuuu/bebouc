@@ -12,7 +12,7 @@ export class Register extends React.Component {
             email: "",
             password: "",
             admin: false,
-            addusers_button: "submit-button",
+            addusers_button: "primary-button",
             addusers_success: "Add User",
             disabled_button: "",
             error_input: "input_addusers is-small",
