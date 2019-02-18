@@ -7,6 +7,10 @@ export class LoanLine extends React.Component {
         super(props);
         this.state = {
             showmodal: "",
+            borrower: "",
+            booktitle: "",
+            date: this.props.date,
+            active: "",
         };
         this.handleClick = this.handleClick.bind(this);
         this.handleClose = this.handleClose.bind(this);
@@ -33,12 +37,48 @@ export class LoanLine extends React.Component {
             });
     };
 
+    componentWillMount() {
+        // Retrieving the book data for each loan
+        axios.get("http://localhost/api/books").then(res => {
+            res.data.map(book => {
+                if (book._id === this.props.book) {
+                    this.setState({
+                        booktitle: book.title,
+                    });
+                }
+            });
+        });
+
+        // Retrieving borrower data for each loan
+        axios.get(`http://localhost/api/users`).then(res => {
+            res.data.map(user => {
+                if (user._id === this.props.borrower) {
+                    this.setState({
+                        borrower: user.name,
+                    });
+                }
+            });
+        });
+
+        // Getting Loan data and updating state
+        if (this.props.active) {
+            this.setState({
+                active: "Yes",
+            });
+        } else {
+            this.setState({
+                active: "No",
+            });
+        }
+    }
+
     render() {
         return (
             <tr>
-                <th>{this.props.book}</th>
-                <th>{this.props.borrower}</th>
-                <td>{this.props.date}</td>
+                <th>{this.state.booktitle}</th>
+                <th>{this.state.borrower}</th>
+                <td>{this.state.date}</td>
+                <td>{this.state.active}</td>
                 <td>
                     <button className="secondary-button">{"Edit"}</button>
                     <button
