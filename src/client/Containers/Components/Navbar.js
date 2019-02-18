@@ -93,9 +93,7 @@ export class NavBar extends React.Component {
                         </Navbar.Item>
                     </div>
                     <div className="navbar-end">
-                        <Navbar.Item
-                            href="/login"
-                            onClick={this.props.isLogout}>
+                        <Navbar.Item onClick={this.props.isLogout}>
                             <p className="colorNavCat">{"Logout"} </p>
                         </Navbar.Item>
                     </div>
