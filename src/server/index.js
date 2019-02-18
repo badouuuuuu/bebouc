@@ -6,7 +6,9 @@ import path from "path";
 import cors from "cors";
 
 // Database connection
-mongoose.connect("mongodb://dev:dev@mongo:27017/bebook?authSource=admin");
+mongoose.connect(
+    "mongodb+srv://becode:<becode>@cluster0-56rn0.mongodb.net/test?retryWrites=true",
+);
 
 const db = mongoose.connection;
 
@@ -53,7 +55,7 @@ app.use("/api", router);
 require(`${__dirname}/routes`)(router);
 
 // Port listener
-const {APP_PORT} = process.env;
+const {APP_PORT} = process.env || 8000;
 
 app.listen(APP_PORT, () =>
     console.log(`🚀 Server is listening on port ${APP_PORT}.`),
