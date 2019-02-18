@@ -7,6 +7,7 @@ import axios from "axios";
 export class Modal extends React.Component {
     constructor(props) {
         super(props);
+        this.handleSubmit = this.handleSubmit.bind(this);
         this.state = {
             review: [],
         };
@@ -18,6 +19,30 @@ export class Modal extends React.Component {
 
             this.setState({review});
         });
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        axios
+            .post(`http://localhost/api/reviews`, {
+                authorID: this.state.authorID,
+                authorName: this.state.authorName,
+                authorSurname: this.state.authorSurname,
+                bookID: this.state.bookID,
+                rating: this.state.rating,
+                comment: this.state.comment,
+            })
+            .then(res => {
+                if (res.status !== 200) {
+                    console.log("Vous avez déjà posté cette review");
+                } else {
+                    this.setState(prevState => {
+                        return {
+                            review: [...prevState.review, res.data],
+                        };
+                    });
+                }
+            });
     }
 
     render() {
@@ -56,13 +81,12 @@ export class Modal extends React.Component {
 
                         {displayEachReviews}
 
-                        <form>
+                        <form onSubmit={this.handleSubmit}>
                             <input
                                 className="InsideReview"
                                 placeholder="Your review here"
                             />
                             <button className="submit-button">
-                                {" "}
                                 {"Into the wild"}
                             </button>
                         </form>
