@@ -6,7 +6,6 @@ export class NavBar extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            isJunior: false,
             active: false,
             AdminActive: "button-is-active",
             CatalogueActive: null,
@@ -64,12 +63,12 @@ export class NavBar extends React.Component {
                     <div className="logoNav">
                         <Logo />
                     </div>
-
                     <Navbar.Burger
                         active={this.state.active}
                         onClick={this.handleClickBurger}
                     />
                 </Navbar.Brand>
+
                 <Navbar.Menu>
                     <div className="navbar-start">
                         {AdminMenu}
