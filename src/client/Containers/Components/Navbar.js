@@ -7,10 +7,9 @@ export class NavBar extends React.Component {
         super(props);
         this.state = {
             isJunior: false,
+            active: false,
         };
     }
-
-    state = {active: false};
 
     handleClick = () => {
         const {active} = this.state;
@@ -33,16 +32,17 @@ export class NavBar extends React.Component {
         return (
             <Navbar id="navigation" active={this.state.active}>
                 <Navbar.Brand>
-                    <Navbar.Item>
+                    <div className="logoNav">
                         <Logo />
-                    </Navbar.Item>
+                    </div>
+
                     <Navbar.Burger
                         active={this.state.active}
                         onClick={this.handleClick}
                     />
                 </Navbar.Brand>
                 <Navbar.Menu>
-                    <div className="navbar-end">
+                    <div className="navbar-start">
                         {AdminMenu}
                         <Navbar.Item href="/catalogue">
                             <p className="colorNavCat">{"Catalogue"} </p>
@@ -50,6 +50,8 @@ export class NavBar extends React.Component {
                         <Navbar.Item href="/editprofil">
                             <p className="colorNavCat">{"Account"} </p>
                         </Navbar.Item>
+                    </div>
+                    <div className="navbar-end">
                         <Navbar.Item href="/login">
                             <p className="colorNavCat">{"Logout"} </p>
                         </Navbar.Item>

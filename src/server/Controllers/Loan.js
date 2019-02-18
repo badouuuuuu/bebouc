@@ -3,7 +3,9 @@ const Loan = require("../Models/Loan.js");
 const list = (req, res) => {
     Loan.find()
         .sort({borrowerID: 1})
-        .then(loan => res.json(loan));
+        .populate("bookID", "title")
+        .populate("borrowerID", "email")
+        .then(loans => res.json(loans));
 };
 
 const create = (req, res) => {

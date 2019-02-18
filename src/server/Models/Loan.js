@@ -4,12 +4,14 @@ const mongoose = require("mongoose");
 let loanSchema = new mongoose.Schema(
     {
         bookID: {
-            type: String,
-            required: true,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "book",
+            required: [true, "the book reference is required"],
         },
         borrowerID: {
-            type: String,
-            required: true,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "user",
+            required: [true, "the user field is required"],
         },
         active: {
             type: Boolean,
