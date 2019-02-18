@@ -47,7 +47,7 @@ export class NavBar extends React.Component {
     render() {
         let AdminMenu = null;
 
-        if (!this.state.isJunior) {
+        if (this.props.isJunior) {
             AdminMenu = (
                 <Navbar.Item href="/admin" onClick={this.handleClickAdmin}>
                     {" "}
@@ -93,7 +93,9 @@ export class NavBar extends React.Component {
                         </Navbar.Item>
                     </div>
                     <div className="navbar-end">
-                        <Navbar.Item href="/login">
+                        <Navbar.Item
+                            href="/login"
+                            onClick={this.props.isLogout}>
                             <p className="colorNavCat">{"Logout"} </p>
                         </Navbar.Item>
                     </div>

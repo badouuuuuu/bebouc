@@ -45,7 +45,11 @@ userSchema.methods = {
             });
     },
     getToken: function() {
-        return jwt.encode(this, process.env.JWT_TOKEN);
+        console.log(this.admin);
+        return jwt.encode(
+            {id: this._id, admin: this.admin},
+            process.env.JWT_TOKEN,
+        );
     },
 };
 

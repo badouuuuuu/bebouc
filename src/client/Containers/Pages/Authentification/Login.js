@@ -11,7 +11,6 @@ export class Login extends React.Component {
         this.state = {
             email: "",
             password: "",
-            admin: false,
             login_button: "submit-button",
             login: "Login",
             disabled_button: "",
@@ -29,7 +28,7 @@ export class Login extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.state.admin);
+
         axios
             .post(`http://localhost/api/login`, {
                 email: this.state.email,
@@ -39,14 +38,12 @@ export class Login extends React.Component {
                 if (res.status !== 200) {
                     console.log("email ou mot de pass incorrect");
                 } else {
-                    console.log(res.data);
+                    console.log(res);
 
                     this.setState({
                         login_button: "success-button",
                         login: "Success",
                     });
-
-                    window.location = "/homepage";
                 }
             })
             .catch(err => {

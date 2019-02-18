@@ -4,6 +4,10 @@ const loanController = require("./Controllers/Loan.js");
 const reviewController = require("./Controllers/Review.js");
 const tagController = require("./Controllers/Tag.js");
 
+const mongoose = require("mongoose");
+const User = mongoose.model("user");
+const checkToken = require("../server/jwt/auth");
+
 module.exports = function(app) {
     // user
     app.post("/login", userController.login);
@@ -31,4 +35,12 @@ module.exports = function(app) {
     app.post("/tags", tagController.create);
     app.put("/tags/:id", tagController.edit);
     app.delete("/tags/:id", tagController.destroy);
+
+    app.get("/auth", checkToken.validate, (req, res, next) => {
+        User.findOne({_id: req._id})
+            .then(user => {
+                res.json({email: user.email, admin: user.admin});
+            })
+            .catch(err => next(err));
+    });
 };

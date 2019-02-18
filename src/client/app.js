@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
-import {PrivateRoute} from "./Containers/Pages/Redirection/PrivateRoute";
 import {Login} from "./Containers/Pages/Authentification/Login";
 import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
@@ -24,16 +23,71 @@ library.add(faTag);
 library.add(faSearch);
 
 class App extends Component {
-    render() {
-        let auth = true,
-            RoutingAuth = "";
+    constructor(props) {
+        super(props);
+        this.logout = this.logout.bind(this);
 
-        if (auth) {
+        this.state = {
+            auth: false,
+            isJunior: false,
+        };
+    }
+
+    componentWillMount() {
+        axios
+            .get("http://localhost/api/auth")
+            .then(response => {
+                console.log(response.data);
+
+                if (response.status === 200) {
+                    if (response.data.admin === true) {
+                        this.setState({
+                            auth: true,
+                            isJunior: true,
+                        });
+                    }
+
+                    if (reponse.data.admin === false) {
+                        this.setState({
+                            auth: true,
+                            isJunior: false,
+                        });
+                    }
+                } else {
+                    this.setState({
+                        auth: false,
+                    });
+                }
+            })
+            .then(error => {
+                console.log(error);
+            });
+    }
+
+    logout() {
+        console.log("Logout");
+
+        this.setState({
+            auth: false,
+            isJunior: false,
+        });
+        localStorage.removeItem("token");
+
+        window.location = "/";
+    }
+
+    render() {
+        let RoutingAuth = "";
+
+        if (this.state.auth) {
             RoutingAuth = (
                 <>
                     <div className="App">
                         <div className="App-content">
-                            <NavBar />
+                            <NavBar
+                                isJunior={this.state.isJunior}
+                                isLogout={this.logout}
+                            />
                             <Switch>
                                 <Route exact path="/" component={Homepage} />
                                 <Route
@@ -65,10 +119,6 @@ class App extends Component {
                                     exact
                                     path="/Register"
                                     component={Register}
-                                />
-                                <PrivateRoute
-                                    path="/homepage"
-                                    component={Homepage}
                                 />
                                 <Route exact path="*" component={Error404} />
                             </Switch>

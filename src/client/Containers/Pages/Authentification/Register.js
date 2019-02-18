@@ -20,6 +20,8 @@ export class Register extends React.Component {
         };
     }
 
+    componentDidUpdate() {}
+
     handleChange(e) {
         let target = e.target;
 
@@ -61,8 +63,6 @@ export class Register extends React.Component {
                         error_input: "error",
                         error_alreadyexist: "Email already exist",
                     });
-
-                    this.resetStates();
                 } else {
                     console.log(res.data);
 
@@ -72,6 +72,23 @@ export class Register extends React.Component {
                         error_input: "",
                         error_alreadyexist: "",
                     });
+
+                    setTimeout(
+                        () =>
+                            this.setState({
+                                name: "",
+                                surname: "",
+                                email: "",
+                                password: "",
+                                admin: false,
+                                addusers_button: "submit-button",
+                                addusers_success: "Add User",
+                                disabled_button: "",
+                                error_input: "input_addusers is-small",
+                                error_alreadyexist: "",
+                            }),
+                        1000,
+                    );
                 }
             })
             .catch(err => {

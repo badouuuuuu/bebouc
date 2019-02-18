@@ -2,6 +2,8 @@ const User = require("../Models/User.js");
 // crypt password
 const bcrypt = require("bcryptjs");
 const saltRounds = 10;
+const LocalStorage = require("node-localstorage").LocalStorage;
+const localStorage = new LocalStorage("./scratch");
 
 const list = (req, res) => {
     User.find()
@@ -111,10 +113,16 @@ const login = (req, res) => {
                 } else {
                     user.authenticate(req.body.password, isChecked => {
                         if (isChecked) {
+                            let token = user.getToken();
+
+                            localStorage.setItem("token", token);
+
+                            req.body.password = "";
+
                             res.status(200).json({
                                 auth: true,
-                                token: user.getToken(),
-                                text: "Authentification succesful",
+                                text: "Authentification",
+                                token: token,
                             });
                         } else {
                             res.status(401).json({
