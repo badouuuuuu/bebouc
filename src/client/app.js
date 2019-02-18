@@ -83,7 +83,6 @@ class App extends Component {
         });
 
         localStorage.removeItem("token");
-        window.location = "/";
     }
 
     render() {
