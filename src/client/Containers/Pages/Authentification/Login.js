@@ -1,7 +1,6 @@
 import * as React from "react";
 import axios from "axios";
 import LogoBecode from "../../../../assets/logo_Becode.png";
-import Logo from "../../Components/Logo";
 
 export class Login extends React.Component {
     constructor(props) {
@@ -61,7 +60,6 @@ export class Login extends React.Component {
                         <a href="https://becode.org">
                             <img className="logo_login" src={LogoBecode} />
                         </a>
-                        <Logo />
                     </section>
                     <br />
                     <div className="login_block">
