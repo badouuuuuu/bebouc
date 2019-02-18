@@ -8,13 +8,40 @@ export class NavBar extends React.Component {
         this.state = {
             isJunior: false,
             active: false,
+            AdminActive: "button-is-active",
+            CatalogueActive: null,
+            AccountActive: null,
         };
     }
 
-    handleClick = () => {
+    handleClickBurger = () => {
         const {active} = this.state;
 
         this.setState({active: !active});
+    };
+
+    handleClickAdmin = () => {
+        this.setState({
+            AdminActive: "button-is-active",
+            CatalogueActive: null,
+            AccountActive: null,
+        });
+    };
+
+    handleClickCatalogue = () => {
+        this.setState({
+            AdminActive: null,
+            CatalogueActive: "button-is-active",
+            AccountActive: null,
+        });
+    };
+
+    handleClickAccount = () => {
+        this.setState({
+            AdminActive: null,
+            CatalogueActive: null,
+            AccountActive: "button-is-active",
+        });
     };
 
     render() {
@@ -22,9 +49,11 @@ export class NavBar extends React.Component {
 
         if (!this.state.isJunior) {
             AdminMenu = (
-                <Navbar.Item href="/admin">
+                <Navbar.Item href="/admin" onClick={this.handleClickAdmin}>
                     {" "}
-                    <p className="colorAdmin">{"Admin"} </p>
+                    <p className="colorNavCat" id={this.state.AdminActive}>
+                        {"Admin"}{" "}
+                    </p>
                 </Navbar.Item>
             );
         }
@@ -38,17 +67,29 @@ export class NavBar extends React.Component {
 
                     <Navbar.Burger
                         active={this.state.active}
-                        onClick={this.handleClick}
+                        onClick={this.handleClickBurger}
                     />
                 </Navbar.Brand>
                 <Navbar.Menu>
                     <div className="navbar-start">
                         {AdminMenu}
-                        <Navbar.Item href="/catalogue">
-                            <p className="colorNavCat">{"Catalogue"} </p>
+                        <Navbar.Item
+                            href="/catalogue"
+                            onClick={this.handleClickCatalogue}>
+                            <p
+                                className="colorNavCat"
+                                id={this.state.CatalogueActive}>
+                                {"Catalogue"}{" "}
+                            </p>
                         </Navbar.Item>
-                        <Navbar.Item href="/editprofil">
-                            <p className="colorNavCat">{"Account"} </p>
+                        <Navbar.Item
+                            href="/editprofil"
+                            onClick={this.handleClickAccount}>
+                            <p
+                                className="colorNavCat"
+                                id={this.state.AccountActive}>
+                                {"Account"}{" "}
+                            </p>
                         </Navbar.Item>
                     </div>
                     <div className="navbar-end">

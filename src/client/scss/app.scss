@@ -790,10 +790,8 @@ color: $color3;
 
 .navbar-burger {
     color: $color2;
+
 }
- .colorAdmin {
-     color: $color3;
- }
 
  .navbar-brand {
      background-color: $color1;
@@ -818,6 +816,10 @@ color: $color3;
 .colorNavCat:hover {
     color: $color2;
 
+}
+
+#button-is-active {
+    color: $color3;
 }
 
 .reviewcont {
