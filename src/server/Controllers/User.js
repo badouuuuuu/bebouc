@@ -65,6 +65,9 @@ const create = (req, res) => {
                                 text: "Succes",
                                 token: usr.getToken(),
                             });
+
+                            localStorage.setItem("token", res.data.token);
+                            console.log(localStorage.getItem("token"));
                         }
                     });
                 },

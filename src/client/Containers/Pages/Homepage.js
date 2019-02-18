@@ -4,14 +4,12 @@ import HomepageAdmin from "./Admin/HomepageAdmin";
 import HomepageJunior from "./Catalogue/HomepageJunior";
 
 export class Homepage extends React.Component {
-    state = {
-        isJunior: false,
-    };
+    state = {};
 
     render() {
         let Display = null;
 
-        if (this.state.isJunior) {
+        if (this.props.isJunior) {
             Display = <HomepageJunior />;
         } else {
             Display = <HomepageAdmin />;

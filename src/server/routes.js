@@ -39,7 +39,11 @@ module.exports = function(app) {
     app.get("/auth", checkToken.validate, (req, res, next) => {
         User.findOne({_id: req._id})
             .then(user => {
-                res.json({email: user.email, admin: user.admin});
+                res.json({
+                    email: user.email,
+                    admin: user.admin,
+                    userID: user._id,
+                });
             })
             .catch(err => next(err));
     });

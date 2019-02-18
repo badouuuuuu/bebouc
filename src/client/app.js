@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
 // import registerServiceWorker from "./registerServiceWorker";
 import {Route, Switch} from "react-router-dom";
-import {PrivateRoute} from "./Containers/Pages/Redirection/PrivateRoute";
 import {Login} from "./Containers/Pages/Authentification/Login";
 import {Register} from "./Containers/Pages/Authentification/Register";
 import {Homepage} from "./Containers/Pages/Homepage";
@@ -28,10 +27,11 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.logout = this.logout.bind(this);
+        this.isLogged = this.isLogged.bind(this);
 
         this.state = {
             auth: false,
-            isJunior: false,
+            isJunior: true,
         };
     }
 
@@ -66,6 +66,14 @@ class App extends Component {
             });
     }
 
+    isLogged() {
+        console.log("is Logged");
+
+        this.setState({
+            auth: true,
+        });
+    }
+
     logout() {
         console.log("Logout");
 
@@ -73,8 +81,8 @@ class App extends Component {
             auth: false,
             isJunior: false,
         });
-        localStorage.removeItem("token");
 
+        localStorage.removeItem("token");
         window.location = "/";
     }
 
@@ -116,16 +124,16 @@ class App extends Component {
                                     exact
                                     path="/admin"
                                     component={Homepage}
+                                    render={() => (
+                                        <Homepage
+                                            isJunior={this.state.isJunior}
+                                        />
+                                    )}
                                 />
                                 <Route
                                     exact
                                     path="/Register"
                                     component={Register}
-                                />
-                                <PrivateRoute
-                                    exact
-                                    path="/admin"
-                                    component={Homepage}
                                 />
                             </Switch>
                         </div>
@@ -135,7 +143,11 @@ class App extends Component {
         } else {
             RoutingAuth = (
                 <>
-                    <Route exact path="/" component={Login} />
+                    <Route
+                        exact
+                        path="/"
+                        render={() => <Login isLogged={this.isLogged} />}
+                    />
                 </>
             );
         }

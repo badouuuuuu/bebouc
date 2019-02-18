@@ -44,6 +44,7 @@ export class Login extends React.Component {
                         login_button: "success-button",
                         login: "Success",
                     });
+                    this.props.isLogged();
                 }
             })
             .catch(err => {
