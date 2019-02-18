@@ -35,7 +35,7 @@ class App extends Component {
         };
     }
 
-    componentWillMount() {
+    componentDidUpdate() {
         axios
             .get("http://localhost/api/auth")
             .then(response => {
@@ -83,6 +83,7 @@ class App extends Component {
         });
 
         localStorage.removeItem("token");
+        window.location = "/";
     }
 
     render() {
