@@ -35,7 +35,7 @@ class App extends Component {
         };
     }
 
-    componentWillReceiveProps() {
+    componentWillMount() {
         axios
             .get("http://localhost/api/auth")
             .then(response => {

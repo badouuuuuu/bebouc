@@ -47,7 +47,7 @@ export class NavBar extends React.Component {
     render() {
         let AdminMenu = null;
 
-        if (!this.props.isJunior) {
+        if (this.props.isJunior) {
             AdminMenu = (
                 <Navbar.Item href="/admin" onClick={this.handleClickAdmin}>
                     {" "}
